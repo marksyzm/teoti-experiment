@@ -1,0 +1,48 @@
+{
+  "mongo": {
+    "url": "mongodb://localhost/teoti"
+  },
+  "logs" : {
+    "type" : "console",
+    "level": "silly",
+    "path": "./rps.log",
+    "size": 2000000,
+    "count": 1,
+    "logstash" : {
+      "port": 28777,
+      "host": "127.0.0.1"
+    }
+  },
+  "express": {
+    "name": "TEOTI",
+    "host": "localhost",
+    "port": 8080,
+    "session": {
+      "secret" : "thesecretisthis",
+      "resave" : true,
+      "saveUninitialized" : true
+    }
+  },
+  "urls": {
+  },
+  "js": {
+    "path": "public/js",
+    "nodePath": "app",
+    "tests": "test",
+    "source": "app",
+    "vendors": "libs/vendors",
+    "main": "bootstrap",
+    "out": "default"
+  },
+  "css": {
+    "path": "public/css"
+  },
+  "sass": {
+    "path": "public/sass"
+  },
+  "html": {
+    "path": "views",
+    "views": "public/views",
+    "partials": "public/views/partials"
+  }
+}

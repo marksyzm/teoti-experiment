@@ -26,3 +26,18 @@ node_modules
 
 # Users Environment Variables
 .lock-wscript
+
+.DS_Store
+public/js/components
+*.css
+.sass-cache
+*.css.map
+*.js.map
+.idea/
+public/js/default.js
+npm-debug.log
+validation-status.json
+app/data/db/
+app/data/uploads/*
+!app/data/uploads/README
+coverage/

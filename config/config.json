@@ -1,1 +1,35 @@
-{}
+{
+    "js": {
+        "path": "public/js",
+        "nodePath": "app",
+        "tests": "test",
+        "source": "app",
+        "vendors": "libs/vendors",
+        "main": "bootstrap",
+        "out": "default"
+    },
+    "css": {
+        "path": "public/css"
+    },
+    "sass": {
+        "path": "public/sass"
+    },
+    "html": {
+        "path": "views",
+        "views": "public/views",
+        "partials": "public/views/partials"
+    },
+    "mongo": {
+        "url": "mongodb://localhost/teoti"
+    },
+    "express": {
+        "name": "TEOTI",
+        "host": "localhost",
+        "port": 8080,
+        "session": {
+            "secret" : "catfish",
+            "resave" : true,
+            "saveUninitialized" : true
+        }
+    }
+}

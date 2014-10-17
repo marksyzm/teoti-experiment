@@ -1,0 +1,214 @@
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal ) {
+  @font-face {
+    font-family: $font-family;
+    src: url('#{$file-path}.eot');
+    src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'),
+    url('#{$file-path}.woff') format('woff'),
+    url('#{$file-path}.ttf') format('truetype'),
+    url('#{$file-path}.svg##{$font-family}') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin retina {
+  @media
+  only screen and (-webkit-min-device-pixel-ratio: 2),
+  only screen and (   min--moz-device-pixel-ratio: 2),
+  only screen and (     -o-min-device-pixel-ratio: 2/1),
+  only screen and (        min-device-pixel-ratio: 2),
+  only screen and (                min-resolution: 192dpi),
+  only screen and (                min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+@mixin transition($values...) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -o-transition: $values;
+  transition: $values;
+}
+
+@mixin transform-origin($value: left top) {
+  -webkit-transform-origin: $value;
+  -moz-transform-origin: $value;
+  -ms-transform-origin: $value;
+  -o-transform-origin: $value;
+  transform-origin: $value;
+}
+
+@mixin blur($amount: 10px){
+  @if ($amount == 0px) {
+    filter: none;
+    -webkit-filter: none;
+    -moz-filter: none;
+    -o-filter: none;
+    -ms-filter: none;
+  } @else {
+    filter: blur($amount);
+    -webkit-filter: blur($amount);
+    -moz-filter: blur($amount);
+    -o-filter: blur($amount);
+    -ms-filter: blur($amount);
+  }
+}
+
+@mixin box-shadow($vars: 0px 4px 16px 0px, $color: rgba(0, 0, 0, 0.6)) {
+  -webkit-box-shadow:  $vars $color;
+  box-shadow:  $vars $color;
+}
+
+@mixin clearfix {
+  &:after {
+    clear: both;
+  }
+
+  &:before,
+  &:after {
+    display: table;
+    content: "";
+  }
+
+  .lt-ie8 & {
+    zoom: 1;
+  }
+}
+
+@mixin media-query($value, $operator: 'min-width', $query: 'screen') {
+  @media #{$query} and (#{$operator}: #{$value}) {
+    @content;
+  }
+}
+
+@mixin text-shadow($values...) {
+  -webkit-text-shadow: $values;
+  text-shadow: $values;
+}
+
+@mixin border-radius($r){
+  -moz-border-radius: $r;
+  -webkit-border-radius: $r;
+  -ms-border-radius: $r;
+  -o-border-radius: $r;
+  border-radius: $r;
+}
+
+@mixin rgba($color, $alpha, $property: background-color) {
+  $rgba: rgba($color, $alpha);
+  $ie-hex-str: ie-hex-str($rgba);
+  #{$property}: $color; //fallback for non-supporting browsers
+  #{$property}: $rgba;
+  @if ($property == background-color) {
+    .lt-ie9 & {
+      background-color: transparent;
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str},endColorstr=#{$ie-hex-str});
+      zoom: 1;
+    }
+  }
+}
+
+@mixin box-sizing($value: border-box) {
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+  box-sizing: $value;
+}
+
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin animation($values){
+  -moz-animation: $values;
+  -webkit-animation: $values;
+  -ms-animation: $values;
+  -o-animation: $values;
+  animation: $values;
+}
+
+@mixin animation-delay($t){
+  -moz-animation-delay: $t;
+  -webkit-animation-delay: $t;
+  -ms-animation-delay: $t;
+  -o-animation-delay: $t;
+  animation-delay: $t;
+}
+
+@mixin animation-timing($easing){
+  -moz-animation-timing-function: $easing;
+  -webkit-animation-timing-function: $easing;
+  -ms-animation-timing-function: $easing;
+  -o-animation-timing-function: $easing;
+  animation-timing-function: $easing;
+}
+
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}));
+}
+
+// scale
+@mixin scale($scale: 1) {
+  @include transform(scale($scale));
+}
+
+// translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+@mixin origin($o){
+    -moz-origin:$o;
+    -webkit-origin:$o;
+    -ms-origin:$o;
+    -o-origin:$o;
+    origin:$o;
+}
+
+// skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin ($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin transforms($transform){
+  -moz-transform: $transform;
+  -webkit-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+
+@mixin keyframes($animation-name) {
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-ms-keyframes #{$animation-name} {
+    @content;
+  }
+
+  @-o-keyframes #{$animation-name} {
+    @content; 
+  }
+
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}

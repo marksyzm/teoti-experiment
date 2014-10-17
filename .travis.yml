@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+  - "0.10"
+branches:
+  only:
+  - master
+  - develop
+services:
+  - mongodb
+
+install: "npm install && npm run build-ci"
+after_success: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && ./deploy/deploy.sh'

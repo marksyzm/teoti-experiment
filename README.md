@@ -12,14 +12,16 @@ mongodb
 Install
 -------
 
-`npm build`
+`npm run build`
 
 Development
 -----------
 
 `npm run watch`
 
-Run
----
+Run Service
+-----------
 
 `npm start`
+
+`npm stop`

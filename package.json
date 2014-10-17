@@ -5,7 +5,8 @@
   "main": "index.js",
     "scripts": {
         "start": "pm2 start index.js",
-        "build": "bower install && grunt dev",
+        "stop": "pm2 stop index.js",
+        "build": "bower install && grunt build",
         "build-ci": "bower install --config.interactive=false && grunt",
         "test-mocha": "mocha",
         "test": "karma start karma.config.js && grunt test",

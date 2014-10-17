@@ -2,10 +2,11 @@ require.config({
 
     paths: {
         lodash: "../components/lodash/dist/lodash",
+        tweenmax: "../components/gsap/src/uncompressed/TweenMax",
         jquery: "../components/jquery/dist/jquery",
         jqueryui: "../components/jqueryui/jquery-ui",
-        tweenmax: "../components/gsap/src/uncompressed/TweenMax",
         "jquery.gsap": "../components/gsap/src/uncompressed/jquery.gsap",
+        "jqueryui-touchpunch": "../components/jquery-ui-touch-punch-improved/jquery.ui.touch-punch-improved",
         "moment": "../components/moment/moment",
         "angular": "../components/angular/angular",
         "angular-file-upload-shim": "../components/ng-file-upload-shim/angular-file-upload-shim",
@@ -24,28 +25,14 @@ require.config({
             exports: "jQuery.gsap"
         },
 
-        "jqueryuitouchpunch": {
+        "jqueryui-touchpunch": {
             deps: [ "jquery", "jqueryui" ],
             exports: "jQuery"
-        },
-
-        "d3": {
-            exports: "d3"
-        },
-
-        "nvd3": {
-            exports: "nv",
-            deps: ["d3"]
         },
 
         "angular" : {
             exports : "angular",
             deps: ["jquery", "angular-file-upload-shim"]
-        },
-
-        "angular-translate" : {
-            exports: "angular",
-            deps: ["angular"]
         },
 
         "angular-file-upload": {

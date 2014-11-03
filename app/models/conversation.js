@@ -1,0 +1,18 @@
+"use strict";
+
+var mongoose = require("mongoose"),
+    Schema = mongoose.Schema,
+    schemaName = "Conversation";
+
+var ConversationSchema = new Schema({
+    createdBy:  { type: Number, ref: "User" },
+    created:    { type: Date, ref: Date.now },
+    updated:    { type: Date, ref: Date.now },
+    title:      { type: String, required: true, trim: true },
+    users:      [ { type: Number, ref: "User" } ],
+    read:       [ { type: Number, ref: "User" } ]
+});
+
+mongoose.model(schemaName, ConversationSchema);
+
+module.exports = mongoose;

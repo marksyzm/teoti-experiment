@@ -13,6 +13,14 @@ var GroupSchema = new Schema({
         own: { type: Boolean, default: false },
         all: { type: Boolean, default: false }
     },
+    conversation: {
+        own: { type: Boolean, default: false },
+        all: { type: Boolean, default: false }
+    },
+    message: {
+        own: { type: Boolean, default: false },
+        all: { type: Boolean, default: false }
+    },
     users: {
         edit: { type: Boolean, default: false },
         delete: { type: Boolean, default: false },

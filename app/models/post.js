@@ -1,6 +1,6 @@
 "use strict";
 
-var mongoose = require("mongoose"),
+var mongoose = require("../data/db").mongoose,
     Schema = mongoose.Schema,
     autoIncrement = require("mongoose-auto-increment"),
     schemaName = "Post";

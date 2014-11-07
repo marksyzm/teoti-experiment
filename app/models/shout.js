@@ -2,7 +2,7 @@
 
 var mongoose = require("mongoose"),
     Schema = mongoose.Schema,
-    schemaName = "Group";
+    schemaName = "Shout";
 
 var ShoutSchema = new Schema({
     user:       { type: Number, ref: "User" },

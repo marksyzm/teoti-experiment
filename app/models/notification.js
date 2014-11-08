@@ -12,7 +12,7 @@ var NotificationSchema = new Schema({
     fromUser:   { type: Number, ref: "User", required: true },
     type:       { type: Number, enum: notificationTypeIds, required: true },
     itemId:     { type: Number, required: true },
-    created:    { type: Date, default: Date.now, required: true },
+    created:    { type: Date, default: Date.now },
     value:      { type: String },
     groupId:    { type: Number, required: true }
 });

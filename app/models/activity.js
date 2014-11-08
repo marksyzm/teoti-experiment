@@ -13,7 +13,7 @@ var ActivitySchema = new Schema({
     forum:          { type: Number, ref: "Forum", required: true },
     method:         { type: String, enum: [ "create", "update", "delete" ], required: true, default: "create" },
     type:           { type: Number, enum: notificationTypeIds, required: true },
-    created:        { type: Date, default: Date.now, required: true },
+    created:        { type: Date, default: Date.now },
     value:          { type: String },
     ip:             { type: String },
     browser:        { type: String },

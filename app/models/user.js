@@ -8,7 +8,7 @@ var mongoose = require("../data/db").mongoose,
 autoIncrement.initialize(mongoose);
 
 var UserSchema = new Schema({
-    group           : { type: Schema.types.ObjectId, ref: "Group" },
+    group           : { type: Schema.Types.ObjectId, ref: "Group" },
     username        : { type: String, trim: true, required: true },
     title           : { type: String, trim: true },
     password        : { type: String, required: true },

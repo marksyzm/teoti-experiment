@@ -13,6 +13,6 @@ var StyleSchema = new Schema({
     values: [ { type: Schema.Types.mixed } ]
 });
 
-mongoose.model(schemaName, ScoreSchema);
+mongoose.model(schemaName, StyleSchema);
 
 module.exports = mongoose;

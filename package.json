@@ -3,14 +3,15 @@
   "version": "9.0.0-alpha",
   "description": "Forums for the armageddon",
   "main": "index.js",
-    "scripts": {
-        "start": "pm2 start index.js",
-        "build": "bower install && grunt dev",
-        "build-ci": "bower install --config.interactive=false && grunt",
-        "test-mocha": "mocha",
-        "test": "karma start karma.config.js && grunt test",
-        "watch": "grunt dev"
-    },
+  "scripts": {
+    "start": "pm2 start index.js",
+    "stop": "pm2 stop index.js",
+    "build": "bower install && grunt build",
+    "build-ci": "bower install --config.interactive=false && grunt",
+    "test-mocha": "mocha",
+    "test": "karma start karma.config.js && grunt test",
+    "watch": "grunt dev"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/marksyzm/teoti.git"
@@ -23,16 +24,19 @@
   "homepage": "https://github.com/marksyzm/teoti",
   "dependencies": {
     "bbcode-parser": "^1.0.6",
+    "bell": "^1.3.0",
     "bluebird": "^2.3.5",
     "colors": "^1.0.3",
     "ejs": "^1.0.0",
-    "express": "^4.9.7",
-    "express-session": "^1.8.2",
+    "hapi": "^7.5.0",
+    "hapi-session-mongo": "^2.1.0",
+    "joi": "^4.8.0",
     "lodash": "^2.4.1",
     "moment": "^2.8.3",
     "moment-timezone": "^0.2.2",
     "mongodb": "^1.4.19",
     "mongoose": "^3.8.17",
+    "mongoose-auto-increment": "^3.0.8",
     "multiparty": "^3.3.2",
     "nconf": "^0.6.9",
     "passport": "^0.2.1",

@@ -11,6 +11,7 @@ module.exports = function (grunt) {
     grunt.registerTask("coverage",    [ "env:test", "mongoimport", "jshint", "mocha_istanbul:coverage" ]);
     grunt.registerTask("coveralls",   [ "env:test", "mongoimport", "jshint", "mocha_istanbul:coveralls" ]);
     grunt.registerTask("dev",         [ "watchers", "sass:dev", "concurrent:target"]);
+    grunt.registerTask("build",       [ "watchers", "sass:dev"]);
     grunt.registerTask("default",     [ "watchers", "sass:dist"]);
     grunt.registerTask("package",     [ "default"]);
     grunt.registerTask("watchers",    [ "jshint" ]);

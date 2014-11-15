@@ -2,7 +2,10 @@
 
 var mongoose = require("../data/db").mongoose,
     Schema = mongoose.Schema,
+    autoIncrement = require("mongoose-auto-increment"),
     schemaName = "Style";
+
+autoIncrement.initialize(mongoose);
 
 var StyleSchema = new Schema({
     title:          { type: String, required: true, trim: true },
@@ -10,9 +13,10 @@ var StyleSchema = new Schema({
     version:        { type: Number, default: 0 },
     created:        { type: Date, default: Date.now },
     updated:        { type: Date, default: Date.now },
-    values: [ { type: Schema.Types.mixed } ]
+    values:         [ { type: Schema.Types.mixed } ]
 });
 
+StyleSchema.plugin(autoIncrement.plugin, schemaName);
 mongoose.model(schemaName, StyleSchema);
 
 module.exports = mongoose;

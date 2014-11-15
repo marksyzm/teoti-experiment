@@ -9,7 +9,7 @@ var _ = require("lodash"),
 
 var ActivitySchema = new Schema({
     user:           { type: Number, ref: "User", required: true },
-    itemid:         { type: Number, required: true },
+    itemId:         { type: Number, required: true },
     forum:          { type: Number, ref: "Forum", required: true },
     method:         { type: String, enum: [ "create", "update", "delete" ], required: true, default: "create" },
     type:           { type: Number, enum: notificationTypeIds, required: true },

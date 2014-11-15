@@ -7,7 +7,7 @@ var mongoose = require("../data/db").mongoose,
 var ConversationSchema = new Schema({
     user:           { type: Number, ref: "User" },
     conversation:   { type: Number, ref: "Conversation" },
-    created:        { type: Date, ref: Date.now },
+    created:        { type: Date, default: Date.now },
     bbcode:         { type: String, required: true, trim: true },
     html:           { type: String, required: true, trim: true }
 });

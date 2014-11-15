@@ -6,8 +6,8 @@ var mongoose = require("../data/db").mongoose,
 
 var ConversationSchema = new Schema({
     createdBy:  { type: Number, ref: "User" },
-    created:    { type: Date, ref: Date.now },
-    updated:    { type: Date, ref: Date.now },
+    created:    { type: Date, default: Date.now },
+    updated:    { type: Date, default: Date.now },
     title:      { type: String, required: true, trim: true },
     users:      [ { type: Number, ref: "User" } ],
     read:       [ { type: Number, ref: "User" } ]

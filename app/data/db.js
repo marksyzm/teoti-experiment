@@ -5,8 +5,8 @@ var mongoose = require("mongoose"),
 
 var db = mongoose.connection.open(config.get("mongo:url"));
 
-db.on('error', console.error.bind(console, 'connection error'));
-db.once('open', function callback() {
+db.on("error", console.error.bind(console, "connection error"));
+db.once("open", function callback() {
     console.log("Connection with database succeeded.");
 });
 

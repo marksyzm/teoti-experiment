@@ -13,4 +13,4 @@ var StarSchema = new Schema({
 
 mongoose.model(schemaName, StarSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

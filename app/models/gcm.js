@@ -13,4 +13,4 @@ var GcmSchema = new Schema({
 
 mongoose.model(schemaName, GcmSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

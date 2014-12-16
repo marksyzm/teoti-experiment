@@ -13,4 +13,4 @@ var ShoutSchema = new Schema({
 
 mongoose.model(schemaName, ShoutSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

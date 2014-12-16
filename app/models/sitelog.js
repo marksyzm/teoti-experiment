@@ -14,4 +14,4 @@ var SitelogSchema = new Schema({
 
 mongoose.model(schemaName, SitelogSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

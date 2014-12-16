@@ -41,4 +41,4 @@ var UserSchema = new Schema({
 UserSchema.plugin(autoIncrement.plugin, schemaName);
 mongoose.model(schemaName, UserSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

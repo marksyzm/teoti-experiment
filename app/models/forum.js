@@ -19,4 +19,4 @@ var ForumSchema = new Schema({
 ForumSchema.plugin(autoIncrement.plugin, schemaName);
 mongoose.model(schemaName, ForumSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

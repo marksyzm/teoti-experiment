@@ -24,4 +24,4 @@ var PostSchema = new Schema({
 PostSchema.plugin(autoIncrement.plugin, schemaName);
 mongoose.model(schemaName, PostSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

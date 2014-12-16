@@ -15,4 +15,4 @@ var ConversationSchema = new Schema({
 
 mongoose.model(schemaName, ConversationSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

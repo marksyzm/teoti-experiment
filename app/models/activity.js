@@ -27,4 +27,4 @@ var ActivitySchema = new Schema({
 
 mongoose.model(schemaName, ActivitySchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

@@ -25,10 +25,11 @@ var ThreadSchema = new Schema({
     related         : { type: String },
     thumbnail       : { type: String },
     score           : { type: Number, default: 0 },
-    style           : { type: Number, ref: "Style" }
+    style           : { type: Number, ref: "Style" },
+    subscribers     : [ { type: Number, ref: "User" } ]
 });
 
 ThreadSchema.plugin(autoIncrement.plugin, schemaName);
 mongoose.model(schemaName, ThreadSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

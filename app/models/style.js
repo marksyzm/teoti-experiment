@@ -19,4 +19,4 @@ var StyleSchema = new Schema({
 StyleSchema.plugin(autoIncrement.plugin, schemaName);
 mongoose.model(schemaName, StyleSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

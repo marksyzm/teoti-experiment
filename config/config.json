@@ -19,8 +19,17 @@
         "views": "public/views",
         "partials": "public/views/partials"
     },
+    "mysql": {
+        "host": "localhost",
+        "user": "teoti",
+        "password": "jericho32",
+        "database": "teoti"
+    },
     "mongo": {
-        "url": "mongodb://localhost/teoti"
+        "url": "mongodb://localhost/teoti",
+        "username": "teoti",
+        "password": "jericho32",
+        "database": "teoti"
     },
     "express": {
         "name": "TEOTI",

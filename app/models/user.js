@@ -38,7 +38,7 @@ var UserSchema = new Schema({
     }
 });
 
-UserSchema.plugin(autoIncrement.plugin, schemaName);
+UserSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, UserSchema);
 
 module.exports = mongoose.model(schemaName);

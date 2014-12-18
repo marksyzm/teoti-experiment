@@ -10,13 +10,18 @@ var config = require("./app/config"),
     thread = require("./app/import/thread"),
     post = require("./app/import/post");
 
-async.waterfall([
+async.series([
     function (callback) {
         thread.import(mysqlClient, callback);
     },
-    function (callback) {
+    /*function (callback) {
         post.import(mysqlClient, callback);
-    }
-], function (err, results) {
+    }*/
+], function (err) {
     // all done!
+    if (err) {
+        console.error(err);
+    } else {
+        console.info("\n\n\nIMPORT COMPLETE!");
+    }
 });

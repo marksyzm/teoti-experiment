@@ -16,7 +16,7 @@ var ForumSchema = new Schema({
     hashTags        : { type: String, trim: true }
 });
 
-ForumSchema.plugin(autoIncrement.plugin, schemaName);
+ForumSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, ForumSchema);
 
 module.exports = mongoose.model(schemaName);

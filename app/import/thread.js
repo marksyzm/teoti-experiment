@@ -1,51 +1,81 @@
 "use strict";
 
 var _ = require("lodash"),
-    Thread = require("../models/thread"),
     async = require("async"),
+    Thread = require("../models/thread"),
     mysqlClient,
     callback,
-    size = 100;
+    size = 500;
 
 function getData (err, threads) {
-    var rows = [];
+    var count = 0;
 
     if (err) {
         return callback(err);
     }
 
-    threads.forEach(function (thread) {
-        mysqlClient.query(
-            "SELECT * FROM subscribethread WHERE threadid = ?",
-            [ thread.threadid ],
-            buildMongoData(rows, thread)
-        );
-    });
-
     if (!threads.length) {
-        callback(null);
+        console.info("\n\nTHREADS IMPORT COMPLETE\n\n");
+        return callback(null);
     }
+    
+    async.whilst(
+        function () {
+            return count < threads.length;
+        },
+        function (callback) {
+            var thread = threads[count];
+            count++;
+
+            mysqlClient.query(
+                "SELECT * FROM subscribethread WHERE threadid = ?",
+                [ thread.threadid ],
+                function (err, subscribeThreads) {
+                    if (err) {
+                        return callback(err);
+                    }
+
+                    mysqlClient.query(
+                        "SELECT * FROM post WHERE threadid = ? ORDER BY postid DESC LIMIT 1",
+                        [ thread.threadid ],
+                        buildMongoData(thread, subscribeThreads, callback)
+                    );
+                }
+            );
+        },
+        function (err) {
+            if (err) {
+                return callback(err);
+            }
+
+            looper();
+        }
+    );
+
+
 }
 
-function buildMongoData (rows, thread) {
-    return function (err, subscribeThreads) {
+function buildMongoData (thread, subscribeThreads, callback) {
+    return function (err, lastPost) {
         if (err) {
             return callback(err);
         }
 
-        var subscribers = _.pluck(subscribeThreads, "userid");
+        var subscribers = _.pluck(subscribeThreads, "userid"),
+            lastPost = lastPost[0] || {};
 
-        var rowData = {
-            id              : thread.threadid,
+        var threadData = {
+            _id              : thread.threadid,
             title           : thread.title,
-            type            : thread.type,
+            type            : thread.threadtype ? "blog" : null,
             firstPost       : thread.firstpostid,
             firstPostUser   : thread.postuserid,
-            lastPost        : { type: Number, ref: "Post" },
-            lastPostUser    : { type: Number, ref: "User" },
+            lastPost        : lastPost.postid,
+            lastPostUser    : lastPost.userid,
             forum           : thread.forumid,
-            created         : new Date(thread.dateline),
-            replyCount      : thread.replyCount,
+            updated         : new Date(thread.lastpost * 1000),
+            created         : new Date(thread.dateline * 1000),
+            replyCount      : thread.replycount,
             viewCount       : thread.views,
             open            : !!thread.open,
             deleted         : Number(thread.visible) !== 1,
@@ -58,34 +88,44 @@ function buildMongoData (rows, thread) {
             subscribers     : subscribers
         };
 
-        rows.push(rowData);
-
-        Thread.create(rows, function (err) {
+        Thread.create(threadData, function (err, thread) {
             if (err) {
                 return callback(err);
             }
 
-            for (var i = 1; i < arguments.length; i++) {
-                console.info("Created: \"", rowData);
-            }
+            console.info(
+                "Created: id: ", thread._id, " subscribers:", thread.subscribers.length
+                //,"\n", row, "\n\n"
+            );
 
-            looper(position + size);
+            callback(null);
         });
     }
 }
 
-function looper (position) {
-    mysqlClient.query(
-        "SELECT * FROM thread WHERE threadid > (SELECT MAX(threadid) FROM thread) LIMIT ?," + size,
-        [position],
-        getData
-    );
+function looper () {
+    Thread.findOne({}, null, { sort: { _id: -1 } }, function (err, thread) {
+        if (err) { return callback(err); }
+
+        var query = "SELECT * FROM thread ORDER BY threadid ASC LIMIT ?",
+            queryData = [ size ];
+
+        if (thread) {
+            query = "SELECT * FROM thread WHERE threadid > ? ORDER BY threadid ASC LIMIT ?";
+            queryData = [ thread._id, size ];
+        }
+
+        console.info("\"", query, "\" - threadid: ", thread ? thread._id : null);
+
+        mysqlClient.query(query, queryData, getData);
+    });
 };
 
 module.exports = {
     "import": function (cl, cb) {
         mysqlClient = cl;
         callback = cb;
-        looper(0);
+
+        looper();
     }
 };

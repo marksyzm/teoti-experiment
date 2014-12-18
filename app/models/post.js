@@ -21,7 +21,7 @@ var PostSchema = new Schema({
     updated         : { type: Date, default: Date.now }
 });
 
-PostSchema.plugin(autoIncrement.plugin, schemaName);
+PostSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, PostSchema);
 
 module.exports = mongoose.model(schemaName);

@@ -9,7 +9,7 @@ autoIncrement.initialize(mongoose);
 
 var PostSchema = new Schema({
     title           : { type: String, trim: true },
-    html            : { type: String, trim: true, required: true },
+    html            : { type: String, trim: true },
     bbcode          : { type: String, trim: true, required: true },
     thread          : { type: Number, ref: "Thread" },
     user            : { type: Number, ref: "User" },

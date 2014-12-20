@@ -44,6 +44,10 @@ function getData (err, posts) {
                 updated         : new Date(post.updated * 1000)
             };
 
+            if (!data.bbcode) {
+                callback(null);
+            }
+
             Post.create(data, function (err, post) {
                 if (err) {
                     return callback(err);

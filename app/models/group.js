@@ -2,6 +2,7 @@
 
 var mongoose = require("../data/db").mongoose,
     Schema = mongoose.Schema,
+    autoIncrement = require("mongoose-auto-increment"),
     schemaName = "Group";
 
 var GroupSchema = new Schema({
@@ -28,6 +29,7 @@ var GroupSchema = new Schema({
     }
 });
 
+GroupSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, GroupSchema);
 
 module.exports = mongoose.model(schemaName);

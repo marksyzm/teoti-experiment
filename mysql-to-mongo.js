@@ -14,9 +14,9 @@ async.series([
     function (callback) {
         thread.import(mysqlClient, callback);
     },
-    /*function (callback) {
+    function (callback) {
         post.import(mysqlClient, callback);
-    }*/
+    }
 ], function (err) {
     // all done!
     if (err) {

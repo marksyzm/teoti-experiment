@@ -65,7 +65,7 @@ function buildMongoData (thread, subscribeThreads, callback) {
             lastPost = lastPost[0] || {};
 
         var threadData = {
-            _id              : thread.threadid,
+            _id             : thread.threadid,
             title           : thread.title,
             type            : thread.threadtype ? "blog" : null,
             firstPost       : thread.firstpostid,
@@ -78,7 +78,7 @@ function buildMongoData (thread, subscribeThreads, callback) {
             replyCount      : thread.replycount,
             viewCount       : thread.views,
             open            : !!thread.open,
-            deleted         : Number(thread.visible) !== 1,
+            deleted         : thread.visible !== 1,
             sticky          : !!thread.sticky,
             description     : thread.description,
             related         : thread.related,

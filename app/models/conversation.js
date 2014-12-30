@@ -5,6 +5,8 @@ var mongoose = require("../data/db").mongoose,
     autoIncrement = require("mongoose-auto-increment"),
     schemaName = "Conversation";
 
+autoIncrement.initialize(mongoose);
+
 var ConversationSchema = new Schema({
     createdBy:  { type: Number, ref: "User" },
     created:    { type: Date, default: Date.now },

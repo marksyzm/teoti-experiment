@@ -13,7 +13,8 @@ var ForumSchema = new Schema({
     title           : { type: String, trim: true, required: true },
     description     : { type: String, trim: true },
     icon            : { type: String, trim: true },
-    hashTags        : { type: String, trim: true }
+    hashTags        : { type: String, trim: true },
+    groups          : [ { type: Number, ref: "Group" } ]
 });
 
 ForumSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });

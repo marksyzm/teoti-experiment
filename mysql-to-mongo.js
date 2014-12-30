@@ -10,7 +10,8 @@ var config = require("./app/config"),
     thread = require("./app/import/thread"),
     post = require("./app/import/post"),
     user = require("./app/import/user"),
-    activity = require("./app/import/activity");
+    activity = require("./app/import/activity"),
+    conversation = require("./app/import/conversation");
 
 async.series([
     function (callback) {
@@ -24,6 +25,9 @@ async.series([
     },
     function (callback) {
         activity.import(mysqlClient, callback);
+    },
+    function (callback) {
+        conversation.import(mysqlClient, callback);
     }
 ], function (err) {
     // all done!

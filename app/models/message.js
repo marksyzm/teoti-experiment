@@ -3,14 +3,14 @@
 var mongoose = require("../data/db").mongoose,
     Schema = mongoose.Schema,
     autoIncrement = require("mongoose-auto-increment"),
-    schemaName = "Conversation";
+    schemaName = "Message";
 
 var MessageSchema = new Schema({
     user:           { type: Number, ref: "User" },
     conversation:   { type: Number, ref: "Conversation" },
     created:        { type: Date, default: Date.now },
     bbcode:         { type: String, required: true, trim: true },
-    html:           { type: String, required: true, trim: true }
+    html:           { type: String, trim: true }
 });
 
 MessageSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });

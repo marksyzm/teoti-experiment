@@ -1,7 +1,5 @@
 "use strict";
 
-"use strict";
-
 var _ = require("lodash"),
     async = require("async"),
     Post = require("../models/post"),

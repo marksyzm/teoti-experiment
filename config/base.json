@@ -30,15 +30,5 @@
         "username": "teoti",
         "password": "jericho32",
         "database": "teoti"
-    },
-    "express": {
-        "name": "TEOTI",
-        "host": "localhost",
-        "port": 8080,
-        "session": {
-            "secret" : "catfish",
-            "resave" : true,
-            "saveUninitialized" : true
-        }
     }
 }

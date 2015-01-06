@@ -1,0 +1,5 @@
+{
+  "permissions": {
+    "types": [ "thread", "post", "conversation", "message", "user", "forum", "bbcode", "shout", "sitelog" ]
+  }
+}

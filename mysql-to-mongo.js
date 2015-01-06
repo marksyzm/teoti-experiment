@@ -7,33 +7,33 @@ var config = require("./app/config"),
         database: config.get("mysql:database")
     }),
     async = require("async"),
-    thread = require("./app/import/thread"),
-    post = require("./app/import/post"),
-    user = require("./app/import/user"),
-    activity = require("./app/import/activity"),
-    conversation = require("./app/import/conversation"),
-    message = require("./app/import/message");
+    _ = require("lodash"),
+    importers = require("./app/import");
 
-async.series([
-    function (callback) {
-        thread.import(mysqlClient, callback);
-    },
-    function (callback) {
-        post.import(mysqlClient, callback);
-    },
-    function (callback) {
-        user.import(mysqlClient, callback);
-    },
-    function (callback) {
-        activity.import(mysqlClient, callback);
-    },
-    function (callback) {
-        conversation.import(mysqlClient, callback);
-    },
-    function (callback) {
-        message.import(mysqlClient, callback);
-    }
-], function (err) {
+var importerItems = [
+    "thread",
+    "post",
+    "user",
+    "activity",
+    "conversation",
+    "message",
+    "forum",
+];
+
+importerItems = _.map(importerItems, function (importerItem) {
+    return function (callback) {
+        var importer = importers.get(importerItem);
+        if (!importer) {
+            return callback(new Error("Importer does not exist"));
+        }
+        if (!importer.import) {
+            return callback(new Error("Importer is invalid"));
+        }
+        importer.import(mysqlClient, callback);
+    };
+})
+
+async.series(importerItems, function (err) {
     // all done!
     if (err) {
         console.error(err);

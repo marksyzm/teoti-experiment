@@ -44,6 +44,7 @@
     "passport-local": "^1.0.0",
     "pm2": "^0.10.8",
     "request": "^2.45.0",
+    "speakingurl": "^0.18.1",
     "w3cjs": "^0.1.25",
     "winston": "^0.8.1"
   },

@@ -2,6 +2,7 @@
 
 var _ = require("lodash"),
     async = require("async"),
+    getSlug = require("speakingurl"),
     User = require("../models/user"),
     mysqlClient,
     callback,
@@ -52,7 +53,7 @@ function getData (err, users) {
                 location        : user.location,
                 score           : user.post_thanks_thanked_times,
                 totalScore      : user.user_total_score,
-                usernameUrl     : user.usernameurl,
+                usernameUrl     : getSlug(user.username),
                 activate        : user.activate
             };
 

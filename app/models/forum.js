@@ -9,8 +9,10 @@ autoIncrement.initialize(mongoose);
 
 var ForumSchema = new Schema({
     parent          : { type: Number, ref: "Forum" },
+    parentList      : [ { type: Number, ref: "Forum" } ],
     style           : { type: Number, ref: "Style" },
     title           : { type: String, trim: true, required: true },
+    slug            : { type: String, trim: true, required: true },
     description     : { type: String, trim: true },
     icon            : { type: String, trim: true },
     hashTags        : { type: String, trim: true },

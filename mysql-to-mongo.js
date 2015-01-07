@@ -18,6 +18,7 @@ var importerItems = [
     "conversation",
     "message",
     "forum",
+    "notification",
 ];
 
 importerItems = _.map(importerItems, function (importerItem) {

@@ -1,4 +1,6 @@
 {
+  "superAdmin": [ 2 ],
+  "banned": [ 6 ],
   "permissions": {
     "types": [ "thread", "post", "conversation", "message", "user", "forum", "bbcode", "shout", "sitelog" ]
   }

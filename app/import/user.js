@@ -8,6 +8,26 @@ var _ = require("lodash"),
     callback,
     size = 500;
 
+function getUserGroup(id) {
+    switch (id) {
+        case 6:
+            return 1;
+        case 5:
+            return 2;
+        case 12:
+            return 3;
+        case 10:
+            return 4;
+        case 2:
+        case 3:
+            return 5;
+        case 8:
+            return 6;
+        default:
+            return 5;
+    }
+}
+
 function getData (err, users) {
     var count = 0;
 
@@ -30,7 +50,7 @@ function getData (err, users) {
 
             var data = {
                 _id             : user.userid,
-                group           : user.usergroupid,
+                group           : getUserGroup(user.usergroupid),
                 username        : user.username,
                 title           : user.usertitle,
                 password        : user.password,

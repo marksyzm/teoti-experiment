@@ -16,7 +16,6 @@ var NotificationSchema = new Schema({
     type:       { type: String, enum: notificationTypeNames, required: true },
     itemId:     { type: Number, required: true },
     created:    { type: Date, default: Date.now },
-    value:      { type: String },
     read:       { type: Boolean, default: false }
 });
 

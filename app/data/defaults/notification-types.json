@@ -1,6 +1,7 @@
 [
-    { "id": 1, "name": "newpost", "description": "New posts", "group": "post" },
-    { "id": 2, "name": "likedislike", "description": "People that like/dislike your posts", "group": "thread" },
+    { "id": 1, "name": "newpost", "description": "New posts" },
+    { "id": 2, "name": "liked", "description": "People that like your posts" },
     { "id": 3, "name": "conversation", "description": "New & updated conversations", "store": false },
-    { "id": 6, "name": "extrapoints", "description": "People that gave you extra points", "group": "thread" }
+    { "id": 6, "name": "extrapoints", "description": "People that gave you extra points" },
+    { "id": 7, "name": "disliked", "description": "People that dislike your posts" }
 ]

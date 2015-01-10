@@ -40,10 +40,9 @@ function getData (err, notifications) {
                 _id             : notification.noteid,
                 user            : notification.userid,
                 fromUsers       : [ notification.fromuserid ],
-                type            : getNotificationTypeNameFromId(notification.type),
+                type            : getNotificationTypeNameFromId(notification.extra === "disliked" ? 7 : notification.type),
                 itemId          : notification.itemid,
                 created         : new Date(notification.dateline * 1000),
-                value           : notification.extra,
                 read            : false
             };
 
@@ -53,7 +52,7 @@ function getData (err, notifications) {
                 }
 
                 console.info(
-                    "Created: id: ", notification._id, "Title:", notification.title
+                    "Created: id: ", notification._id, "Type:", notification.type
                     //,"\n", row, "\n\n"
                 );
 

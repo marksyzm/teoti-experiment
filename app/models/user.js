@@ -33,6 +33,7 @@ var UserSchema = new Schema({
     totalScore      : { type: Number, default: 0 },
     usernameUrl     : { type: String },
     active          : { type: Boolean },
+    activationCode  : { type: String },
     settings: {
         view:       { type: String, enum: [ "simple", "compact", "stream" ], default: "simple" },
         wysiwyg:    { type: Boolean, default: false }

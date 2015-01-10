@@ -6,6 +6,8 @@ var mongoose = require("../data/db").mongoose,
     autoIncrement = require("mongoose-auto-increment"),
     schemaName = "Group";
 
+autoIncrement.initialize(mongoose);
+
 var GroupSchema = new Schema({
     create      : {
         own     : [ { type: String, enum: config.get("permissions:types") } ],

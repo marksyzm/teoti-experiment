@@ -2,7 +2,10 @@
 
 var mongoose = require("../data/db").mongoose,
     Schema = mongoose.Schema,
+    autoIncrement = require("mongoose-auto-increment"),
     schemaName = "Score";
+
+autoIncrement.initialize(mongoose);
 
 var ScoreSchema = new Schema({
     user            : { type: Number, ref: "User" },
@@ -12,6 +15,7 @@ var ScoreSchema = new Schema({
     like            : { type: Boolean, default: false }
 });
 
+ScoreSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, ScoreSchema);
 
 module.exports = mongoose.model(schemaName);

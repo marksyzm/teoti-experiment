@@ -20,6 +20,7 @@ var importerItems = [
     "forum",
     "notification",
     "score",
+    "like",
 ];
 
 importerItems = _.map(importerItems, function (importerItem) {

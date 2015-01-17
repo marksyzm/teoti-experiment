@@ -22,6 +22,7 @@ var importerItems = [
     "score",
     "like",
     "shout",
+    "sitelog",
 ];
 
 importerItems = _.map(importerItems, function (importerItem) {

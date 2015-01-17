@@ -21,6 +21,7 @@ var importerItems = [
     "notification",
     "score",
     "like",
+    "shout",
 ];
 
 importerItems = _.map(importerItems, function (importerItem) {

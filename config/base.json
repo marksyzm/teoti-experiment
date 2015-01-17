@@ -19,17 +19,16 @@
         "views": "public/views",
         "partials": "public/views/partials"
     },
-    "mongo": {
-        "url": "mongodb://localhost/teoti"
-    },
-    "express": {
-        "name": "TEOTI",
+    "mysql": {
         "host": "localhost",
-        "port": 8080,
-        "session": {
-            "secret" : "catfish",
-            "resave" : true,
-            "saveUninitialized" : true
-        }
+        "user": "teoti",
+        "password": "jericho32",
+        "database": "teoti"
+    },
+    "mongo": {
+        "url": "mongodb://localhost/teoti",
+        "username": "teoti",
+        "password": "jericho32",
+        "database": "teoti"
     }
 }

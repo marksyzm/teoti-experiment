@@ -2,7 +2,10 @@
 
 var mongoose = require("../data/db").mongoose,
     Schema = mongoose.Schema,
+    autoIncrement = require("mongoose-auto-increment"),
     schemaName = "Sitelog";
+
+autoIncrement.initialize(mongoose);
 
 var SitelogSchema = new Schema({
     user:       { type: Number, ref: "User", required: true },
@@ -12,6 +15,7 @@ var SitelogSchema = new Schema({
     created:    { type: Date, default: Date.now }
 });
 
+SitelogSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, SitelogSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

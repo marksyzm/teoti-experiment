@@ -12,4 +12,4 @@ var TweetSchema = new Schema({
 
 mongoose.model(schemaName, TweetSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

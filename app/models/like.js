@@ -3,18 +3,18 @@
 var mongoose = require("../data/db").mongoose,
     Schema = mongoose.Schema,
     autoIncrement = require("mongoose-auto-increment"),
-    schemaName = "Score";
+    schemaName = "Like";
 
 autoIncrement.initialize(mongoose);
 
-var ScoreSchema = new Schema({
+var LikeSchema = new Schema({
     user            : { type: Number, ref: "User" },
     post            : { type: Number, ref: "Post" },
     created         : { type: Date, default: Date.now },
-    amount          : { type: Number, default: 0 }
+    amount          : { type: Number, default: 1 }
 });
 
-ScoreSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
-mongoose.model(schemaName, ScoreSchema);
+LikeSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
+mongoose.model(schemaName, LikeSchema);
 
 module.exports = mongoose.model(schemaName);

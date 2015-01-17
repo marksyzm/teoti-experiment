@@ -2,7 +2,10 @@
 
 var mongoose = require("../data/db").mongoose,
     Schema = mongoose.Schema,
+    autoIncrement = require("mongoose-auto-increment"),
     schemaName = "Shout";
+
+autoIncrement.initialize(mongoose);
 
 var ShoutSchema = new Schema({
     user:       { type: Number, ref: "User" },
@@ -11,6 +14,7 @@ var ShoutSchema = new Schema({
     message:    { type: String, required: true, trim: true }
 });
 
+ShoutSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, ShoutSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

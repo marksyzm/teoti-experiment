@@ -14,4 +14,4 @@ var BbcodeSchema = new Schema({
 
 mongoose.model(schemaName, BbcodeSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

@@ -9,12 +9,13 @@ autoIncrement.initialize(mongoose);
 
 var ThreadSchema = new Schema({
     title           : { type: String, required: true, trim: true },
-    type            : { type: Number, default: 0 },
+    type            : { type: String, enum: [ "blog" ] },
     firstPost       : { type: Number, ref: "Post" },
     firstPostUser   : { type: Number, ref: "User" },
     lastPost        : { type: Number, ref: "Post" },
     lastPostUser    : { type: Number, ref: "User" },
     forum           : { type: Number, ref: "Forum" },
+    updated         : { type: Date, default: Date.now },
     created         : { type: Date, default: Date.now },
     replyCount      : { type: Number, default: 0 },
     viewCount       : { type: Number, default: 0 },
@@ -25,10 +26,11 @@ var ThreadSchema = new Schema({
     related         : { type: String },
     thumbnail       : { type: String },
     score           : { type: Number, default: 0 },
-    style           : { type: Number, ref: "Style" }
+    style           : { type: Number, ref: "Style" },
+    subscribers     : [ { type: Number, ref: "User" } ]
 });
 
-ThreadSchema.plugin(autoIncrement.plugin, schemaName);
+ThreadSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, ThreadSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

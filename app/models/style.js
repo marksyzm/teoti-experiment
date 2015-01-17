@@ -16,7 +16,7 @@ var StyleSchema = new Schema({
     values:         [ { type: Schema.Types.mixed } ]
 });
 
-StyleSchema.plugin(autoIncrement.plugin, schemaName);
+StyleSchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, StyleSchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

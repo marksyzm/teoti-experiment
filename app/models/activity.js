@@ -2,17 +2,20 @@
 
 var _ = require("lodash"),
     mongoose = require("../data/db").mongoose,
+    autoIncrement = require("mongoose-auto-increment"),
     notificationTypes = require("../data/defaults/notification-types.json"),
     Schema = mongoose.Schema,
     schemaName = "Activity",
-    notificationTypeIds = _.pluck(notificationTypes, "id");
+    notificationTypeNames = _.pluck(notificationTypes, "name");
+
+autoIncrement.initialize(mongoose);
 
 var ActivitySchema = new Schema({
     user:           { type: Number, ref: "User", required: true },
     itemId:         { type: Number, required: true },
     forum:          { type: Number, ref: "Forum", required: true },
     method:         { type: String, enum: [ "create", "update", "delete" ], required: true, default: "create" },
-    type:           { type: Number, enum: notificationTypeIds, required: true },
+    type:           { type: String, enum: notificationTypeNames, required: true },
     created:        { type: Date, default: Date.now },
     value:          { type: String },
     ip:             { type: String },
@@ -25,6 +28,7 @@ var ActivitySchema = new Schema({
     line:           { type: Number }
 });
 
+ActivitySchema.plugin(autoIncrement.plugin, { model: schemaName, startAt: 1 });
 mongoose.model(schemaName, ActivitySchema);
 
-module.exports = mongoose;
+module.exports = mongoose.model(schemaName);

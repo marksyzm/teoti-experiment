@@ -1,7 +1,6 @@
 "use strict";
 
-var _ = require("lodash"),
-    async = require("async"),
+var async = require("async"),
     Message = require("../models/message"),
     mysqlClient,
     callback,
@@ -79,7 +78,7 @@ function looper () {
 
         mysqlClient.query(query, queryData, getData);
     });
-};
+}
 
 module.exports = {
     "import": function (cl, cb) {

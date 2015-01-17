@@ -83,7 +83,7 @@ function looper () {
 
         mysqlClient.query(query, queryData, getData);
     });
-};
+}
 
 module.exports = {
     "import": function (cl, cb) {

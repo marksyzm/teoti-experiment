@@ -1,6 +1,6 @@
 "use strict";
 
-var Thread = require("./app/models/thread");
+var Thread = require("./lib/api/models/thread");
 
 Thread.create({ _id: 2, title: "WEEEE" },function (err, thread) {
     if (err) {

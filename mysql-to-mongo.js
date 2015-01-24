@@ -1,6 +1,6 @@
 "use strict";
 
-var config = require("./app/config"),
+var config = require("./lib/api/config"),
     mysqlClient = require('mysql').createConnection({
         user: config.get("mysql:user"),
         password: config.get("mysql:password"),
@@ -8,7 +8,7 @@ var config = require("./app/config"),
     }),
     async = require("async"),
     _ = require("lodash"),
-    importers = require("./app/import");
+    importers = require("./lib/api/import");
 
 var importerItems = [
     "thread",

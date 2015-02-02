@@ -15,7 +15,7 @@
         "path": "public/sass"
     },
     "html": {
-        "path": "views",
+        "path": "public",
         "views": "public/views",
         "partials": "public/views/partials"
     },
@@ -32,6 +32,9 @@
         "database": "teoti"
     },
     "express": {
+        "name": "teoti",
+        "host": "localhost",
+        "port": 8080,
         "session": {
             "secret": "ihaveadream",
             "resave": true,

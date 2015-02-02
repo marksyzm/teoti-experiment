@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html id="ng-app">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <base href="/">
+    <title data-ng-bind="(pageTitle ? pageTitle+' | ' : '')+ 'TEOTI - The End Of The Internet'">TEOTI - The End Of The Internet</title>
+    <link type="text/css" href="css/style.css" rel="stylesheet">
+</head>
+<body>
+<section data-ng-view>
+    <!-- CONTENT -->
+    <%- body %>
+</section>
+</body>
+</html>

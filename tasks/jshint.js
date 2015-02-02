@@ -46,7 +46,7 @@ module.exports = function jshint(grunt) {
             }
         },
         uses_defaults: [
-            "app/**/*.js",
+            "lib/**/*.js",
             "index.js",
             "public/js/app/**/*.js",
             "public/js/test/**/*.js",

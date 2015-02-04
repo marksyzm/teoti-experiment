@@ -16,10 +16,16 @@ module.exports = function watch(grunt) {
             files: [
                 "public/js/app/**/*.js",
                 "public/js/test/**/*.js",
-                "app/**/*.js",
+                "lib/**/*.js",
                 "index.js"
             ],
             tasks: ["jshint"]
+        },
+        browserify: {
+            files: [
+                "public/js/app/**/*.js"
+            ],
+            tasks: ["browserify:dist"]
         },
         server: {
             files: [

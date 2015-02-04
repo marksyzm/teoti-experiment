@@ -1,44 +1,48 @@
 {
-    "js": {
-        "path": "public/js",
-        "nodePath": "app",
-        "tests": "test",
-        "source": "app",
-        "vendors": "libs/vendors",
-        "main": "bootstrap",
-        "out": "default"
-    },
-    "css": {
-        "path": "public/css"
-    },
-    "sass": {
-        "path": "public/sass"
-    },
-    "html": {
-        "path": "public",
-        "views": "public/views",
-        "partials": "public/views/partials"
-    },
-    "mysql": {
-        "host": "localhost",
-        "user": "teoti",
-        "password": "jericho32",
-        "database": "teoti"
-    },
-    "mongo": {
-        "url": "mongodb://localhost/teoti",
-        "username": "teoti",
-        "password": "jericho32",
-        "database": "teoti"
-    },
-    "express": {
-        "name": "teoti",
-        "host": "localhost",
-        "port": 8080,
-        "session": {
-            "secret": "ihaveadream",
-            "resave": true,
-            "saveUninitialized": true
-        }
+  "js": {
+    "path": "public/js",
+    "nodePath": "app",
+    "tests": "test",
+    "source": "app",
+    "vendors": "libs/vendors",
+    "main": "bootstrap",
+    "out": "default"
+  },
+  "css": {
+    "path": "public/css"
+  },
+  "sass": {
+    "path": "public/sass"
+  },
+  "html": {
+    "path": "public",
+    "views": "public/views",
+    "partials": "public/views/partials",
+    "layouts": "public/views/layouts"
+  },
+  "mysql": {
+    "host": "localhost",
+    "user": "teoti",
+    "password": "jericho32",
+    "database": "teoti"
+  },
+  "mongo": {
+    "url": "mongodb://localhost/teoti",
+    "username": "teoti",
+    "password": "jericho32",
+    "database": "teoti"
+  },
+  "express": {
+    "name": "teoti",
+    "host": "localhost",
+    "port": 8080,
+    "session": {
+      "secret": "ihaveadream",
+      "resave": true,
+      "saveUninitialized": true,
+      "cookie": {
+        "maxAge": 8640000000
+      }
     }
+  }
 }

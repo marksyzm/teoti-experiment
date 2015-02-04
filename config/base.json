@@ -27,13 +27,10 @@
     "database": "teoti"
   },
   "mongo": {
-    "url": "mongodb://localhost/teoti",
-    "username": "teoti",
-    "password": "jericho32",
-    "database": "teoti"
+    "url": "mongodb://localhost/teoti"
   },
   "express": {
-    "name": "teoti",
+    "name": "TEOTI",
     "host": "localhost",
     "port": 8080,
     "session": {
@@ -41,8 +38,12 @@
       "resave": true,
       "saveUninitialized": true,
       "cookie": {
-        "maxAge": 8640000000
+        "maxAge": 864000000
       }
     }
+  },
+  "mongoStore": {
+    "autoRemove": "interval",
+    "autoRemoveInterval": 14400
   }
 }

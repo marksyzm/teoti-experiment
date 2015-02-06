@@ -34,7 +34,7 @@ public/js/components
 *.css.map
 *.js.map
 .idea/
-public/js/default.js
+public/js/app.js
 npm-debug.log
 validation-status.json
 app/data/db/

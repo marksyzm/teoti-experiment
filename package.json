@@ -51,7 +51,7 @@
     "moment": "^2.9.0",
     "moment-timezone": "^0.2.5",
     "mongodb": "^1.4.19",
-    "mongoose": "^3.8.17",
+    "mongoose": "^3.8.22",
     "mongoose-auto-increment": "git://github.com/marksyzm/mongoose-auto-increment#master",
     "multiparty": "^3.3.2",
     "mysql": "^2.5.4",
@@ -68,6 +68,8 @@
   },
   "devDependencies": {
     "bower": "^1.3.12",
+    "browserify": "^8.1.3",
+    "browserify-shim": "^3.8.2",
     "chai": "^1.9.2",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.3.0",
@@ -84,7 +86,7 @@
     "grunt-nodemon": "^0.3.0",
     "grunt-sass": "^0.14.2",
     "istanbul": "^0.3.2",
-    "jshint": "^2.5.6",
+    "jshint": "^2.6.0",
     "karma": "^0.12.24",
     "karma-chrome-launcher": "^0.1.5",
     "karma-cli": "0.0.4",
@@ -99,5 +101,14 @@
     "requirejs": "^2.1.15",
     "sinon": "^1.10.3",
     "supertest": "^0.14.0"
+  },
+  "browser": {
+    "angular": "./node_modules/angular/angular.js"
+  },
+  "browserify-shim": {
+    "angular": "angular"
+  },
+  "browserify": {
+    "transform": [ "browserify-shim" ]
   }
 }

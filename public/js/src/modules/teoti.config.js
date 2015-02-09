@@ -6,4 +6,6 @@ var moduleName = "teoti.config";
 
 angular.module(moduleName, []);
 
+require("../config/router");
+
 module.exports = moduleName;

@@ -37,7 +37,4 @@ public/js/components
 public/js/app.js
 npm-debug.log
 validation-status.json
-app/data/db/
-app/data/uploads/*
-!app/data/uploads/README
 coverage/

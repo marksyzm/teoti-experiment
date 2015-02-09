@@ -1,9 +1,10 @@
 "use strict";
 
 var angular = require("angular");
+console.log(require("angular-route"));
 
 var modules = [
-    require("angular-ui-router"),
+    "ngRoute",
     require("./modules/teoti.modules")
 ];
 

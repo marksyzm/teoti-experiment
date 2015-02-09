@@ -14,7 +14,7 @@ module.exports = function watch(grunt) {
         },
         jshint: {
             files: [
-                "public/js/app/**/*.js",
+                "public/js/src/**/*.js",
                 "public/js/test/**/*.js",
                 "lib/**/*.js",
                 "index.js"

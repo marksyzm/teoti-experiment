@@ -6,4 +6,6 @@ var moduleName = "teoti.directives";
 
 angular.module(moduleName, []);
 
+require("../directives/autocomplete");
+
 module.exports = moduleName;

@@ -1,7 +1,9 @@
 "use strict";
 
+require("jquery");
+
 var angular = require("angular");
-console.log(require("angular-route"));
+require("angular-route");
 
 var modules = [
     "ngRoute",

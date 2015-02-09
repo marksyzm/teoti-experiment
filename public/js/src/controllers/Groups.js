@@ -23,6 +23,6 @@ angular.module("teoti.controllers").controller("Groups", [
                         return $scope.fetchGroups();
                     });
             }
-        }
+        };
     }
 ]);

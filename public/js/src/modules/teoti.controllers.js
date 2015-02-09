@@ -6,7 +6,7 @@ var moduleName = "teoti.controllers";
 
 angular.module(moduleName, []);
 
-require("../controllers/users");
+require("../controllers/user");
 require("../controllers/groups");
 require("../controllers/group-edit");
 

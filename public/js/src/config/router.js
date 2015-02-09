@@ -11,7 +11,7 @@ angular.module("teoti.config").config([
                 title: "Home"
             })
             .when("/manage", {
-                templateUrl: "/views/manage.html",
+                templateUrl: "/views/manage/index.html",
                 title: "Manage"
             })
             .when("/sign-in", {
@@ -32,6 +32,11 @@ angular.module("teoti.config").config([
                 controller: "GroupEdit",
                 templateUrl: "/views/manage/group-edit.html",
                 title: "Edit group"
+            })
+            .when("/manage/user", {
+                controller: "User",
+                templateUrl: "/views/manage/user.html",
+                title: "Edit user"
             });
 
         $locationProvider.html5Mode(true);

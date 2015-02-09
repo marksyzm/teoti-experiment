@@ -7,22 +7,30 @@ angular.module("teoti.config").config([
     function ($routeProvider, $locationProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "/views/sign-in.html",
+                templateUrl: "/views/home.html",
                 title: "Home"
             })
-            .when("/admin/groups", {
+            .when("/manage", {
+                templateUrl: "/views/manage.html",
+                title: "Manage"
+            })
+            .when("/sign-in", {
+                templateUrl: "/views/sign-in.html",
+                title: "Sign In"
+            })
+            .when("/manage/groups", {
                 controller: "Groups",
-                templateUrl: "/views/admin/groups.html",
+                templateUrl: "/views/manage/groups.html",
                 title: "Groups"
             })
-            .when("/admin/group", {
+            .when("/manage/group", {
                 controller: "GroupEdit",
-                templateUrl: "/views/admin/group-edit.html",
+                templateUrl: "/views/manage/group-edit.html",
                 title: "Create group"
             })
-            .when("/admin/group/:groupId", {
+            .when("/manage/group/:groupId", {
                 controller: "GroupEdit",
-                templateUrl: "/views/admin/group-edit.html",
+                templateUrl: "/views/manage/group-edit.html",
                 title: "Edit group"
             });
 

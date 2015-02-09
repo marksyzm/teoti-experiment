@@ -13,14 +13,16 @@ angular.module("teoti.controllers").controller("GroupEdit", [
         function create (group) {
             $http.post("/api/group", group)
                 .then(function () {
-                    $location.path("/admin/groups");
+                    $location.path("/manage/groups");
                 });
         }
 
         function update (group) {
             $http.put("/api/group/"+groupId, group)
                 .then(function () {
-                    $location.path("/admin/groups");
+                    //if ($window.confirm("Group updated. Click okay to go to groups or cancel to continue editing.")) {
+                        $location.path("/manage/groups");
+                    //}
                 });
         }
 

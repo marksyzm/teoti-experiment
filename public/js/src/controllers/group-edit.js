@@ -4,31 +4,29 @@ var angular = require("angular"),
     settings = require("../../../../config/app.json");
 
 angular.module("teoti.controllers").controller("GroupEdit", [
-    "$scope", "$route", "$http", "$location",
-    function ($scope, $route, $http, $location) {
+    "$scope", "$route", "$location", "GroupResource",
+    function ($scope, $route, $location, GroupResource) {
         $scope.edit = false;
         $scope.group = {};
         $scope.permissionTypes = settings.permissions.types;
 
         function create (group) {
-            $http.post("/api/group", group)
+            GroupResource.save(group)
                 .then(function () {
                     $location.path("/manage/groups");
                 });
         }
 
         function update (group) {
-            $http.put("/api/group/"+groupId, group)
+            GroupResource.update(group)
                 .then(function () {
-                    //if ($window.confirm("Group updated. Click okay to go to groups or cancel to continue editing.")) {
-                        $location.path("/manage/groups");
-                    //}
+                    $location.path("/manage/groups");
                 });
         }
 
         var groupId = $route.current.params.groupId;
         if (groupId) {
-            $http.get("/api/group/"+groupId)
+            GroupResource.get(groupId)
                 .then(function (response) {
                     if (response.data && response.data._id) {
                         $scope.edit = true;
@@ -39,7 +37,7 @@ angular.module("teoti.controllers").controller("GroupEdit", [
 
         $scope.submit = function () {
             if ($scope.edit) {
-                update($scope.group);
+                update(groupId, $scope.group);
                 return;
             }
 

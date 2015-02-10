@@ -17,6 +17,7 @@ module.exports = function env(grunt) {
             src: ["public/js/src/app.js"],
             dest: "public/js/app.js",
             options: {
+                transform: ["uglifyify"],
                 browserifyOptions: {
                     debug: false
                 }

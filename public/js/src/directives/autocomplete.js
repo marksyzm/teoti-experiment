@@ -1,14 +1,13 @@
 "use strict";
 
 var angular = require("angular");
-var $ = require("jquery");
 require("jquery-ui/autocomplete");
 
 angular.module("teoti.directives").directive("autocomplete", [
     "$http",
     function ($http) {
         function linker (scope, element, attrs) {
-            $(element[0]).autocomplete({
+            element.find("input[type=text]").autocomplete({
                 source: function( request, res ) {
                     var params = {};
                     params[attrs.filter || "filter"] = request.term;
@@ -17,9 +16,7 @@ angular.module("teoti.directives").directive("autocomplete", [
                         .then(function (response) {
                             var items = response.data;
 
-                            if (!items) {
-                                return;
-                            }
+                            if (!items) { return; }
 
                             var parsedItems = [];
                             angular.forEach(items, function (item) {
@@ -34,11 +31,14 @@ angular.module("teoti.directives").directive("autocomplete", [
                         });
                 },
                 minLength: 2,
+                appendTo: element,
                 select: function (event, ui) {
-                    $http.get(attrs.url+"/"+ui.item.id)
-                        .then(function (response) {
-                            scope.output = response.data;
-                        });
+                    scope.$apply(function () {
+                        $http.get(attrs.url+"/"+ui.item.id)
+                            .then(function (response) {
+                                scope.$emit("autocomplete-select", response.data, attrs.url);
+                            });
+                    });
                 }
             });
         }
@@ -46,9 +46,7 @@ angular.module("teoti.directives").directive("autocomplete", [
         return {
             restrict: "A",
             link: linker,
-            scope: {
-                output: "="
-            }
+            scope: {}
         };
     }
 ]);

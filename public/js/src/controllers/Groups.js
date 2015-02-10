@@ -3,12 +3,12 @@
 var angular = require("angular");
 
 angular.module("teoti.controllers").controller("Groups", [
-    "$scope", "$http", "$window",
-    function ($scope, $http, $window) {
+    "$scope", "$window", "GroupResource",
+    function ($scope, $window, GroupResource) {
         $scope.groups = null;
 
         $scope.fetchGroups = function () {
-            return $http.get("/api/group")
+            return GroupResource.query()
                 .then(function (response) {
                     if (response.data) {
                         $scope.groups = response.data;
@@ -18,7 +18,7 @@ angular.module("teoti.controllers").controller("Groups", [
 
         $scope.deleteGroup = function (group) {
             if ($window.confirm("Are you sure you want to delete this group?") && $window.confirm("Really?")) {
-                $http.delete("/api/group/"+group._id)
+                GroupResource.delete(group._id)
                     .then(function () {
                         return $scope.fetchGroups();
                     });

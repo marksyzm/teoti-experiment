@@ -1,7 +1,110 @@
-<input type="text" data-autocomplete
-       data-url="/api/user"
-       data-id="_id"
-       data-label="username"
-       data-value="username"
-       data-output="user">
-<form></form>
+<div data-autocomplete
+     data-url="/api/user"
+     data-id="_id"
+     data-label="username"
+     data-value="username">
+    <input type="text">
+</div>
+<h2>{{ editMode ? 'Update user' : 'Create user' }}</h2>
+<form name="editUser" novalidate data-ng-submit="submit()">
+    <div class="inputWrapper">
+        <label for="editUserUsername">
+            Username
+        </label>
+        <input type="text" id="editUserUsername" data-ng-model="user.username" required>
+        <div data-ng-show="editUser.username.$invalid">
+            <p class="error" data-ng-show="editUser.username.$error.required">
+                Username must be supplied
+            </p>
+        </div>
+    </div>
+    <div class="inputWrapper inputWrapperSelect">
+        <label for="editUserGroup">
+            Group
+        </label>
+        <select id="editUserGroup"
+                data-ng-model="user.group"
+                data-ng-options="group._id as group.name for group in groups" required></select>
+        <div data-ng-show="editUser.group.$invalid">
+            <p class="error" data-ng-show="editUser.group.$error.required">
+                Group must be supplied
+            </p>
+        </div>
+    </div>
+    <div class="inputWrapper">
+        <label for="editUserTitle">
+            Title
+        </label>
+        <input type="text" id="editUserTitle" data-ng-model="user.title">
+    </div>
+    <div class="inputWrapper">
+        <label for="editUserPassword">
+            Password
+        </label>
+        <input type="text" id="editUserPassword" data-ng-model="user.password">
+    </div>
+    <div class="inputWrapper">
+        <label for="editUserEmail">
+            Email
+        </label>
+        <input type="email" id="editUserEmail" data-ng-model="user.email" required>
+        <div data-ng-show="editUser.username.$error.required">
+            <p class="error" data-ng-show="editUser.email.$error.required">
+                Email must be supplied
+            </p>
+            <p class="error" data-ng-show="editUser.email.$error.email">
+                Email is incorrect format
+            </p>
+        </div>
+    </div>
+    <div class="inputWrapper">
+        <label for="editUserStyle">
+            Style
+        </label>
+        <input type="number" id="editUserStyle" data-ng-model="user.style">
+    </div>
+    <div class="inputWrapper">
+        <label for="editUserAvatar">
+            Avatar
+        </label>
+        <img data-ng-src="{{user.avatar}}" alt="{{user.username}}">
+        <input type="file" id="editUserAvatar">
+    </div>
+    <div class="inputWrapper">
+        <label for="editUserLocation">
+            Location
+        </label>
+        <input type="text" id="editUserLocation" data-ng-model="user.location">
+    </div>
+    <div class="inputWrapper">
+        <label for="editUserActive">
+            Active
+        </label>
+        <input type="checkbox" id="editUserActive" data-ng-model="user.active">
+    </div>
+    <div class="inputWrapper" data-ng-show="">
+        <label for="editUserSendEmail">
+            Send email?
+        </label>
+        <input type="checkbox" id="editUserSendEmail" data-ng-model="user.sendEmail">
+    </div>
+    <div>
+        <button type="submit">{{ editMode ? 'Update':'Create' }}</button>
+        <button type="button" data-ng-show="editMode" data-ng-click="cancelEditMode()">Cancel edit mode</button>
+    </div>
+    <script>
+        /*_id: Joi.number(),
+                __v: Joi.number(),
+                group: Joi.number().integer().min(0).required(),
+                username: Joi.string().max(80).required(),
+                title: Joi.string().min(0).max(80),
+                password: Joi.string().min(5),
+                email: Joi.string().email().required(),
+                style: Joi.number().integer().min(0).default(0),
+                timezoneOffset: Joi.number().default(0),
+                avatar: Joi.string(),
+                location: Joi.string(),
+                active: Joi.boolean().default(false)*/
+    </script>
+    {{user}}
+</form>

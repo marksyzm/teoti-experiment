@@ -1,7 +1,18 @@
 {
+  "brand": {
+    "name": "TEOTI - The End Of The Internet"
+  },
   "superAdmin": [ 2 ],
   "banned": [ 6 ],
+  "registered": [ 5 ],
   "permissions": {
     "types": [ "thread", "post", "conversation", "message", "user", "forum", "bbcode", "shout", "sitelog" ]
+  },
+  "email": {
+    "from": "info@teoti.com"
+  },
+  "recaptcha": {
+    "public": "6Ldn3gETAAAAAH_3QNxUY14vG2E7n8GoSF8goA2Z",
+    "private": "6Ldn3gETAAAAANzhxBR7yN-evb864cDixThEZTMP"
   }
 }

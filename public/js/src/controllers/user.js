@@ -20,16 +20,31 @@ angular.module("teoti.controllers").controller("User", [
         });
 
         $scope.submit = function () {
+            if ($scope.editMode) {
+                UserResource.update($scope.user._id, $scope.user)
+                    .then(function () {
+                        $scope.cancelEditMode();
+                    });
+                return;
+            }
+
             UserResource.save($scope.user)
                 .then(function () {
-                    $scope.user = null;
-                    $window.alert("WORKED");
+                    $scope.cancelEditMode();
                 });
         };
 
         $scope.cancelEditMode = function () {
             $scope.editMode = false;
-            $scope.user = {};
+            $scope.user = null;
+        };
+
+        $scope.deleteUser = function () {
+            if ($window.confirm("Are you sure?") && $window.confirm("Really?")) {
+                UserResource.delete($scope.user._id).then(function () {
+                    $scope.cancelEditMode();
+                });
+            }
         };
     }
 ]);

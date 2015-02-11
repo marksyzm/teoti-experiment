@@ -18,6 +18,9 @@
             </p>
         </div>
     </div>
+    <div data-ng-show="editMode">
+        <button type="button" data-ng-click="deleteUser()">Delete user?</button>
+    </div>
     <div class="inputWrapper inputWrapperSelect">
         <label for="editUserGroup">
             Group
@@ -92,19 +95,4 @@
         <button type="submit">{{ editMode ? 'Update':'Create' }}</button>
         <button type="button" data-ng-show="editMode" data-ng-click="cancelEditMode()">Cancel edit mode</button>
     </div>
-    <script>
-        /*_id: Joi.number(),
-                __v: Joi.number(),
-                group: Joi.number().integer().min(0).required(),
-                username: Joi.string().max(80).required(),
-                title: Joi.string().min(0).max(80),
-                password: Joi.string().min(5),
-                email: Joi.string().email().required(),
-                style: Joi.number().integer().min(0).default(0),
-                timezoneOffset: Joi.number().default(0),
-                avatar: Joi.string(),
-                location: Joi.string(),
-                active: Joi.boolean().default(false)*/
-    </script>
-    {{user}}
 </form>

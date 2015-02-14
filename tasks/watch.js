@@ -14,7 +14,7 @@ module.exports = function watch(grunt) {
         },
         jshint: {
             files: [
-                "public/js/app/**/*.js",
+                "public/js/src/**/*.js",
                 "public/js/test/**/*.js",
                 "lib/**/*.js",
                 "index.js"
@@ -23,9 +23,9 @@ module.exports = function watch(grunt) {
         },
         browserify: {
             files: [
-                "public/js/app/**/*.js"
+                "public/js/src/**/*.js"
             ],
-            tasks: ["browserify:dist"]
+            tasks: ["browserify:dev"]
         },
         server: {
             files: [

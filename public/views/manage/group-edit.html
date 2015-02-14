@@ -1,0 +1,43 @@
+<form name="groupEdit" data-ng-submit="submit()">
+    <h1>{{ edit ? 'Edit Group: '+group.name : 'Add group' }}</h1>
+    <div class="inputWrapper">
+        <label for="groupEditName">Name</label>
+        <input type="text" data-ng-model="group.name" id="groupEditName" name="name" required>
+        <p data-ng-show="groupEdit.name.$error.required">Supply a group name, please!</p>
+    </div>
+    <div class="inputWrapper">
+        <label for="groupEditHierarchy">Hierarchy</label>
+        <input type="number" data-ng-model="group.hierarchy" id="groupEditHierarchy">
+    </div>
+    <div class="inputWrapper">
+        <h2>Create</h2>
+        <label for="groupEditCreateOwn">Own</label>
+        <select multiple id="groupEditCreateOwn" data-ng-model="group.create.own" data-ng-options="pT as pT for pT in permissionTypes"></select>
+        <label for="groupEditCreateAll">All</label>
+        <select multiple id="groupEditCreateAll" data-ng-model="group.create.all" data-ng-options="pT as pT for pT in permissionTypes"></select>
+    </div>
+    <div class="inputWrapper">
+        <h2>Read</h2>
+        <label for="groupEditReadOwn">Own</label>
+        <select multiple id="groupEditReadOwn" data-ng-model="group.read.own" data-ng-options="pT as pT for pT in permissionTypes"></select>
+        <label for="groupEditReadAll">All</label>
+        <select multiple id="groupEditReadAll" data-ng-model="group.read.all" data-ng-options="pT as pT for pT in permissionTypes"></select>
+    </div>
+    <div class="inputWrapper">
+        <h2>Update</h2>
+        <label for="groupEditUpdateOwn">Own</label>
+        <select multiple id="groupEditUpdateOwn" data-ng-model="group.update.own" data-ng-options="pT as pT for pT in permissionTypes"></select>
+        <label for="groupEditUpdateAll">All</label>
+        <select multiple id="groupEditUpdateAll" data-ng-model="group.update.all" data-ng-options="pT as pT for pT in permissionTypes"></select>
+    </div>
+    <div class="inputWrapper">
+        <h2>Delete</h2>
+        <label for="groupEditDeleteOwn">Own</label>
+        <select multiple id="groupEditDeleteOwn" data-ng-model="group.delete.own" data-ng-options="pT as pT for pT in permissionTypes"></select>
+        <label for="groupEditDeleteAll">All</label>
+        <select multiple id="groupEditDeleteAll" data-ng-model="group.delete.all" data-ng-options="pT as pT for pT in permissionTypes"></select>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>

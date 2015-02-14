@@ -6,8 +6,8 @@
   "scripts": {
     "start": "pm2 start index.js",
     "stop": "pm2 stop index.js",
-    "build": "bower install && grunt build",
-    "build-ci": "bower install --config.interactive=false && grunt",
+    "build": "grunt build",
+    "build-ci": "grunt",
     "test-mocha": "mocha",
     "test": "grunt test",
     "watch": "grunt dev"
@@ -28,7 +28,7 @@
     "angular-file-upload": "^1.6.4",
     "angular-file-upload-shim": "^1.6.4",
     "angular-mocks": "^1.3.11",
-    "angular-ui-router": "^0.2.13",
+    "angular-route": "^1.3.12",
     "async": "^0.9.0",
     "bbcode-parser": "^1.0.6",
     "bell": "^1.3.0",
@@ -36,38 +36,43 @@
     "boom": "^2.6.1",
     "colors": "^1.0.3",
     "connect-mongo": "^0.7.0",
+    "email": "^0.2.6",
     "express": "^4.11.1",
     "express-handlebars": "^1.1.0",
     "express-session": "^1.10.1",
     "gsap": "^1.15.1",
+    "handlebars": "^3.0.0",
     "hapi": "^8.1.0",
     "hapi-session-mongo": "^3.0.1",
     "joi": "^4.8.0",
     "jquery": "^2.1.3",
     "jquery-ui": "^1.10.5",
     "jquery-ui-touch-punch": "^0.2.3",
-    "json3": "^3.3.2",
     "lodash": "^2.4.1",
     "moment": "^2.9.0",
     "moment-timezone": "^0.2.5",
     "mongodb": "^1.4.19",
-    "mongoose": "^3.8.17",
+    "mongoose": "^3.8.22",
     "mongoose-auto-increment": "git://github.com/marksyzm/mongoose-auto-increment#master",
     "multiparty": "^3.3.2",
     "mysql": "^2.5.4",
     "nconf": "^0.6.9",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
+    "password-generator": "^0.2.3",
     "pbkdf2": "0.0.5",
     "pm2": "^0.10.8",
+    "recaptcha": "^1.2.0",
     "request": "^2.45.0",
     "scrape": "^0.2.3",
     "speakingurl": "^0.18.1",
+    "uglifyify": "^3.0.1",
     "w3cjs": "^0.1.25",
     "winston": "^0.8.1"
   },
   "devDependencies": {
-    "bower": "^1.3.12",
+    "browserify": "^8.1.3",
+    "browserify-shim": "^3.8.2",
     "chai": "^1.9.2",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.3.0",
@@ -82,22 +87,30 @@
     "grunt-mocha-istanbul": "^2.1.0",
     "grunt-mongoimport": "^0.1.5",
     "grunt-nodemon": "^0.3.0",
-    "grunt-sass": "^0.14.2",
+    "grunt-sass": "^0.17.0",
     "istanbul": "^0.3.2",
-    "jshint": "^2.5.6",
-    "karma": "^0.12.24",
-    "karma-chrome-launcher": "^0.1.5",
-    "karma-cli": "0.0.4",
-    "karma-firefox-launcher": "^0.1.3",
-    "karma-jasmine": "^0.1.5",
-    "karma-phantomjs-launcher": "^0.1.4",
-    "karma-requirejs": "^0.2.2",
-    "karma-safari-launcher": "^0.1.1",
+    "jshint": "^2.6.0",
     "mocha": "^1.21.4",
     "nodemon": "^1.2.1",
     "passport-stub": "^1.0.1",
     "requirejs": "^2.1.15",
     "sinon": "^1.10.3",
     "supertest": "^0.14.0"
+  },
+  "browser": {
+    "angular": "./node_modules/angular/angular.js"
+  },
+  "browserify-shim": {
+    "angular": {
+      "depends": [
+        "jquery:jQuery"
+      ],
+      "exports": "angular"
+    }
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
   }
 }

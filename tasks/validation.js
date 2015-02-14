@@ -20,8 +20,7 @@ module.exports = function html_validation(grunt) {
         },
         files: {
             src: [
-                "public/views/partials/**/*.html",
-                "public/views/partials/**/*.ejs"
+                "public/views/partials/**/*.html"
             ]
         }
     };

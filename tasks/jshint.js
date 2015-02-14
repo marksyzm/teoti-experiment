@@ -38,7 +38,8 @@ module.exports = function jshint(grunt) {
                 "after"       : true,
                 "describe"    : true,
                 "it"          : true,
-                "angular"     : false,
+                "angular"     : true,
+                "Notification": true,
                 "jQuery"      : false,
                 "d3"          : false,
                 "define"      : false,
@@ -48,7 +49,7 @@ module.exports = function jshint(grunt) {
         uses_defaults: [
             "lib/**/*.js",
             "index.js",
-            "public/js/app/**/*.js",
+            "public/js/src/**/*.js",
             "public/js/test/**/*.js",
         ]
     };

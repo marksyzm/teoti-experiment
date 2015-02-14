@@ -86,7 +86,7 @@
   text-shadow: $values;
 }
 
-@mixin border-radius($r){
+@mixin border-radius($r: 5px){
   -moz-border-radius: $r;
   -webkit-border-radius: $r;
   -ms-border-radius: $r;

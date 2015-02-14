@@ -33,6 +33,21 @@ angular.module("teoti.config").config([
                 templateUrl: "/views/manage/group-edit.html",
                 title: "Edit group"
             })
+            .when("/manage/forums", {
+                controller: "Forums",
+                templateUrl: "/views/manage/forums.html",
+                title: "Forums"
+            })
+            .when("/manage/forum", {
+                controller: "ForumEdit",
+                templateUrl: "/views/manage/forum-edit.html",
+                title: "Create group"
+            })
+            .when("/manage/forum/:forumId", {
+                controller: "ForumEdit",
+                templateUrl: "/views/manage/forum-edit.html",
+                title: "Edit forum"
+            })
             .when("/manage/user", {
                 controller: "User",
                 templateUrl: "/views/manage/user.html",

@@ -2,7 +2,7 @@
     <h1>{{ edit ? 'Edit Group: '+group.name : 'Add group' }}</h1>
     <div class="inputWrapper">
         <label for="groupEditName">Name</label>
-        <input type="text" data-ng-model="group.name" id="groupEditName" required>
+        <input type="text" data-ng-model="group.name" id="groupEditName" name="name" required>
         <p data-ng-show="groupEdit.name.$error.required">Supply a group name, please!</p>
     </div>
     <div class="inputWrapper">

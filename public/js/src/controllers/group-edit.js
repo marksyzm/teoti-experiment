@@ -10,20 +10,6 @@ angular.module("teoti.controllers").controller("GroupEdit", [
         $scope.group = {};
         $scope.permissionTypes = settings.permissions.types;
 
-        function create (group) {
-            GroupResource.save(group)
-                .then(function () {
-                    $location.path("/manage/groups");
-                });
-        }
-
-        function update (group) {
-            GroupResource.update(group)
-                .then(function () {
-                    $location.path("/manage/groups");
-                });
-        }
-
         var groupId = $route.current.params.groupId;
         if (groupId) {
             GroupResource.get(groupId)
@@ -36,12 +22,16 @@ angular.module("teoti.controllers").controller("GroupEdit", [
         }
 
         $scope.submit = function () {
+            var http;
             if ($scope.edit) {
-                update(groupId, $scope.group);
-                return;
+                http = GroupResource.update(groupId, $scope.group);
+            } else {
+                http = GroupResource.save($scope.group);
             }
 
-            create($scope.group);
+            http.then(function () {
+                $location.path("/manage/groups");
+            });
         };
     }
 ]);

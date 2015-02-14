@@ -1,0 +1,50 @@
+<form name="forumEdit" data-ng-submit="submit()">
+    <h1>{{ edit ? 'Edit Forum: '+forum.title: 'Add forum' }}</h1>
+    <div class="inputWrapper">
+        <label for="forumEditTitle">Title</label>
+        <input type="text" data-ng-model="forum.title" id="forumEditTitle" name="title" required>
+        <p data-ng-show="forumEdit.title.$error.required">Supply a forum title, please!</p>
+    </div>
+    <div class="inputWrapper">
+        <label for="forumEditParent">Parent</label>
+        <input type="number" data-ng-model="forum.parent" id="forumEditParent" name="parent" data-ng-pattern="/^[-]?\d+$/">
+        <p data-ng-show="forumEdit.parent.$error.pattern">Must be an integer!</p>
+    </div>
+    <div class="inputWrapper">
+        <label for="forumEditStyle">Style</label>
+        <input type="number" data-ng-model="forum.style" id="forumEditStyle" name="style" data-ng-pattern="/^[-]?\d+$/">
+        <p data-ng-show="forumEdit.style.$error.pattern">Must be an integer!</p>
+    </div>
+    <div class="inputWrapper">
+        <label for="forumEditDescription">Description</label>
+        <textarea data-ng-model="forum.description" id="forumEditDescription" name="description"></textarea>
+    </div>
+    <div class="inputWrapper">
+        <label for="editForumIcon">Icon</label>
+        <img data-ng-src="{{user.icon}}" alt="{{forum.title}}">
+        <input type="file" id="editForumIcon">
+    </div>
+    <div class="inputWrapper">
+        <label for="forumEditHashTags">Hash tags</label>
+        <input type="text" data-ng-model="forum.hashTags" id="forumEditHashTags" name="hashTags">
+    </div>
+    <div class="inputWrapper">
+        <label for="forumEditGroups">Groups</label>
+        <select multiple id="forumEditGroups" data-ng-model="forum.groups" data-ng-options="group._id as group.name for group in groups"></select>
+    </div>
+    <!--
+    parent          : { type: Number, ref: "Forum", required: true },
+    parentList      : [ { type: Number, ref: "Forum" } ],
+    style           : { type: Number, ref: "Style", default: 0 },
+    title           : { type: String, trim: true, required: true },
+    slug            : { type: String, trim: true, required: true },
+    description     : { type: String, trim: true },
+    icon            : { type: String, trim: true },
+    hashTags        : { type: String, trim: true },
+    groups          : [ { type: Number, ref: "Group" } ]
+    -->
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+    <pre>{{ forum | json }}</pre>
+</form>

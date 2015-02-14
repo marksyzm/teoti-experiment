@@ -8,10 +8,8 @@
 <h2>{{ editMode ? 'Update user' : 'Create user' }}</h2>
 <form name="editUser" novalidate data-ng-submit="submit()">
     <div class="inputWrapper">
-        <label for="editUserUsername">
-            Username
-        </label>
-        <input type="text" id="editUserUsername" data-ng-model="user.username" required>
+        <label for="editUserUsername">Username</label>
+        <input type="text" id="editUserUsername" data-ng-model="user.username" name="username" required>
         <div data-ng-show="editUser.username.$invalid">
             <p class="error" data-ng-show="editUser.username.$error.required">
                 Username must be supplied
@@ -22,11 +20,10 @@
         <button type="button" data-ng-click="deleteUser()">Delete user?</button>
     </div>
     <div class="inputWrapper inputWrapperSelect">
-        <label for="editUserGroup">
-            Group
-        </label>
+        <label for="editUserGroup">Group</label>
         <select id="editUserGroup"
                 data-ng-model="user.group"
+                name="group"
                 data-ng-options="group._id as group.name for group in groups" required></select>
         <div data-ng-show="editUser.group.$invalid">
             <p class="error" data-ng-show="editUser.group.$error.required">
@@ -35,22 +32,16 @@
         </div>
     </div>
     <div class="inputWrapper">
-        <label for="editUserTitle">
-            Title
-        </label>
+        <label for="editUserTitle">Title</label>
         <input type="text" id="editUserTitle" data-ng-model="user.title">
     </div>
     <div class="inputWrapper">
-        <label for="editUserPassword">
-            Password
-        </label>
+        <label for="editUserPassword">Password</label>
         <input type="text" id="editUserPassword" data-ng-model="user.password">
     </div>
     <div class="inputWrapper">
-        <label for="editUserEmail">
-            Email
-        </label>
-        <input type="email" id="editUserEmail" data-ng-model="user.email" required>
+        <label for="editUserEmail">Email</label>
+        <input type="email" id="editUserEmail" data-ng-model="user.email" name="email" required>
         <div data-ng-show="editUser.username.$error.required">
             <p class="error" data-ng-show="editUser.email.$error.required">
                 Email must be supplied
@@ -61,34 +52,24 @@
         </div>
     </div>
     <div class="inputWrapper">
-        <label for="editUserStyle">
-            Style
-        </label>
+        <label for="editUserStyle">Style</label>
         <input type="number" id="editUserStyle" data-ng-model="user.style">
     </div>
     <div class="inputWrapper">
-        <label for="editUserAvatar">
-            Avatar
-        </label>
+        <label for="editUserAvatar">Avatar</label>
         <img data-ng-src="{{user.avatar}}" alt="{{user.username}}">
         <input type="file" id="editUserAvatar">
     </div>
     <div class="inputWrapper">
-        <label for="editUserLocation">
-            Location
-        </label>
+        <label for="editUserLocation">Location</label>
         <input type="text" id="editUserLocation" data-ng-model="user.location">
     </div>
     <div class="inputWrapper">
-        <label for="editUserActive">
-            Active
-        </label>
+        <label for="editUserActive">Active</label>
         <input type="checkbox" id="editUserActive" data-ng-model="user.active">
     </div>
     <div class="inputWrapper" data-ng-show="">
-        <label for="editUserSendEmail">
-            Send email?
-        </label>
+        <label for="editUserSendEmail">Send email?</label>
         <input type="checkbox" id="editUserSendEmail" data-ng-model="user.sendEmail">
     </div>
     <div>

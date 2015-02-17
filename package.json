@@ -3,6 +3,7 @@
   "version": "9.0.0",
   "description": "Forums for the armageddon",
   "main": "index.js",
+  "engine": "node 0.10.36",
   "scripts": {
     "start": "pm2 start index.js",
     "stop": "pm2 stop index.js",

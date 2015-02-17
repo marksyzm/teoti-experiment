@@ -1,5 +1,11 @@
 {
-  "route-permissions": [
+  "forumAccessRoutes": [
+    "/forum/{id}/thread",
+    "/forum/{id}/thread/{id}",
+    "/forum/{id}/thread/{id}/post",
+    "/forum/{id}/thread/{id}/post/{id}"
+  ],
+  "routePermissions": [
     {
       "path": "/authenticate",
       "permissions": {

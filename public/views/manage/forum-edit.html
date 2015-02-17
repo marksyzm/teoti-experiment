@@ -32,6 +32,18 @@
         <label for="forumEditGroups">Groups</label>
         <select multiple id="forumEditGroups" data-ng-model="forum.groups" data-ng-options="group._id as group.name for group in groups"></select>
     </div>
+    <div class="inputWrapper">
+        <label for="forumEditAutoSubscribe">Groups</label>
+        <select multiple id="forumEditAutoSubscribe" data-ng-model="forum.autoSubscribe" data-ng-options="group._id as group.name for group in groups"></select>
+    </div>
+    <div class="inputWrapper">
+        <label for="forumEditPublic">Public</label>
+        <input type="checkbox" id="forumEditPublic" data-ng-model="forum.public">
+    </div>
+    <div class="inputWrapper">
+        <label for="forumEditOverride">Public</label>
+        <input type="checkbox" id="forumEditOverride" data-ng-model="forum.override">
+    </div>
     <!--
     parent          : { type: Number, ref: "Forum", required: true },
     parentList      : [ { type: Number, ref: "Forum" } ],

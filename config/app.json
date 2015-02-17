@@ -6,7 +6,10 @@
   "banned": [ 6 ],
   "registered": [ 5 ],
   "permissions": {
-    "types": [ "thread", "post", "conversation", "message", "user", "forum", "bbcode", "shout", "sitelog" ]
+    "types": [
+      "user", "group", "forum", "thread", "post", "conversation", "message", "bbcode", "shout",
+      "sitelog", "like", "score", "star", "style", "tweet"
+    ]
   },
   "email": {
     "from": "info@teoti.com"

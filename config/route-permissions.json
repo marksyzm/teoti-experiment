@@ -1,0 +1,100 @@
+{
+  "forumAccessRoutes": [
+    "/forum/{id}/thread",
+    "/forum/{id}/thread/{id}",
+    "/forum/{id}/thread/{id}/post",
+    "/forum/{id}/thread/{id}/post/{id}"
+  ],
+  "routePermissions": [
+    {
+      "path": "/authenticate",
+      "permissions": {
+        "create"  : { "own": [], "all": [], "public": true }
+      }
+    },
+    {
+      "path": "/user",
+      "permissions": {
+        "create"  : { "own": [], "all": ["user"] },
+        "read"    : { "own": [], "all": ["user"] },
+        "update"  : { "own": [], "all": [] },
+        "delete"  : { "own": [], "all": [] }
+      }
+    },
+    {
+      "path": "/user/{id}",
+      "permissions": {
+        "create"  : { "own": [], "all": [] },
+        "read"    : { "own": [], "all": ["user"] },
+        "update"  : { "own": [], "all": ["user"] },
+        "delete"  : { "own": [], "all": ["user"] }
+      }
+    },
+    {
+      "path": "/group",
+      "permissions": {
+        "create"  : { "own": [], "all": ["group"] },
+        "read"    : { "own": [], "all": ["group"] }
+      }
+    },
+    {
+      "path": "/group/{id}",
+      "permissions": {
+        "read"    : { "own": [], "all": ["group"] },
+        "update"  : { "own": [], "all": ["group"] },
+        "delete"  : { "own": [], "all": ["group"] }
+      }
+    },
+    {
+      "path": "/forum",
+      "permissions": {
+        "create"  : { "own": [], "all": ["forum"] },
+        "read"    : { "own": [], "all": ["forum"] }
+      }
+    },
+    {
+      "path": "/forum/{id}",
+      "permissions": {
+        "read"    : { "own": [], "all": ["forum"] },
+        "update"  : { "own": [], "all": ["forum"] },
+        "delete"  : { "own": [], "all": ["forum"] }
+      }
+    },
+    {
+      "path": "/forum/{id}/thread",
+      "permissions": {
+        "read"    : { "own": [], "all": [], "public": true },
+        "create"  : { "own": [], "all": ["thread"] },
+        "delete"  : { "own": [], "all": ["thread"] }
+      }
+    },
+    {
+      "path": "/thread",
+      "permissions": {
+        "create"  : { "own": ["thread"], "all": ["thread"] }
+      }
+    },
+    {
+      "path": "/thread/{id}",
+      "permissions": {
+        "read"    : { "own": ["thread"], "all": ["thread"] },
+        "update"  : { "own": ["thread"], "all": ["thread"] },
+        "delete"  : { "own": ["thread"], "all": ["thread"] }
+      }
+    },
+    {
+      "path": "/post",
+      "permissions": {
+        "create"  : { "own": ["post"], "all": ["post"] }
+      }
+    },
+    {
+      "path": "/post/{id}",
+      "permissions": {
+        "read"    : { "own": ["post"], "all": ["post"] },
+        "update"  : { "own": ["post"], "all": ["post"] },
+        "delete"  : { "own": ["post"], "all": ["post"] }
+      }
+    }
+  ]
+}

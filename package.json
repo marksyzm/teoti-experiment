@@ -2,7 +2,6 @@
   "name": "TEOTI",
   "version": "9.0.0",
   "description": "Forums for the armageddon",
-  "main": "index.js",
   "engine": "node 0.10.36",
   "scripts": {
     "start": "pm2 start index.js",
@@ -58,6 +57,7 @@
     "multiparty": "^3.3.2",
     "mysql": "^2.5.4",
     "nconf": "^0.6.9",
+    "nodenailer": "git://github.com/marksyzm/NodeNailer",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
     "password-generator": "^0.2.3",
@@ -94,7 +94,6 @@
     "mocha": "^1.21.4",
     "nodemon": "^1.2.1",
     "passport-stub": "^1.0.1",
-    "requirejs": "^2.1.15",
     "sinon": "^1.10.3",
     "supertest": "^0.14.0"
   },

@@ -13,6 +13,4 @@ var modules = [
 
 angular.module("teoti", modules);
 
-angular.bootstrap(document, ["teoti"]);
-
 module.exports = angular;

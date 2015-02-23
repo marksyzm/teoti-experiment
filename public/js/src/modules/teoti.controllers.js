@@ -11,5 +11,6 @@ require("../controllers/groups");
 require("../controllers/forums");
 require("../controllers/group-edit");
 require("../controllers/forum-edit");
+require("../controllers/search");
 
 module.exports = moduleName;

@@ -10,21 +10,32 @@
         </nav>
 
         <nav class="account">
-            <ul class="accountMenu accountMenuLoggedOut" data-ng-show="!account.username">
-                <li class="search"><input type="text" data-ng-model="search"></li>
+            <ul class="accountMenu accountMenuLoggedOut ng-cloak" data-ng-show="!account.username">
+                <li class="search" data-ng-controller="Search">
+                    {{> search}}
+                </li>
                 <li class="submit"><a href="submit">{{> svg/submit}} Submit</a></li>
                 <li class="signIn"><a href="sign-in">Sign in</a></li>
             </ul>
-            <ul class="accountMenu accountMenuLoggedIn" data-ng-show="account.username">
-                <li class="search"><input type="text" data-ng-model="search"></li>
-                <li><a href="submit">{{> svg/submit}} Submit</a></li>
-                <li><a href class="shouts" data-ng-click="showMenu('shouts')">{{> svg/shout}} Shouts</a></li>
-                <li><a href class="conversations" data-ng-click="showMenu('conversations')">{{> svg/conversation}} Conversations</a></li>
-                <li><a href class="notifications" data-ng-click="showMenu('notifications')">{{> svg/notification}} Notifications</a></li>
+            <ul class="accountMenu accountMenuLoggedIn ng-cloak" data-ng-show="account.username">
+                <li class="search" data-ng-controller="Search">{{> search}}</li>
+                <li><a href="submit" class="submit">{{> svg/submit}} <span>Submit</span></a></li>
+                <li><a href class="shouts" data-ng-click="showMenu('shouts')" data-ng-class="{active: account.shouts}">
+                    {{> svg/shout}}
+                    <span>Shouts</span>
+                    <small>\{{account.shouts || 0}}</small>
+                </a></li>
+                <li><a href class="conversations" data-ng-click="showMenu('conversations')" data-ng-class="{active: account.messagesUnread}">
+                    {{> svg/conversation}}
+                    <span>Conversations</span>
+                    <small>\{{account.messagesUnread || 0}}</small>
+                </a></li>
+                <li><a href class="notifications" data-ng-click="showMenu('notifications')" data-ng-class="{active: account.notifications}">
+                    {{> svg/notification}} <span>Notifications</span>
+                    <small>\{{account.notifications || 0}}</small>
+                </a></li>
                 <li><a class="user" data-ng-href="/members/\{{account.usernameUrl}}"><img src="img/default.png" data-ng-src="img/avatars/\{{account.avatar}}" alt="\{{account.username}}"></a></li>
-                <li>
-                    {{> account}}
-                </li>
+                <li>{{> account}}</li>
             </ul>
         </nav>
     </div>

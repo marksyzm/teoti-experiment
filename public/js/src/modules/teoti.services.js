@@ -11,5 +11,6 @@ require("../services/user-resource");
 require("../services/forum-resource");
 require("../services/account-resource");
 require("../services/utils");
+require("../services/settings");
 
 module.exports = moduleName;

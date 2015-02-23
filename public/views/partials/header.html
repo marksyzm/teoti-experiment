@@ -1,0 +1,31 @@
+<header role="banner">
+    <div>
+        <nav class="navigation">
+            <ul>
+                <li class="home"><a href="/" rel="home">{{> svg/logo}}</a></li>
+                <li class="menu">
+                    {{> navigation}}
+                </li>
+            </ul>
+        </nav>
+
+        <nav class="account">
+            <ul class="accountMenu accountMenuLoggedOut" data-ng-show="!account.username">
+                <li class="search"><input type="text" data-ng-model="search"></li>
+                <li class="submit"><a href="submit">{{> svg/submit}} Submit</a></li>
+                <li class="signIn"><a href="sign-in">Sign in</a></li>
+            </ul>
+            <ul class="accountMenu accountMenuLoggedIn" data-ng-show="account.username">
+                <li class="search"><input type="text" data-ng-model="search"></li>
+                <li><a href="submit">{{> svg/submit}} Submit</a></li>
+                <li><a href class="shouts" data-ng-click="showMenu('shouts')">{{> svg/shout}} Shouts</a></li>
+                <li><a href class="conversations" data-ng-click="showMenu('conversations')">{{> svg/conversation}} Conversations</a></li>
+                <li><a href class="notifications" data-ng-click="showMenu('notifications')">{{> svg/notification}} Notifications</a></li>
+                <li><a class="user" data-ng-href="/members/\{{account.usernameUrl}}"><img src="img/default.png" data-ng-src="img/avatars/\{{account.avatar}}" alt="\{{account.username}}"></a></li>
+                <li>
+                    {{> account}}
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>

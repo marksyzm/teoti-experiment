@@ -54,7 +54,7 @@
   }
 }
 
-@mixin box-shadow($vars: 0px 4px 16px 0px, $color: rgba(0, 0, 0, 0.6)) {
+@mixin box-shadow($vars: 0px 2px 5px 0px, $color: rgba(0, 0, 0, 0.3)) {
   -webkit-box-shadow:  $vars $color;
   box-shadow:  $vars $color;
 }

@@ -1,0 +1,73 @@
+header[role=banner] {
+  background: $white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: $header-height;
+  @include box-shadow;
+  @include clearfix;
+  path,
+  polygon,
+  polyline {
+    fill: $blue-fill;
+  }
+  .navigation,
+  .account {
+    a {
+      display: block;
+    }
+  }
+  .navigation {
+    float: left;
+    @include clearfix;
+    > ul {
+      display: block;
+      @include clearfix;
+      > li {
+        display: block;
+        float: left;
+      }
+    }
+    .home {
+      [rel=home] {
+        text-decoration: none;
+        font-weight: normal;
+        svg {
+          margin: 10px 20px;
+        }
+        &:hover path {
+          opacity: 0.8;
+        }
+      }
+    }
+    .menu {
+      > a {
+        position: relative;
+        margin: 15px 20px;
+        padding-right: 29px;
+        svg {
+          position: absolute;
+          right: 0;
+          top: -0.25em;
+        }
+      }
+    }
+  }
+  .account {
+    float:right;
+    > ul {
+      display: block;
+      > li {
+        display: inline-block;
+        a {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+[data-ng-view] {
+  margin-top: $header-height;
+}

@@ -2,10 +2,10 @@
 -------------------------------------------------------------- */
 
 $font-family: Avenir, Arial, Helvetica, sans-serif;
-$text-default: #0a2c38;
-$text-disabled: #AAA;
+$text-default: #444444;
+$text-disabled: #aaaaaa;
 $text-dark: #444444;
-$text-light: #AAAAAA;
+$text-light: #aaaaaa;
 $black: black;
 $white: white;
 
@@ -15,29 +15,9 @@ $tablet-portrait: 48em; //768px
 $mobile: 30em; //480px
 $mobile-min: 20em; //320px
 
-$purple-fill: #8c348b;
+$header-height: 50px;
 
-$green-fill: #01d3ae;
-$green-text: #0ea48a;
-$green-text-dark: #016d5a;
+$main-background: #f1f1f1;
 
-$red-text: #af153d;
-$red-fill: #e74c3c;
-
-$pink-text: #f02193;
-$pink-fill: #f02193;
-$pink-fill-light: #ffa4d6;
-
-$blue-text: #018bd3;
-$blue-fill: #018bd3;
-$blue-fill-light: #7cc2e7;
-
-$teal-stroke: #91afba;
-$teal-fill: #b4c7ce;
-$teal-fill-mid: #d7e4e7;
-$teal-fill-light: #e7f1f3;
-
-$widgetPadding: 10px;
-$buttonMenuWidth: 12px;
-$widgetMenuWidth: 190px;
-$buttonMenuWidth: 12px;
+$blue-fill: #0040a1;
+$blue-fill-light: #7f9fd0;

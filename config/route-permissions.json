@@ -31,6 +31,15 @@
       }
     },
     {
+      "path": "/account",
+      "permissions": {
+        "create"  : { "own": [], "all": [] },
+        "read"    : { "own": ["user"], "all": [] },
+        "update"  : { "own": ["user"], "all": [] },
+        "delete"  : { "own": [], "all": [] }
+      }
+    },
+    {
       "path": "/group",
       "permissions": {
         "create"  : { "own": [], "all": ["group"] },

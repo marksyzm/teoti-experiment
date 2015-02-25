@@ -8,10 +8,10 @@ module.exports = function watch(grunt) {
             files: ["public/css/**/*.scss", "public/sass/**/*.scss"],
             tasks: ["sass:dev"]
         },
-        validation: {
-            files: ["public/views/**/*.html"],
-            tasks: ["validation"]
-        },
+        //validation: {
+        //    files: ["public/views/**/*.html"],
+        //    tasks: ["validation"]
+        //},
         jshint: {
             files: [
                 "public/js/src/**/*.js",

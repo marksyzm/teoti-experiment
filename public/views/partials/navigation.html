@@ -1,4 +1,11 @@
-<a href data-ng-click="showNav()">
-    <span data-ng-bind="currentNav">Home</span>
-    {{> svg/navigation}}
-</a>
+<nav class="navigation">
+    <ul>
+        <li class="home"><a href="/" rel="home">{{> svg/logo}}</a></li>
+        <li class="menuButton">
+            <a href data-ng-click="toggleNavigation()" data-ng-class="{ showNavigation : showNavigation }">
+                <span data-ng-bind="currentNav">Home</span>
+                {{> svg/navigation}}
+            </a>
+        </li>
+    </ul>
+</nav>

@@ -16,6 +16,11 @@
         <p data-ng-show="forumEdit.style.$error.pattern">Must be an integer!</p>
     </div>
     <div class="inputWrapper">
+        <label for="forumEditOrder">Order</label>
+        <input type="number" data-ng-model="forum.order" id="forumEditOrder" name="order">
+        <p data-ng-show="forumEdit.style.$error.number">Must be a number!</p>
+    </div>
+    <div class="inputWrapper">
         <label for="forumEditDescription">Description</label>
         <textarea data-ng-model="forum.description" id="forumEditDescription" name="description"></textarea>
     </div>
@@ -33,7 +38,7 @@
         <select multiple id="forumEditGroups" data-ng-model="forum.groups" data-ng-options="group._id as group.name for group in groups"></select>
     </div>
     <div class="inputWrapper">
-        <label for="forumEditAutoSubscribe">Groups</label>
+        <label for="forumEditAutoSubscribe">Auto subscribe group users to new threads</label>
         <select multiple id="forumEditAutoSubscribe" data-ng-model="forum.autoSubscribe" data-ng-options="group._id as group.name for group in groups"></select>
     </div>
     <div class="inputWrapper">
@@ -41,20 +46,17 @@
         <input type="checkbox" id="forumEditPublic" data-ng-model="forum.public">
     </div>
     <div class="inputWrapper">
-        <label for="forumEditOverride">Public</label>
+        <label for="forumEditOverride">Override inherited settings</label>
         <input type="checkbox" id="forumEditOverride" data-ng-model="forum.override">
     </div>
-    <!--
-    parent          : { type: Number, ref: "Forum", required: true },
-    parentList      : [ { type: Number, ref: "Forum" } ],
-    style           : { type: Number, ref: "Style", default: 0 },
-    title           : { type: String, trim: true, required: true },
-    slug            : { type: String, trim: true, required: true },
-    description     : { type: String, trim: true },
-    icon            : { type: String, trim: true },
-    hashTags        : { type: String, trim: true },
-    groups          : [ { type: Number, ref: "Group" } ]
-    -->
+    <div class="inputWrapper">
+        <label for="forumEditCreateThread">Allow creation of threads</label>
+        <input type="checkbox" id="forumEditCreateThread" data-ng-model="forum.createThread">
+    </div>
+    <div class="inputWrapper">
+        <label for="forumEditNsfw">All content is NSFW?</label>
+        <input type="checkbox" id="forumEditNsfw" data-ng-model="forum.nsfw">
+    </div>
     <div>
         <button type="submit">Submit</button>
     </div>

@@ -1,0 +1,210 @@
+header[role=banner] {
+  > div {
+    background: $white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: $header-height;
+    z-index: 30;
+    @include box-shadow;
+    @include clearfix;
+  }
+  path,
+  rect,
+  polygon,
+  polyline {
+    fill: $blue-fill-light;
+    @include transition(fill 0.25s);
+  }
+  .navigation,
+  .account {
+    a {
+      display: block;
+      outline: none;
+    }
+  }
+  .navigation {
+    float: left;
+    @include clearfix;
+    > ul {
+      display: block;
+      @include clearfix;
+      > li {
+        display: block;
+        float: left;
+      }
+    }
+    .home {
+      [rel=home] {
+        text-decoration: none;
+        font-weight: normal;
+        svg {
+          margin: 10px 10px;
+        }
+        path {
+          fill: $blue-fill;
+        }
+        &:hover path {
+          fill: $blue-fill-light;
+        }
+      }
+    }
+    .menuButton {
+      > a {
+        position: relative;
+        margin: 15px 10px;
+        padding-right: 29px;
+        svg {
+          position: absolute;
+          right: 0;
+          top: 50%;
+          @include translate(0, -50%);
+          path {
+            @include transition(transform 0.5s);
+            @include transform-origin(center center);
+          }
+        }
+        &.showNavigation {
+          svg {
+            path {
+              @include rotate(90deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .account {
+    float:right;
+    .accountMenu {
+      display: block;
+      @include clearfix;
+      > li {
+        float: left;
+        display: block;
+        > a {
+          display: block;
+          padding: 10px;
+          position: relative;
+          > span {
+            display: none;
+          }
+          &.active,
+          &:hover {
+            path,
+            rect,
+            polygon,
+            polyline {
+              fill: $blue-fill;
+            }
+          }
+          small {
+            bottom: 0;
+            left: 0;
+            font-weight: normal;
+            color: $text-light;
+            width: 100%;
+            position: absolute;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .search {
+      input[type=text] {
+        border: none;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        border-bottom: 1px solid $blue-fill-light;
+        width: 0;
+        outline: none;
+        padding: 5px 0;
+        @include transition(width 0.25s);
+        &.searchActive {
+          width: 125px;
+        }
+      }
+      button {
+        font-size: 0;
+        color: transparent;
+        border: none;
+        background: transparent;
+        outline: none;
+        padding: 10px;
+        path,
+        rect {
+          @include transition(fill 0.25s);
+        }
+        &.searchActive {
+          path,
+          rect {
+            fill: $blue-fill;
+          }
+        }
+      }
+    }
+    .user {
+      img {
+        width: 24px;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}
+
+[data-ng-controller=NavigationMenu] {
+  position: fixed;
+  left: -300px;
+  top: 0;
+  height: 100%;
+  padding-top: $header-height;
+  width: 300px;
+  background: $white;
+  z-index: 29;
+  @include box-shadow;
+  @include box-sizing;
+  @include transition(left 0.5s, opacity 0.5s);
+  &.showNavigation {
+    left: 0;
+  }
+  > div {
+    position: relative;
+    height: 100%;
+    overflow: auto;
+    @include box-sizing;
+  }
+  a {
+    outline: none;
+    display: block;
+    width: auto;
+    padding: 5px 10px;
+    @include box-sizing;
+  }
+  ul {
+    border-top: 1px solid #CCC;
+    padding: 5px 0;
+    &:first-child {
+      border-top: none;
+    }
+  }
+  .forums {
+    li {
+      @include clearfix;
+      a {
+        float: left;
+        &:first-child {
+          width: 256px;
+          + a {
+            width: 44px;
+            padding: 3px 10px;
+            svg {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

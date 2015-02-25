@@ -58,7 +58,7 @@
       "path": "/forum",
       "permissions": {
         "create"  : { "own": [], "all": ["forum"] },
-        "read"    : { "own": [], "all": ["forum"] }
+        "read"    : { "own": [], "all": [], "public": true }
       }
     },
     {

@@ -12,5 +12,7 @@ require("../controllers/forums");
 require("../controllers/group-edit");
 require("../controllers/forum-edit");
 require("../controllers/search");
+require("../controllers/header");
+require("../controllers/navigation-menu");
 
 module.exports = moduleName;

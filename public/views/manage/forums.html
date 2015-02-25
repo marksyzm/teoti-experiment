@@ -4,7 +4,7 @@
     <li data-ng-repeat="forum in forums">
         <button type="button" data-ng-click="delete(forum)">Delete</button>
         <button type="button" data-ng-click="fetch(forum._id)">&rarr;</button>
-        <a href="/manage/forum/{{forum._id}}">{{forum.title}}</a>
+        <a href="/manage/forum/{{forum._id}}">({{forum._id}}) {{forum.title}}</a>
     </li>
 </ul>
-<button type="button" data-ng-click="fetch(-1)">Start again</button>
+<button type="button" data-ng-click="fetch(forums[0] ? forums[0].parent.parent : -1)">Back</button>

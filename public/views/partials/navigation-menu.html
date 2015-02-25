@@ -1,0 +1,28 @@
+<div>
+
+    <ul class="forums">
+        <li data-ng-show="forums[0].parent"><a href data-ng-click="getChildren(forums[0].parent.parent)">Back</a></li>
+        <li data-ng-repeat="forum in forums">
+            <a data-ng-href="/{{forum.slug}}/">{{forum.title}}</a>
+            <a href
+               data-ng-show="forum.children.length > 2"
+               data-ng-click="getChildren(forum._id)"
+               data-ng-include="settings.paths.partials+'/svg/navigation.html'"></a>
+        </li>
+    </ul>
+
+    <ul class="views">
+        <li><a href data-ng-click="setView('simple')">Simple</a></li>
+        <li><a href data-ng-click="setView('comfort')">Comfort</a></li>
+        <li><a href data-ng-click="setView('compact')">Compact</a></li>
+    </ul>
+
+    <ul class="special">
+        <li><a href data-ng-click="special('hot')">Hot</a></li>
+        <li><a href data-ng-click="special('random')">Random</a></li>
+        <li><a href data-ng-click="special('sticky')">Sticky</a></li>
+        <li><a href data-ng-click="special('scores')">Scores</a></li>
+        <li><a href data-ng-click="special('blogs')">Blogs</a></li>
+    </ul>
+
+</div>

@@ -4,11 +4,12 @@ angular.module("teoti.services").factory("AccountResource", [
     "$http",
     function ($http) {
         return {
+            account: {},
             "get": function () {
-                var account = this;
-                return $http.get("/api/account").then(function (response) {
-                    angular.extend(account, response.data);
-                });
+                return $http.get("/api/account")
+                    .then(angular.bind(this, function (response) {
+                        angular.extend(this.account, response.data);
+                    }));
             },
             update: function () {
                 return $http.put("/api/account", this);

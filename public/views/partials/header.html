@@ -1,20 +1,13 @@
-<header role="banner">
+<header role="banner" data-ng-controller="Header">
     <div>
-        <nav class="navigation">
-            <ul>
-                <li class="home"><a href="/" rel="home">{{> svg/logo}}</a></li>
-                <li class="menu">
-                    {{> navigation}}
-                </li>
-            </ul>
-        </nav>
+        {{> navigation}}
 
         <nav class="account">
             <ul class="accountMenu accountMenuLoggedOut ng-cloak" data-ng-show="!account.username">
                 <li class="search" data-ng-controller="Search">
                     {{> search}}
                 </li>
-                <li class="submit"><a href="submit">{{> svg/submit}} Submit</a></li>
+                <li class="submit"><a href="sign-in">{{> svg/submit}} <span>Submit</span></a></li>
                 <li class="signIn"><a href="sign-in">Sign in</a></li>
             </ul>
             <ul class="accountMenu accountMenuLoggedIn ng-cloak" data-ng-show="account.username">
@@ -39,4 +32,7 @@
             </ul>
         </nav>
     </div>
+    <section data-ng-controller="NavigationMenu"
+             data-ng-include="settings.paths.partials+'/navigation-menu.html'"
+             data-ng-class="{showNavigation:showNavigation}"></section>
 </header>

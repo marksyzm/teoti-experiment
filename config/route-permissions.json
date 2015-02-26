@@ -34,7 +34,7 @@
       "path": "/account",
       "permissions": {
         "create"  : { "own": [], "all": [] },
-        "read"    : { "own": ["user"], "all": [] },
+        "read"    : { "own": [], "all": [], "public": true },
         "update"  : { "own": ["user"], "all": [] },
         "delete"  : { "own": [], "all": [] }
       }

@@ -16,6 +16,7 @@ angular.module("teoti.config").config([
             })
             .when("/sign-in", {
                 templateUrl: "/views/sign-in.html",
+                controller: "SignIn",
                 title: "Sign In"
             })
             .when("/manage/groups", {

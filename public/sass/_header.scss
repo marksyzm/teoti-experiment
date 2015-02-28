@@ -54,10 +54,10 @@ header[role=banner] {
       > a {
         position: relative;
         margin: 15px 10px;
-        padding-right: 29px;
+        padding-left: 29px;
         svg {
           position: absolute;
-          right: 0;
+          left: 0;
           top: 50%;
           @include translate(0, -50%);
           path {
@@ -169,11 +169,10 @@ header[role=banner] {
   &.showNavigation {
     left: 0;
   }
-  > div {
+  > nav {
     position: relative;
     height: 100%;
     overflow: auto;
-    @include box-sizing;
   }
   a {
     outline: none;
@@ -206,5 +205,97 @@ header[role=banner] {
         }
       }
     }
+  }
+}
+
+[data-ng-controller=AccountMenu] {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  height: 100%;
+  padding-top: $header-height;
+  width: 300px;
+  background: $white;
+  z-index: 29;
+  @include box-shadow;
+  @include box-sizing;
+  @include transition(right 0.5s, opacity 0.5s);
+  &.showAccount {
+    right: 0;
+  }
+  > header,
+  > footer {
+    background: $blue-fill;
+    position: absolute;
+    top: $header-height;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    color: $white;
+    z-index: 1;
+    @include box-sizing;
+    @include clearfix;
+    a {
+      color: $white;
+    }
+    > a {
+      font-weight: bold;
+      float: left;
+    }
+    > div {
+      float: right;
+    }
+  }
+  > section,
+  > nav {
+    position: relative;
+    height: 100%;
+    padding: 40px 0 52px;
+    @include box-sizing;
+    h3 {
+      font-weight: normal;
+    }
+    > div {
+      overflow: auto;
+      position: relative;
+      height: 100%;
+      padding: 10px 20px;
+      @include box-sizing;
+    }
+    .shouts {
+      > div {
+        background: $white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: right;
+        padding: 10px 20px;
+        @include box-sizing;
+        textarea,
+        button {
+          float: left;
+        }
+        textarea {
+          display: block;
+          width: 100%;
+          @include box-sizing;
+        }
+      }
+      ul li {
+        display: block;
+        margin: 10px 0;
+      }
+      a {
+        display: block;
+      }
+    }
+  }
+  > footer {
+    font-size: 0.8em;
+    top: auto;
+    bottom: 0;
+    padding: 10px;
+    text-align: center;
   }
 }

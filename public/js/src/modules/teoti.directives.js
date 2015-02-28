@@ -8,5 +8,6 @@ angular.module(moduleName, []);
 
 require("../directives/autocomplete");
 require("../directives/focus-element");
+require("../directives/html");
 
 module.exports = moduleName;

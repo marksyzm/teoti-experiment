@@ -35,6 +35,7 @@
     "body-parser": "^1.10.2",
     "boom": "^2.6.1",
     "colors": "^1.0.3",
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^0.7.0",
     "email": "^0.2.6",
     "express": "^4.11.1",

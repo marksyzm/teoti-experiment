@@ -17,5 +17,6 @@ require("../controllers/navigation-menu");
 require("../controllers/account-menu");
 require("../controllers/sign-in");
 require("../controllers/submit");
+require("../controllers/shout");
 
 module.exports = moduleName;

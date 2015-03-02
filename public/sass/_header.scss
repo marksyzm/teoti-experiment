@@ -246,15 +246,49 @@ header[role=banner] {
       float: right;
     }
   }
+  > section,
   > nav {
     position: relative;
     height: 100%;
     padding: 40px 0 52px;
     @include box-sizing;
+    h3 {
+      font-weight: normal;
+    }
     > div {
       overflow: auto;
       position: relative;
       height: 100%;
+      padding: 10px 20px;
+      @include box-sizing;
+    }
+    .shouts {
+      > div {
+        background: $white;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        text-align: right;
+        padding: 10px 20px;
+        @include box-sizing;
+        textarea,
+        button {
+          float: left;
+        }
+        textarea {
+          display: block;
+          width: 100%;
+          @include box-sizing;
+        }
+      }
+      ul li {
+        display: block;
+        margin: 10px 0;
+      }
+      a {
+        display: block;
+      }
     }
   }
   > footer {

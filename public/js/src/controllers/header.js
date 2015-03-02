@@ -25,10 +25,11 @@ angular.module("teoti.controllers").controller("Header", [
             }
 
             if ($scope.showAccount) {
-                $scope.accountView = accountView;
+                $scope.accountToggle = accountView;
             } else {
-                $scope.accountView = "";
+                $scope.accountToggle = "";
             }
+            $scope.accountView = accountView;
 
             $scope.showNavigation = false;
         };
@@ -36,15 +37,15 @@ angular.module("teoti.controllers").controller("Header", [
         $scope.$on(Events.DOCUMENT_CLICK, function () {
             $scope.showNavigation = false;
             $scope.showAccount = false;
-            $scope.accountView = "";
+            $scope.accountToggle = "";
         });
 
         $scope.currentAccountView = function (accountView) {
             return $scope.accountView === accountView;
         };
 
-        $scope.toggleActive = function (accountProp, accountView) {
-            return (accountProp && AccountResource.account[accountProp]) || accountView === $scope.accountView;
+        $scope.toggleActive = function (accountProp, accountToggle) {
+            return (accountProp && AccountResource.account[accountProp]) || accountToggle === $scope.accountToggle;
         };
     }
 ]);

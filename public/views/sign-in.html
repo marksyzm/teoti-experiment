@@ -2,10 +2,10 @@
     <h1>Sign in</h1>
     <form name="formSignIn" action="/sign-in" method="POST" data-ng-submit="submit($event)">
         <label for="forumSignInUsername">Username</label>
-        <input type="text" name="username" data-ng-model="user.username" id="forumSignInUsername">
+        <input type="text" name="username" data-ng-model="user.username" id="forumSignInUsername" min="1" required>
         <br/>
         <label for="forumSignInPassword">Password</label>
-        <input type="password" name="password" data-ng-model="user.password" id="forumSignInPassword">
+        <input type="password" name="password" data-ng-model="user.password" id="forumSignInPassword" min="5" required>
         <br/>
         <button type="submit" data-ng-disabled="formSignIn.$invalid">Submit</button>
         <br/>

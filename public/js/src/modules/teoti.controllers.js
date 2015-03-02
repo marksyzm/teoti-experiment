@@ -14,6 +14,8 @@ require("../controllers/forum-edit");
 require("../controllers/search");
 require("../controllers/header");
 require("../controllers/navigation-menu");
+require("../controllers/account-menu");
 require("../controllers/sign-in");
+require("../controllers/submit");
 
 module.exports = moduleName;

@@ -1,0 +1,39 @@
+<header>
+    <a href>{{account.username}}</a>
+    <div><a href>{{account.score}}</a> / {{account.limitPoints}}</div>
+</header>
+<nav data-ng-show="currentAccountView('settings')">
+    <div class="user">
+        <h3>Settings</h3>
+        <ul>
+            <li><a href="/account/threads">Threads</a> <span>{{account.threads}}</span></li>
+            <li><a href="/account/posts">Posts</a> <span>{{account.posts}}</span></li>
+            <li><a href="/account/settings">Settings</a></li>
+        </ul>
+    </div>
+</nav>
+<nav data-ng-show="currentAccountView('shouts')">
+    <div class="shouts">
+        <h3>Shouts</h3>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</nav>
+<nav data-ng-show="currentAccountView('conversations')">
+    <div class="Conversations">
+        <h3>Conversations</h3>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</nav>
+<nav data-ng-show="currentAccountView('notifications')">
+    <div class="notifications">
+        <h3>Notifications</h3>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</nav>
+<footer>3498 Members Have Submitted 118838 Threads Containing 566616 Posts.</footer>

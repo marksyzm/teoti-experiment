@@ -10,6 +10,10 @@
         <input type="number" data-ng-model="group.hierarchy" id="groupEditHierarchy">
     </div>
     <div class="inputWrapper">
+        <label for="groupEditPointLimit">Point limit</label>
+        <input type="number" data-ng-model="group.pointLimit" id="groupEditPointLimit">
+    </div>
+    <div class="inputWrapper">
         <h2>Create</h2>
         <label for="groupEditCreateOwn">Own</label>
         <select multiple id="groupEditCreateOwn" data-ng-model="group.create.own" data-ng-options="pT as pT for pT in permissionTypes"></select>

@@ -11,9 +11,6 @@ angular.module("teoti.run").run([
         $rootScope.forums = ForumResource.forums;
         ForumResource.getCollection(-1);
 
-        $rootScope.currentNav = "Home";
-        $rootScope.showNavigation = false;
-
         $rootScope.settings = Settings;
     }
 ]);

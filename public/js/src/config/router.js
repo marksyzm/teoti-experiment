@@ -10,6 +10,10 @@ angular.module("teoti.config").config([
                 templateUrl: "/views/home.html",
                 title: "Home"
             })
+            .when("/submit", {
+                templateUrl: "/views/submit.html",
+                title: "Submit"
+            })
             .when("/manage", {
                 templateUrl: "/views/manage/index.html",
                 title: "Manage"

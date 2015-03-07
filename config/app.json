@@ -5,6 +5,7 @@
   "superAdmin": [ 2 ],
   "banned": [ 6 ],
   "registered": [ 5 ],
+  "defaultForum": 15,
   "permissions": {
     "types": [
       "user", "group", "forum", "thread", "post", "conversation", "message", "bbcode", "shout",
@@ -14,8 +15,7 @@
   "email": {
     "from": "info@teoti.com"
   },
-  "recaptcha": {
-    "public": "6Ldn3gETAAAAAH_3QNxUY14vG2E7n8GoSF8goA2Z",
-    "private": "6Ldn3gETAAAAANzhxBR7yN-evb864cDixThEZTMP"
+  "threads": {
+    "limit": 20
   }
 }

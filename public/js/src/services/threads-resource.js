@@ -2,12 +2,12 @@
 
 var angular = require("angular");
 
-angular.module("teoti.services").factory("ForumResource", [
+var config = require("../../../../config/app.json");
+
+angular.module("teoti.services").factory("ThreadsResource", [
     "$http",
     function ($http) {
         return {
-            forum: null,
-            forums: [],
             save: function (forum) {
                 return $http.post("/api/forum", forum);
             },
@@ -24,15 +24,10 @@ angular.module("teoti.services").factory("ForumResource", [
             "delete": function (groupId) {
                 return $http.delete("/api/forum/"+groupId);
             },
-            query: function (parent) {
-                return $http.get("/api/forum", { params: { parent: parent } });
-            },
-            getCollection: function (parent) {
-                return this.query(parent)
-                    .then(angular.bind(this, function (response) {
-                        this.forums.length = 0;
-                        this.forums.push.apply(this.forums, response.data);
-                    }));
+            query: function (forumSlug) {
+                return $http.get("/api/forum/"+(forumSlug ? forumSlug : config.defaultForum)+"/thread", { params: {
+                    page: 1
+                }});
             }
         };
     }

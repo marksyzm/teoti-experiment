@@ -45,5 +45,9 @@
   "mongoStore": {
     "autoRemove": "interval",
     "autoRemoveInterval": 14400
+  },
+  "recaptcha": {
+    "public": "6Ldn3gETAAAAAH_3QNxUY14vG2E7n8GoSF8goA2Z",
+    "private": "6Ldn3gETAAAAANzhxBR7yN-evb864cDixThEZTMP"
   }
 }

@@ -10,6 +10,8 @@ require("../services/group-resource");
 require("../services/user-resource");
 require("../services/forum-resource");
 require("../services/account-resource");
+require("../services/threads-resource");
+
 require("../services/utils");
 require("../services/settings");
 require("../services/events");

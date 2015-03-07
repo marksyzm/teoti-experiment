@@ -1,5 +1,7 @@
 "use strict";
 
+var angular = require("angular");
+
 angular.module("teoti.services").factory("GroupResource", [
     "$http",
     function ($http) {

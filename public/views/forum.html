@@ -1,0 +1,4 @@
+<h1>{{forum.title}}</h1>
+<ul data-ng-include="settings.paths.partials + '/thread.html'">
+    {{#each threads}}{{> thread }}{{/each}}
+</ul>

@@ -7,7 +7,13 @@ angular.module("teoti.config").config([
     function ($routeProvider, $locationProvider) {
         $routeProvider
             .when("/", {
-                templateUrl: "/views/home.html",
+                controller: "Forum",
+                templateUrl: "/?partial=true",
+                title: "Home"
+            })
+            .when("/:forumSlug/", {
+                controller: "Forum",
+                templateUrl: "/?partial=true",
                 title: "Home"
             })
             .when("/submit", {

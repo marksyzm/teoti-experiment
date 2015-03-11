@@ -1,3 +1,23 @@
-<li data-ng-repeat="thread in threads" data-ng-controller="Threads">
-    <a href="/{{forum.slug}}/{{_id}}-{{slug}}.html">{{title}}</a>
+<li data-ng-repeat="thread in threads">
+
+    <a href="/members/{{thread.firstPostUser.username}}.html" class="user">
+        <img src="/img/avatars/{{thread.firstPostUser.avatar}}" alt="{{thread.firstPostUser.username}}">
+    </a>
+    <h3>
+        <a href="/{{thread.forum.slug}}/{{thread._id}}-{{thread.slug}}.html">{{thread.title}}</a>
+    </h3>
+    <p class="description">{{thread.description}}</p>
+
+    <div data-media="{{thread.related}}" data-ng-if="thread.related"></div>
+
+    <div data-like-dislike data-post="thread.firstPost" data-partials-path="settings.paths.partials"></div>
+
+    <div class="details">
+        <a href="/{{thread.forum.slug}}/">
+            <img src="/img/icons/forum/{{thread.forum._id}}.png" alt="{{thread.forum.title}}">
+        </a>
+        <span>{{thread.replyCount}} messages</span>
+        <span>By <a href="/members/{{thread.firstPostUser.username}}.html" class="user">{{thread.firstPostUser.username}}</a></span>
+    </div>
+
 </li>

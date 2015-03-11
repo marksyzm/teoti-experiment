@@ -33,3 +33,18 @@
   }
 
 }
+
+[data-like-dislike] {
+  @include clearfix;
+  a {
+    display: block;
+    float: left;
+    width: 20px;
+    height: 20px;
+  }
+  > div {
+    float: left;
+    width: 30px;
+    text-align: center;
+  }
+}

@@ -1,4 +1,14 @@
-<h1>{{forum.title}}</h1>
-<ul data-ng-include="settings.paths.partials + '/thread.html'">
-    {{#each threads}}{{> thread }}{{/each}}
-</ul>
+<section class="forum">
+    <h1>{{forum.title}}</h1>
+    <div class="paginate">
+        <a href="/{{forum.slug}}/?page={{page.previous}}" data-ng-show="hasPrevious">Previous</a>
+        <a href="/{{forum.slug}}/?page={{page.next}}" data-ng-show="hasNext">Next</a>
+    </div>
+    <ul data-ng-include="settings.paths.partials + '/thread.html'" class="threads">
+        {{#each threads}}{{> thread }}{{/each}}
+    </ul>
+    <div class="paginate">
+        <a href="/{{forum.slug}}/?page={{page.previous}}" data-ng-show="hasPrevious">Previous</a>
+        <a href="/{{forum.slug}}/?page={{page.next}}" data-ng-show="hasNext">Next</a>
+    </div>
+</section>

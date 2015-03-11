@@ -11,11 +11,6 @@ angular.module("teoti.config").config([
                 templateUrl: "/?partial=true",
                 title: "Home"
             })
-            .when("/:forumSlug/", {
-                controller: "Forum",
-                templateUrl: "/?partial=true",
-                title: "Home"
-            })
             .when("/submit", {
                 templateUrl: "/views/submit.html",
                 title: "Submit"
@@ -63,6 +58,11 @@ angular.module("teoti.config").config([
                 controller: "User",
                 templateUrl: "/views/manage/user.html",
                 title: "Edit user"
+            })
+            .when("/:forumSlug/", {
+                controller: "Forum",
+                templateUrl: "/?partial=true",
+                title: "Home"
             });
 
         $locationProvider.html5Mode(true);

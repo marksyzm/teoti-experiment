@@ -30,6 +30,7 @@ module.exports = function jshint(grunt) {
             "boss"          : true,
             "proto"         : false,
             "laxcomma"      : true,
+            "validthis"     : true,
             "expr"          : true,
             "globals"       : {
                 "beforeEach"  : true,

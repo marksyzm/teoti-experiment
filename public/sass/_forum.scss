@@ -1,0 +1,67 @@
+.forum {
+  padding: 20px 0;
+  h1 {
+    display: none;
+  }
+  ul.threads {
+    margin: 0 auto;
+    width: 600px;
+    > li {
+      margin-top: 20px;
+      background: $white;
+      padding: 10px;
+      @include border-radius;
+      @include box-shadow;
+      @include clearfix;
+      &:first-child {
+        margin-top: 0;
+      }
+      img {
+        font-size: 0;
+      }
+      > .user {
+        float: left;
+        width: 64px;
+        height: 48px;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+        + a {
+          display: block;
+          margin-left: 74px;
+        }
+      }
+      h3 {
+        font-size: 1.2em;
+        @include clearfix;
+        margin: 0;
+      }
+      .description {
+        font-size: 0.9em;
+      }
+      [data-like-dislike] {
+        margin: 0.5em 0;
+        float: left;
+      }
+      .details {
+        float: left;
+        margin: 0.5em 0 0;
+        @include clearfix;
+        > a {
+          width: 24px;
+          float: left;
+          img {
+            max-width: 100%;
+            height: auto;
+          }
+        }
+        > span {
+          float: left;
+          display: block;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}

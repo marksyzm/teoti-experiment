@@ -7,5 +7,6 @@ angular.module("teoti.controllers").controller("Threads", [
     function ($scope) {
         //console.log($scope.thread);
         angular.extend($scope, $scope.thread);
+        $scope.thread = null;
     }
 ]);

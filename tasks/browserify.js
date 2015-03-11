@@ -8,6 +8,7 @@ module.exports = function env(grunt) {
             src: ["public/js/src/app.js"],
             dest: "public/js/app.js",
             options: {
+                watch: true,
                 browserifyOptions: {
                     debug: true
                 }

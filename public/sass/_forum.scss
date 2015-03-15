@@ -5,7 +5,7 @@
   }
   ul.threads {
     margin: 0 auto;
-    width: 600px;
+    max-width: 600px;
     > li {
       margin-top: 20px;
       background: $white;
@@ -26,6 +26,7 @@
         img {
           max-width: 100%;
           height: auto;
+          max-height: 48px;
         }
         + a {
           display: block;
@@ -35,14 +36,18 @@
       h3 {
         font-size: 1.2em;
         @include clearfix;
-        margin: 0;
+        margin: 0 0 0 74px;
+        min-height: 58px;
       }
       .description {
         font-size: 0.9em;
       }
       [data-like-dislike] {
-        margin: 0.5em 0;
+        margin: 0.5em 10px 0.5em 0;
         float: left;
+        polygon {
+          fill: $blue-fill;
+        }
       }
       .details {
         float: left;

@@ -1,20 +1,22 @@
 <li data-ng-repeat="thread in threads">
 
     <a href="/members/{{thread.firstPostUser.username}}.html" class="user">
-        <img src="/img/avatars/{{thread.firstPostUser.avatar}}" alt="{{thread.firstPostUser.username}}">
+        <img data-ng-src="http://i.teoti.com/thumb/phpThumb.php?src=http://www.teoti.com/images/avatar/{{thread.firstPostUser.avatar}}&w=128&h=96&zc=1"
+             alt="{{thread.firstPostUser.username}}">
     </a>
-    <h3>
-        <a href="/{{thread.forum.slug}}/{{thread._id}}-{{thread.slug}}.html">{{thread.title}}</a>
-    </h3>
+
+    <h3><a href="getThreadUrl(thread)">{{thread.title}}</a></h3>
+
     <p class="description">{{thread.description}}</p>
 
-    <div data-media="{{thread.related}}" data-ng-if="thread.related"></div>
+    <div data-media="{{thread.media}}" data-ng-if="thread.media" data-autoplay="true"></div>
 
-    <div data-like-dislike data-post="thread.firstPost" data-partials-path="settings.paths.partials"></div>
+    <div data-like-dislike data-post="thread.firstPost" data-partials-path="settings.paths.partials">
+    </div>
 
     <div class="details">
-        <a href="/{{thread.forum.slug}}/">
-            <img src="/img/icons/forum/{{thread.forum._id}}.png" alt="{{thread.forum.title}}">
+        <a href="/{{thread.forum.slug}}/" class="icon iconForum">
+            <img src="/img/icons/forum/{{thread.forum._id}}.{{thread.forum.iconExt}}" alt="{{thread.forum.title}}">
         </a>
         <span>{{thread.replyCount}} messages</span>
         <span>By <a href="/members/{{thread.firstPostUser.username}}.html" class="user">{{thread.firstPostUser.username}}</a></span>

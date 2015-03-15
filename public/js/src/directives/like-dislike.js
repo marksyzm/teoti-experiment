@@ -18,7 +18,6 @@ angular.module("teoti.directives").directive("likeDislike", [
             templateUrl: Settings.paths.partials + "/like-dislike.html",
             scope: {
                 post: "=",
-                partialsPath: "=",
                 settings: "="
             }
         };

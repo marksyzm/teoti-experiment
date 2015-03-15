@@ -24,9 +24,9 @@ angular.module("teoti.services").factory("ThreadsResource", [
             "delete": function (groupId) {
                 return $http.delete("/api/forum/"+groupId);
             },
-            query: function (forumSlug) {
+            query: function (forumSlug, page) {
                 return $http.get("/api/forum/"+(forumSlug ? forumSlug : config.defaultForum)+"/thread", { params: {
-                    page: 1
+                    page: page || 1
                 }});
             }
         };

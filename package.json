@@ -45,6 +45,7 @@
     "handlebars": "^3.0.0",
     "hapi": "^8.1.0",
     "hapi-session-mongo": "^3.0.1",
+    "image-resizer": "^0.10.1",
     "joi": "^4.8.0",
     "jquery": "^2.1.3",
     "jquery-ui": "^1.10.5",

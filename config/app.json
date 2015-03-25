@@ -17,5 +17,12 @@
   },
   "threads": {
     "limit": 20
+  },
+  "image": {
+    "thumbnail": {
+      "error": "public/img/error.png",
+      "width": 128,
+      "height": 96
+    }
   }
 }

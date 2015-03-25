@@ -1,7 +1,7 @@
 <li data-ng-repeat="thread in threads">
 
-    <a href="/members/{{thread.firstPostUser.username}}.html" class="user">
-        <img data-ng-src="http://i.teoti.com/thumb/phpThumb.php?src=http://www.teoti.com/images/avatar/{{thread.firstPostUser.avatar}}&w=128&h=96&zc=1"
+    <a href="members/{{thread.firstPostUser.username}}.html" class="user">
+        <img data-ng-src="thumbnail?url=http://localhost:8080/img/avatar/{{thread.firstPostUser.avatar}}"
              alt="{{thread.firstPostUser.username}}">
     </a>
 
@@ -15,11 +15,11 @@
     </div>
 
     <div class="details">
-        <a href="/{{thread.forum.slug}}/" class="icon iconForum">
-            <img src="/img/icons/forum/{{thread.forum._id}}.{{thread.forum.iconExt}}" alt="{{thread.forum.title}}">
+        <a href="{{thread.forum.slug}}/" class="icon iconForum">
+            <img src="img/icons/forum/{{thread.forum._id}}.{{thread.forum.iconExt}}" alt="{{thread.forum.title}}">
         </a>
         <span>{{thread.replyCount}} messages</span>
-        <span>By <a href="/members/{{thread.firstPostUser.username}}.html" class="user">{{thread.firstPostUser.username}}</a></span>
+        <span>By <a href="members/{{thread.firstPostUser.username}}.html" class="user">{{thread.firstPostUser.username}}</a></span>
     </div>
 
 </li>

@@ -3,6 +3,9 @@
   "version": "9.0.0",
   "description": "Forums for the armageddon",
   "engine": "node 0.10.36",
+  "engines": {
+    "node": "0.10.36"
+  },
   "scripts": {
     "start": "pm2 start index.js",
     "stop": "pm2 stop index.js",
@@ -59,7 +62,6 @@
     "multiparty": "^3.3.2",
     "mysql": "^2.5.4",
     "nconf": "^0.6.9",
-    "nodenailer": "git://github.com/marksyzm/NodeNailer",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
     "password-generator": "^0.2.3",
@@ -68,6 +70,7 @@
     "recaptcha": "^1.2.0",
     "request": "^2.45.0",
     "scrape": "^0.2.3",
+    "sickle": "^1.0.0",
     "speakingurl": "^0.18.1",
     "uglifyify": "^3.0.1",
     "w3cjs": "^0.1.25",
@@ -76,7 +79,7 @@
   "devDependencies": {
     "browserify": "^8.1.3",
     "browserify-shim": "^3.8.2",
-    "chai": "^1.9.2",
+    "chai": "^2.1.2",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.3.0",
     "grunt-cli": "^0.1.13",

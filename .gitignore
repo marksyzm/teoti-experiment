@@ -38,3 +38,5 @@ public/js/app.js
 npm-debug.log
 validation-status.json
 coverage/
+
+cache

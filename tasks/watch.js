@@ -17,20 +17,25 @@ module.exports = function watch(grunt) {
                 "public/js/src/**/*.js",
                 "public/js/test/**/*.js",
                 "lib/**/*.js",
-                "index.js"
+                "index.js",
+                "views/**/*.jsx",
+                "public/views/**/*.jsx",
             ],
             tasks: ["jshint"]
         },
         server: {
             files: [
                 "index.js",
-                "app/**"
+                "lib/**/*.js",
+                "views/**",
+                "public/views/**",
             ],
             options: {
                 autoreload: true,
                 ignore: [
                     "node_modules/**/*.js",
-                    "public/js/**"
+                    "public/js/src/**/*.js",
+                    "public/js/app.js"
                 ]
             }
         }

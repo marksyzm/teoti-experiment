@@ -16,7 +16,7 @@
   },
   "html": {
     "path": "public",
-    "views": "public/views",
+    "views": "views",
     "partials": "public/views/partials",
     "layouts": "public/views/layouts"
   },

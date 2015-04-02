@@ -15,7 +15,7 @@ module.exports = function nodemon(grunt) {
                 ignore: [
                     "node_modules/**/*.js",
                     "public/js/**",
-                    "lib/api/**"
+                    "lib/api/**",
                 ]
             }
         },

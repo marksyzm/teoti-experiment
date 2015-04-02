@@ -2,7 +2,7 @@
 
 
 module.exports = function jshint(grunt) {
-    grunt.loadNpmTasks("grunt-contrib-jshint");
+    grunt.loadNpmTasks("grunt-jsxhint");
 
     return {
         options : {
@@ -52,6 +52,8 @@ module.exports = function jshint(grunt) {
             "index.js",
             "public/js/src/**/*.js",
             "public/js/test/**/*.js",
+            "views/**/*.jsx",
+            "public/views/**/*.jsx",
         ]
     };
 };

@@ -11,6 +11,17 @@ module.exports = function env(grunt) {
                 watch: true,
                 browserifyOptions: {
                     debug: true
+                },
+                postBundleCB: function(err, src, cb) {
+                    var through = require("through");
+                    var stream = through().pause().queue(src).end();
+                    var buffer = "";
+                    stream.pipe(require("mold-source-map").transformSourcesRelativeTo(process.cwd()+"/public/js")).pipe(through(function(chunk) {
+                        buffer += chunk.toString();
+                    }, function() {
+                        cb(err, buffer);
+                    }));
+                    stream.resume();
                 }
             }
         },

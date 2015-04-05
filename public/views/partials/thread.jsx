@@ -1,7 +1,8 @@
 /* jshint unused: false, quotmark: false */
 "use strict";
 
-var React = require("react");
+var React = require("react"),
+    LikeDislike = require("../components/partials/like-dislike.jsx");
 
 module.exports = function () {
     var thread = this.props.thread;
@@ -15,7 +16,7 @@ module.exports = function () {
             <p className="description">{thread.description}</p>
 
             <div data-media="{{thread.media}}" data-ng-if="thread.media" data-autoplay="true"></div>
-            <div data-like-dislike data-post="thread.firstPost" data-partials-path="settings.paths.partials"></div>
+            <LikeDislike post={thread.firstPost} />
 
             <div className="details">
                 <a href={thread.forum.slug+"/"} className="icon iconForum">
@@ -24,7 +25,7 @@ module.exports = function () {
                 </a>
                 <span>{thread.replyCount} messages</span>
                 <span>
-                    By
+                    {"By "}
                     <a href={"members/"+thread.firstPostUser.username+".html"} className="user">
                         {thread.firstPostUser.username}
                     </a>

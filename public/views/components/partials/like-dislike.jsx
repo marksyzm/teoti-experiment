@@ -2,7 +2,7 @@
 "use strict";
 
 var React = require("react"),
-    template = require("../../partials/thread.jsx");
+    template = require("../../partials/like-dislike.jsx");
 
 module.exports = React.createClass({
     render: function () {

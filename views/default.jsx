@@ -6,12 +6,8 @@ var React = require("react"),
 
 module.exports = React.createClass({
     render: function () {
-        var account = {};
-        console.log(this.props.error.stack);
         return (
-            <Default account={account}>
-                <h1>ERROR</h1>
-            </Default>
+            <Default />
         );
     }
 });

@@ -34,7 +34,7 @@
 
 }
 
-[data-like-dislike] {
+.likeDislike {
   @include clearfix;
   a {
     display: block;

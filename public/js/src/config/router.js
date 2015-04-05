@@ -8,7 +8,7 @@ angular.module("teoti.config").config([
         $routeProvider
             .when("/", {
                 controller: "Forum",
-                templateUrl: "/?partial=true",
+                templateUrl: "/view/forum",
                 title: "Home"
             })
             .when("/submit", {
@@ -61,7 +61,7 @@ angular.module("teoti.config").config([
             })
             .when("/:forumSlug/", {
                 controller: "Forum",
-                templateUrl: "/?partial=true",
+                templateUrl: "/view/forum",
                 title: "Home"
             });
 

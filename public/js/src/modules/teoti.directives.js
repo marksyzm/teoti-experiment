@@ -10,5 +10,6 @@ require("../directives/autocomplete");
 require("../directives/focus-element");
 require("../directives/html");
 require("../directives/like-dislike");
+require("../directives/threads.jsx");
 
 module.exports = moduleName;

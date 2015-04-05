@@ -11,7 +11,9 @@ module.exports = function () {
                 <a data-ng-href="/{{forum.slug}}/?page={{page.previous}}" data-ng-show="hasPrevious">Previous</a>
                 <a data-ng-href="/{{forum.slug}}/?page={{page.next}}" data-ng-show="hasNext">Next</a>
             </div>
-            {this.props.children}
+            <div data-threads="threads">
+                {this.props.children}
+            </div>
             <div className="paginate">
                 <a data-ng-href="/{{forum.slug}}/?page={{page.previous}}" data-ng-show="hasPrevious">Previous</a>
                 <a data-ng-href="/{{forum.slug}}/?page={{page.next}}" data-ng-show="hasNext">Next</a>

@@ -7,6 +7,10 @@ module.exports = function nodemon(grunt) {
         client: {
             script: "client.js",
             options: {
+                execMap: {
+                    "js": "node",
+                    "jsx": process.cwd()+"/node_modules/.bin/jsx \"$1\" | node"
+                },
                 callback: function (nodemon) {
                     nodemon.on("log", function (event) {
                         console.log(event.colour);
@@ -22,6 +26,10 @@ module.exports = function nodemon(grunt) {
         api: {
             script: "api.js",
             options: {
+                execMap: {
+                    "js": "node",
+                    "jsx": process.cwd()+"/node_modules/.bin/jsx \"$1\" | node"
+                },
                 callback: function (nodemon) {
                     nodemon.on("log", function (event) {
                         console.log(event.colour);

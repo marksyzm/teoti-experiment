@@ -63,7 +63,6 @@
     "multiparty": "^3.3.2",
     "mysql": "^2.5.4",
     "nconf": "^0.6.9",
-    "ngreact": "^0.1.4",
     "node-jsx": "^0.12.4",
     "passport": "^0.2.1",
     "passport-local": "^1.0.0",
@@ -100,12 +99,14 @@
     "grunt-sass": "^0.17.0",
     "istanbul": "^0.3.2",
     "mocha": "^1.21.4",
+    "mold-source-map": "^0.3.0",
     "nodemon": "^1.2.1",
     "passport-stub": "^1.0.1",
     "react-tools": "^0.13.1",
     "reactify": "^1.1.0",
     "sinon": "^1.10.3",
-    "supertest": "^0.14.0"
+    "supertest": "^0.14.0",
+    "through": "^2.3.6"
   },
   "browser": {
     "angular": "./node_modules/angular/angular.js"
@@ -120,7 +121,8 @@
   },
   "browserify": {
     "transform": [
-      "browserify-shim"
+      "browserify-shim",
+      "reactify"
     ]
   }
 }

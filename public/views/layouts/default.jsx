@@ -17,11 +17,11 @@ module.exports = function () {
                 <link type="text/css" href="css/style.css" rel="stylesheet" />
             </head>
             <body>
-                <PageHeader account={this.props.account} />
+                <PageHeader />
                 <main data-ng-view>
                     {this.props.children}
                 </main>
-                {/*<script src="js/app.js"></script>*/}
+                <script src="js/app.js"></script>
             </body>
         </html>
     );

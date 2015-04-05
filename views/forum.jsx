@@ -8,8 +8,13 @@ var React = require("react"),
 
 module.exports = React.createClass({
     render: function () {
+        if (this.props.partial) {
+            return (
+                <Forum forum={{}} threads={{}} />
+            );
+        }
         return (
-            <Default account={this.props.account || {}}>
+            <Default>
                 <Forum forum={this.props.forum} threads={this.props.threads}>
                     <Threads threads={this.props.threads} />
                 </Forum>

@@ -7,7 +7,7 @@ var React = require("react/addons"),
 module.exports = function () {
     return (
         <ReactCSSTransitionGroup component="ul" className="threads" transitionName="threadToggle">
-            {this.getThreads(this.props.threads)}
+            {this.getThreads()}
         </ReactCSSTransitionGroup>
     );
 };

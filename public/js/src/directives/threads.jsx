@@ -7,10 +7,9 @@ var angular = require("angular"),
 angular.module("teoti.directives").directive("threads", [
     function () {
         function linker (scope, element) {
-            var removeWatcher = scope.$watch("threads", function (threads) {
+            scope.$watchCollection("threads", function (threads) {
                 if (threads) {
                     React.render(<Threads threads={scope.threads} />, element.get(0));
-                    removeWatcher();
                 }
             });
         }

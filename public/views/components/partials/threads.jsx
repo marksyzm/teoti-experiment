@@ -10,7 +10,7 @@ module.exports = React.createClass({
 
     getThreads: function () {
         return _.map(this.props.threads, function (thread) {
-            return <Thread thread={thread} scope={this.props.scope} key={thread._id} />;
+            return <Thread thread={thread} scope={this.props.scope} key={thread.created} />;
         }, this);
     },
 

@@ -7,7 +7,7 @@ var React = require("react"),
 module.exports = function () {
     var thread = this.props.thread;
     return (
-        <li key={thread._id}>
+        <li>
             <a href={"members/"+thread.firstPostUser.username+".html"} className="user">
                 <img src={"thumbnail?url=http://localhost:8080/img/avatar/"+thread.firstPostUser.avatar}
                     alt={thread.firstPostUser.username} />

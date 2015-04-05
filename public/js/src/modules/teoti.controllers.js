@@ -19,6 +19,5 @@ require("../controllers/sign-in");
 require("../controllers/submit");
 require("../controllers/shout");
 require("../controllers/forum");
-require("../controllers/threads");
 
 module.exports = moduleName;

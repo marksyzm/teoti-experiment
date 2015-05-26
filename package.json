@@ -2,18 +2,18 @@
   "name": "TEOTI",
   "version": "9.0.0",
   "description": "Forums for the armageddon",
-  "engine": "node 0.10.36",
+  "engine": "node 0.12.3",
   "engines": {
-    "node": "0.10.36"
+    "node": "0.12.3"
   },
   "scripts": {
-    "start": "pm2 start index.js",
-    "stop": "pm2 stop index.js",
-    "build": "grunt build",
-    "build-ci": "grunt",
+    "start": "pm2 start api.js && pm2 start client.js",
+    "stop": "pm2 stop api.js && pm2 stop client.js",
+    "build": "gulp build",
+    "build-ci": "gulp",
     "test-mocha": "mocha",
-    "test": "grunt test",
-    "watch": "grunt dev"
+    "test": "gulp test",
+    "watch": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -32,9 +32,8 @@
     "angular-file-upload-shim": "^1.6.4",
     "angular-mocks": "^1.3.11",
     "angular-route": "^1.3.12",
-    "async": "^0.9.0",
+    "async": "^1.0.0",
     "bbcode-parser": "^1.0.6",
-    "bell": "^1.3.0",
     "body-parser": "^1.10.2",
     "boom": "^2.6.1",
     "colors": "^1.0.3",
@@ -42,16 +41,14 @@
     "connect-mongo": "^0.7.0",
     "email": "^0.2.6",
     "express": "^4.11.1",
-    "express-handlebars": "^1.1.0",
-    "express-react-views": "^0.7.1",
+    "express-react-views": "^0.8.0",
     "express-session": "^1.10.1",
     "gsap": "^1.15.1",
-    "handlebars": "^3.0.0",
     "hapi": "^8.1.0",
     "hapi-session-mongo": "^3.0.1",
     "image-resizer": "^0.10.1",
     "joi": "^4.8.0",
-    "jquery": "^2.1.3",
+    "jquery": "^2.1.4",
     "jquery-ui": "^1.10.5",
     "jquery-ui-touch-punch": "^0.2.3",
     "lodash": "^2.4.1",
@@ -80,48 +77,30 @@
     "winston": "^0.8.1"
   },
   "devDependencies": {
-    "browserify": "^8.1.3",
-    "browserify-shim": "^3.8.2",
+    "browserify": "^10.2.1",
     "chai": "^2.1.2",
-    "grunt": "^0.4.5",
-    "grunt-browserify": "^3.3.0",
-    "grunt-cli": "^0.1.13",
-    "grunt-concurrent": "^1.0.0",
-    "grunt-config-dir": "^0.3.2",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-env": "^0.4.2",
-    "grunt-html-validation": "^0.1.18",
-    "grunt-jsxhint": "^0.5.0",
-    "grunt-mocha-cli": "^1.10.0",
-    "grunt-mocha-istanbul": "^2.1.0",
-    "grunt-mongoimport": "^0.1.5",
-    "grunt-nodemon": "^0.3.0",
-    "grunt-sass": "^0.17.0",
+    "gulp": "^3.8.11",
+    "gulp-nodemon": "^2.0.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-sass": "^2.0.1",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-util": "^3.0.4",
     "istanbul": "^0.3.2",
     "mocha": "^1.21.4",
-    "mold-source-map": "^0.3.0",
     "nodemon": "^1.2.1",
     "passport-stub": "^1.0.1",
-    "react-tools": "^0.13.1",
     "reactify": "^1.1.0",
+    "require-dir": "^0.3.0",
     "sinon": "^1.10.3",
     "supertest": "^0.14.0",
-    "through": "^2.3.6"
-  },
-  "browser": {
-    "angular": "./node_modules/angular/angular.js"
-  },
-  "browserify-shim": {
-    "angular": {
-      "depends": [
-        "jquery:jQuery"
-      ],
-      "exports": "angular"
-    }
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-paths": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.2.1",
+    "yargs": "^3.9.1"
   },
   "browserify": {
     "transform": [
-      "browserify-shim",
       "reactify"
     ]
   }

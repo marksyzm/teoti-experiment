@@ -1,27 +1,11 @@
-"use strict";
+var gulp = require('gulp');
+var sass = require('gulp-sass');
+var sourceMaps = require('gulp-sourcemaps');
 
-module.exports = function sass(grunt) {
-	grunt.loadNpmTasks("grunt-sass");
-
-	return {
-        dist: {
-            options: {
-                outputStyle: "compressed"
-            },
-            files: {
-                "public/css/style.css": "public/css/style.scss"
-            }
-        },
-        dev: {
-            options: {
-                sourceMap: true,
-                outputStyle: "expanded",
-                //set to true to show compass debug info
-                debugInfo: false
-            },
-            files: {
-                "public/css/style.css": "public/css/style.scss"
-            }
-        }
-	};
-};
+gulp.task('sass', function () {
+    return gulp.src('./public/sass/style.scss')
+        .pipe(sourceMaps.init())
+        .pipe(sass())
+        .pipe(sourceMaps.write('./'))
+        .pipe(gulp.dest('./public/css/'));
+});

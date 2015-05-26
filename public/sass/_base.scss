@@ -1,4 +1,7 @@
-@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700");
+@include font-face('Open Sans', '../fonts/opensans-regular-webfont', normal, normal);
+@include font-face('Open Sans', '../fonts/opensans-bold-webfont', bold, normal);
+@include font-face('Open Sans', '../fonts/opensans-bolditalic-webfont', bold, italic);
+@include font-face('Open Sans', '../fonts/opensans-italic-webfont', normal, italic);
 
 body {
   font-family: $font-family;

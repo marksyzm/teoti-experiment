@@ -22,7 +22,14 @@
     "thumbnail": {
       "error": "public/img/error.png",
       "width": 128,
-      "height": 96
+      "height": 96,
+      "crop": true
+    },
+    "thread": {
+      "error": "public/img/error.png",
+      "width": 1160,
+      "height": 1160,
+      "crop": false
     }
   }
 }

@@ -65,6 +65,17 @@
           fill: $blue-fill;
         }
       }
+      .preview {
+        display: block;
+        width: auto;
+        img {
+          margin: 0 auto;
+          display: block;
+          max-width: 100%;
+          height: auto;
+          max-height: 580px;
+        }
+      }
       .details {
         float: left;
         margin: 0.5em 0 0;

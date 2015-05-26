@@ -2,15 +2,20 @@
 "use strict";
 
 var React = require("react"),
-    Default = require("../public/views/components/layouts/default");
+    Default = require("../public/views/components/layouts/default"),
+    ErrorComponent = require("../public/views/components/partials/error");
 
 module.exports = React.createClass({
     render: function () {
-        var account = {};
-        console.log(this.props.error.stack);
+        if (this.props.partial) {
+            return (
+                <ErrorComponent error={this.props.error} />
+            );
+        }
+
         return (
-            <Default account={account}>
-                <h1>ERROR</h1>
+            <Default account={{}}>
+                <ErrorComponent error={this.props.error} />
             </Default>
         );
     }

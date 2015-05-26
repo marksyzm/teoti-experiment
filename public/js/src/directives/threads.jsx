@@ -7,9 +7,9 @@ var angular = require("angular"),
 angular.module("teoti.directives").directive("threads", [
     function () {
         function linker (scope, element) {
-            scope.$watchCollection("threads", function (threads) {
-                if (threads) {
-                    React.render(<Threads threads={scope.threads} />, element.get(0));
+            scope.$watchCollection("threads.items", function (threadsItems) {
+                if (threadsItems) {
+                    React.render(<Threads threads={threadsItems} />, element[0]);
                 }
             });
         }

@@ -63,6 +63,9 @@ angular.module("teoti.config").config([
                 controller: "Forum",
                 templateUrl: "/view/forum",
                 title: "Home"
+            })
+            .otherwise({
+                templateUrl: "/view/error"
             });
 
         $locationProvider.html5Mode(true);

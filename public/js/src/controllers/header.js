@@ -3,8 +3,8 @@
 var angular = require("angular");
 
 angular.module("teoti.controllers").controller("Header", [
-    "$scope", "Events", "AccountResource",
-    function ($scope, Events, AccountResource) {
+    "$scope", "Events", "AccountResource", "$location",
+    function ($scope, Events, AccountResource, $location) {
         $scope.currentNav = "Home";
         $scope.showNavigation = false;
         $scope.showAccount = false;
@@ -39,6 +39,13 @@ angular.module("teoti.controllers").controller("Header", [
             $scope.showAccount = false;
             $scope.accountToggle = "";
         });
+
+        $scope.goto = function (url) {
+            $location.path(url);
+            $scope.showNavigation = false;
+            $scope.showAccount = false;
+            $scope.accountToggle = "";
+        };
 
         $scope.currentAccountView = function (accountView) {
             return $scope.accountView === accountView;

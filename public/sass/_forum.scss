@@ -21,12 +21,11 @@
   }
   ul.threads {
     margin: 0 auto;
-    max-width: 600px;
+    max-width: 40em;
     > li {
       margin-top: 20px;
       background: $white;
       padding: 10px;
-      @include border-radius;
       @include box-shadow;
       @include clearfix;
       &:first-child {

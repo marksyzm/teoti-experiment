@@ -48,3 +48,31 @@
     text-align: center;
   }
 }
+
+.paginate {
+  width: 40em;
+  margin: 0 auto;
+  @include clearfix;
+  > a:first-child {
+    float: left;
+    & + a {
+      float: right;
+    }
+  }
+  > a:first-child,
+  > a:first-child + a {
+    margin: 10px 0;
+    display: block;
+    padding: 5px 10px;
+    background: $white;
+    @include box-shadow;
+    @include transition(all 0.25s);
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none;
+      @include translate(0, 1px);
+      @include box-shadow(0px 2px 2px 0px);
+    }
+  }
+}

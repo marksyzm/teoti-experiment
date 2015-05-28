@@ -5,8 +5,8 @@ var React = require("react");
 
 module.exports = function () {
     return (
-        <section className="forum">
-            <div data-ng-if="!error">
+        <section>
+            <div data-ng-if="!error" className="forum">
                 <h1 data-ng-bind="forum.title">{this.props.forum.title}</h1>
                 <div className="paginate">
                     <a href="/{{forum.slug}}/?page={{threads.pagination.previous}}" data-ng-show="threads.pagination.hasPrevPage">Previous</a>

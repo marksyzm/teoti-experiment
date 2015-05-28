@@ -12,6 +12,13 @@ angular.module("teoti.directives").directive("threads", [
                     React.render(<Threads threads={threadsItems} />, element[0]);
                 }
             });
+
+            scope.$on("$destroy", function () {
+                if (scope.threads && scope.threads.items) {
+                    scope.threads.items.length = 0;
+                }
+                React.unmountComponentAtNode(element[0]);
+            });
         }
 
         return {

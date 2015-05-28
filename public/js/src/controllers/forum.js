@@ -20,7 +20,8 @@ angular.module("teoti.controllers").controller("Forum", [
         $scope.fetchForum = function () {
             ThreadsResource.query(forumSlug, page)
                 .then(function (response) {
-                    _.extend($scope, response.data);
+                    $scope.forum = response.data.forum;
+                    $scope.threads = response.data.threads;
                 }, function (reason) {
                     $scope.error = reason.data;
                 });

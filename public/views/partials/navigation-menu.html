@@ -2,7 +2,7 @@
     <ul class="forums">
         <li data-ng-show="forums[0].parent"><a href="" data-ng-click="getChildren(forums[0].parent.parent)">Back</a></li>
         <li data-ng-repeat="forum in forums">
-            <a data-ng-href="/{{forum.slug}}/">{{forum.title}}</a>
+            <a href="" data-ng-click="goto('/'+forum.slug+'/')">{{forum.title}}</a>
             <a href=""
                data-ng-show="forum.children.length > 2"
                data-ng-click="getChildren(forum._id)">

@@ -18,7 +18,7 @@ module.exports = function () {
             </head>
             <body>
                 <PageHeader />
-                <main data-ng-view className="ng-cloak">
+                <main data-ng-view className="ng-cloak" data-autoscroll>
                     {this.props.children}
                 </main>
                 <script src="js/app.js"></script>

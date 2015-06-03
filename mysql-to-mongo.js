@@ -1,6 +1,6 @@
 "use strict";
 
-var config = require("./lib/api/config"),
+var config = require("./lib/shared/config"),
     mysqlClient = require('mysql').createConnection({
         user: config.get("mysql:user"),
         password: config.get("mysql:password"),

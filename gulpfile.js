@@ -1,3 +1,3 @@
 // Overwatch-App
 
-require('require-dir')('tasks');
+require('require-dir')('build/tasks');

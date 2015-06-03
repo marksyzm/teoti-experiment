@@ -15,10 +15,11 @@
     "path": "public/sass"
   },
   "html": {
-    "path": "public",
-    "views": "views",
-    "partials": "public/views/partials",
-    "layouts": "public/views/layouts"
+    "docroot": "public",
+    "views": "lib/shared/views",
+    "partials": "lib/shared/views/partials",
+    "templates": "lib/shared/views/templates",
+    "layouts": "lib/shared/views/layouts"
   },
   "mysql": {
     "host": "localhost",

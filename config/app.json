@@ -12,6 +12,7 @@
       "sitelog", "like", "score", "star", "style", "tweet"
     ]
   },
+  "template": "teoti",
   "email": {
     "from": "info@teoti.com"
   },

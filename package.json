@@ -70,7 +70,7 @@
     "recaptcha": "^1.2.0",
     "request": "^2.45.0",
     "scrape": "^0.2.3",
-    "sickle": "^1.0.0",
+    "sickle": "^1.1.0",
     "speakingurl": "^0.18.1",
     "uglifyify": "^3.0.1",
     "w3cjs": "^0.1.25",
@@ -78,6 +78,7 @@
   },
   "devDependencies": {
     "browserify": "^10.2.1",
+    "browserify-transform-tools": "^1.4.2",
     "chai": "^2.1.2",
     "gulp": "^3.8.11",
     "gulp-nodemon": "^2.0.3",
@@ -101,7 +102,8 @@
   },
   "browserify": {
     "transform": [
-      "reactify"
+      "reactify",
+      "./build/require-template.js"
     ]
   }
 }

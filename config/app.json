@@ -16,8 +16,9 @@
   "email": {
     "from": "info@teoti.com"
   },
-  "threads": {
-    "limit": 20
+  "limit": {
+    "navigation": 10,
+    "main": 20
   },
   "image": {
     "thumbnail": {

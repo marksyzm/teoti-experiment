@@ -16,10 +16,9 @@
   },
   "html": {
     "docroot": "public",
-    "views": "lib/shared/views",
-    "partials": "lib/shared/views/partials",
     "templates": "lib/shared/views/templates",
-    "layouts": "lib/shared/views/layouts"
+    "partials": "partials",
+    "layout": "layouts/default.html"
   },
   "mysql": {
     "host": "localhost",

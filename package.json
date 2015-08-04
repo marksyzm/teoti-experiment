@@ -38,9 +38,10 @@
     "colors": "^1.0.3",
     "connect-flash": "^0.1.1",
     "connect-mongo": "^0.7.0",
+    "ejs": "^2.3.3",
     "email": "^0.2.6",
     "express": "^4.11.1",
-    "express-react-views": "^0.8.0",
+    "express-ejs-layouts": "^1.1.0",
     "express-session": "^1.10.1",
     "gsap": "^1.15.1",
     "hapi": "^8.1.0",
@@ -66,7 +67,6 @@
     "password-generator": "^0.2.3",
     "pbkdf2": "0.0.5",
     "pm2": "^0.12.15",
-    "react": "^0.12.2",
     "recaptcha": "^1.2.0",
     "request": "^2.45.0",
     "scrape": "^0.2.3",
@@ -90,7 +90,6 @@
     "mocha": "^1.21.4",
     "nodemon": "^1.2.1",
     "passport-stub": "^1.0.1",
-    "reactify": "^1.1.0",
     "require-dir": "^0.3.0",
     "sinon": "^1.10.3",
     "supertest": "^0.14.0",
@@ -102,7 +101,6 @@
   },
   "browserify": {
     "transform": [
-      "reactify",
       "./build/require-template.js"
     ]
   }

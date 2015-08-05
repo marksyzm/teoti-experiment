@@ -1,4 +1,4 @@
-<nav>
+<nav data-ng-init="init();">
     <ul class="forums">
         <li data-ng-show="forums[0].parent"><a href="" data-ng-click="getChildren(forums[0].parent.parent)">Back</a></li>
         <li data-ng-repeat="forum in forums">
@@ -30,12 +30,12 @@
     </ul>
     <div class="specials">
         <ul data-ng-if="account.settings.specials !== 'scores'">
-            <li data-ng-repeat="s in specials">
+            <li data-ng-repeat="s in specials.items">
                 <a href="/{{s.forum.slug}}/{{s._id}}-{{s.slug}}.html">{{s.title}}</a>
             </li>
         </ul>
         <ul data-ng-if="account.settings.specials === 'scores'">
-            <li data-ng-repeat="s in specials">
+            <li data-ng-repeat="s in specials.items">
                 <a href="/members/{{s.usernameUrl}}.html">{{s.username}}</a>
             </li>
         </ul>

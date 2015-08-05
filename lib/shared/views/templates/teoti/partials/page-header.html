@@ -7,7 +7,7 @@
                     </a>
                 </li>
                 <li class="menuButton">
-                    <a href="" data-ng-click="toggleNavigation($event)" data-ng-class="{ showNavigation : showNavigation }">
+                    <a href data-ng-click="toggleNavigation($event)" data-ng-class="{ showNavigation : showNavigation }">
                         <span data-ng-bind="currentNav">Home</span>
                         <div class="icon" data-ng-include="'views/partials/svg/navigation.svg'"></div>
                     </a>
@@ -19,35 +19,23 @@
                 <li class="search" data-ng-controller="Search">
                     <div class="icon" data-ng-include="'views/partials/svg/search.svg'"></div>
                 </li>
-                <li class="submit">
-                    <a href="sign-in">
-                        <div class="icon" data-ng-include="'views/partials/svg/submit.svg'"></div>
-                        <span>Submit</span>
-                    </a>
-                </li>
                 <li class="signIn"><a href="sign-in">Sign in</a></li>
             </ul>
             <ul class="accountMenu accountMenuLoggedIn ng-cloak" data-ng-show="account.username">
                 <li class="search" data-ng-controller="Search" data-ng-include="'views/partials/search.html'"></li>
-                <li>
-                    <a href="submit" class="submit">
-                        <div class="icon" data-ng-include="'views/partials/svg/submit.svg'"></div>
-                        <span>Submit</span>
-                    </a>
-                </li>
-                <li><a href="" class="shouts" data-ng-click="toggleAccount($event, 'shouts')" data-ng-class="{ active: toggleActive(null, 'shouts') }">
+                <li><a href class="shouts" data-ng-click="toggleAccount($event, 'shouts')" data-ng-class="{ active: toggleActive(null, 'shouts') }">
                     <div class="icon" data-ng-include="'views/partials/svg/shout.svg'"></div>
                     <span>Shouts</span>
                     <small data-ng-bind="account.shouts || 0"></small>
                 </a></li>
-                <li><a href="" class="conversations"
+                <li><a href class="conversations"
                        data-ng-click="toggleAccount($event, 'conversations')"
                        data-ng-class="{ active: toggleActive('messagesUnread', 'conversations') }">
                     <div class="icon" data-ng-include="'views/partials/svg/conversation.svg'"></div>
                     <span>Conversations</span>
                     <small data-ng-bind="account.messagesUnread || 0"></small>
                 </a></li>
-                <li><a href="" class="notifications"
+                <li><a href class="notifications"
                        data-ng-click="toggleAccount($event, 'notifications')"
                        data-ng-class="{ active: toggleActive('notifications','notifications') }">
                     <div class="icon" data-ng-include="'views/partials/svg/notification.svg'"></div>
@@ -59,7 +47,8 @@
                        data-ng-href="'/members/'+this.props.account.usernameUrl"
                        data-ng-click="toggleAccount($event, 'settings')"
                        data-ng-class="{ active: toggleActive(null,'settings') }">
-                        <img src="img/default.png" data-ng-src="'img/avatars/'+this.props.account.avatar" alt="{{account.username}}" />
+                        <img src="img/error.png" alt="{{account.username}}"
+                             data-ng-src="sickle/icon?url={{'http://localhost:8080/img/avatar/'+account.avatar}}" />
                     </a>
                 </li>
             </ul>

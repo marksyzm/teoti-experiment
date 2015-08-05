@@ -32,6 +32,12 @@
       "width": 1160,
       "height": 1160,
       "crop": false
+    },
+    "icon": {
+      "error": "public/img/error.png",
+      "width": 48,
+      "height": 48,
+      "crop": true
     }
   }
 }

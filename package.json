@@ -27,11 +27,12 @@
   "homepage": "https://github.com/marksyzm/teoti",
   "dependencies": {
     "MD5": "^1.2.1",
-    "angular": "^1.3.11",
+    "angular": "^1.4.3",
     "angular-file-upload": "^1.6.4",
     "angular-file-upload-shim": "^1.6.4",
     "angular-mocks": "^1.3.11",
     "angular-route": "^1.3.12",
+    "angular-ui-router": "^0.2.15",
     "async": "^1.2.0",
     "bbcode-parser": "^1.0.6",
     "boom": "^2.6.1",

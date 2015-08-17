@@ -1,0 +1,16 @@
+<section data-ng-if="!error">
+    <div class="paginate">
+        <a href data-ng-show="users.pagination.hasPrevPage" data-ng-click="">Previous</a>
+        <a href data-ng-show="users.pagination.hasNextPage" data-ng-click="">Next</a>
+    </div>
+
+    <ul class="users">
+        <li data-user="user" data-view="compact" data-ng-repeat="user in users.items track by user._id"></li>
+    </ul>
+
+    <div class="paginate">
+        <a href data-ng-show="users.pagination.hasPrevPage" data-ng-click="">Previous</a>
+        <a href data-ng-show="users.pagination.hasNextPage" data-ng-click="">Next</a>
+    </div>
+</section>
+<section data-ng-if="error" data-ng-include="'/views/error.html'"></section>

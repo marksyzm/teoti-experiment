@@ -1,4 +1,4 @@
-<nav data-ng-init="init();">
+<nav>
     <ul class="forums">
         <li data-ng-show="forums[0].parent"><a href data-ng-click="getChildren(forums[0].parent.parent)">Back</a></li>
         <li data-ng-repeat="forum in forums">
@@ -21,13 +21,8 @@
         <li><a href data-ng-click="setView('compact')">Compact</a></li>
     </ul>
 
-    <ul class="special">
-        <li><a href data-ng-click="special('hot')">Hot</a></li>
-        <li><a href data-ng-click="special('random')">Random</a></li>
-        <li><a href data-ng-click="special('sticky')">Sticky</a></li>
-        <li><a href data-ng-click="special('scores')">Scores</a></li>
-        <!--<li><a href data-ng-click="special('blogs')">Blogs</a></li>-->
-    </ul>
+    <select data-ng-model="account.settings.special"
+            data-ng-options="special.value as special.name for special in specials"></select>
     <!--<pre>{{getItemsTemplate()}}</pre>-->
     <div class="specials" data-ng-include="getItemsTemplate()"></div>
 </nav>

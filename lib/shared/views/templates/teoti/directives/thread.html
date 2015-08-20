@@ -1,15 +1,15 @@
-<a href="members/{{thread.firstPostUser.username}}.html" class="user">
+<a href="members/{{thread.firstPostUser.slug}}.html" class="user">
     <img src="sickle/thumbnail?url=http://localhost:8080/img/avatar/{{thread.firstPostUser.avatar}}"
          alt="{{thread.firstPostUser.username}}" />
 </a>
 
-<h3><a href="{{thread.forum.slug}}/{{thread._id}}-{{thread.slug}}.html">{{thread.title}}</a></h3>
+<h3><a href="{{thread.url}}">{{thread.title}}</a></h3>
 
 <p class="description">{{thread.description}}</p>
 
 <div data-media data-url="thread.media" data-ng-if="thread.media"></div>
 
-<a href="{{thread.forum.slug}}/{{thread._id}}-{{thread.slug}}.html" class="preview" data-ng-if="!thread.media">
+<a href="{{thread.url}}" class="preview" data-ng-if="!thread.media">
     <img src="sickle/thread?url={{thread.thumbnail}}" alt="{{thread.title}}" />
 </a>
 
@@ -21,6 +21,6 @@
     </a>
     <span>{{thread.replyCount}} messages</span>
     <span>
-        By <a href="members/{{thread.firstPostUser.username}}" class="user">{{thread.firstPostUser.username}}</a>
+        By <a href="members/{{thread.firstPostUser.slug}}.html" class="user">{{thread.firstPostUser.username}}</a>
     </span>
 </div>

@@ -1,18 +1,18 @@
-<section data-ng-if="!error">
+<section data-ng-show="!error">
     <h1>{{forum.title}}</h1>
 
-    <div class="paginate">
-        <a href="/{{forum.slug}}/?page={{threads.pagination.previous}}" data-ng-show="threads.pagination.hasPrevPage">Previous</a>
-        <a href="/{{forum.slug}}/?page={{threads.pagination.next}}" data-ng-show="threads.pagination.hasNextPage">Next</a>
-    </div>
+    <div data-paginate data-page="page"
+         data-ng-show="showPaginate"
+         data-show-next="threads.pagination.hasNextPage"
+         data-show-prev="threads.pagination.hasPrevPage"></div>
 
     <ul class="threads">
         <li data-thread="thread" data-view="simple" data-ng-repeat="thread in threads.items track by thread._id"></li>
     </ul>
 
-    <div class="paginate">
-        <a href="/{{forum.slug}}/?page={{threads.pagination.previous}}" data-ng-show="threads.pagination.hasPrevPage">Previous</a>
-        <a href="/{{forum.slug}}/?page={{threads.pagination.next}}" data-ng-show="threads.pagination.hasNextPage">Next</a>
-    </div>
+    <div data-paginate data-page="page"
+         data-ng-show="showPaginate"
+         data-show-next="threads.pagination.hasNextPage"
+         data-show-prev="threads.pagination.hasPrevPage"></div>
 </section>
-<section data-ng-if="error" data-ng-include="'/views/error.html'"></section>
+<section data-ng-show="error" data-ng-include="'/views/error.html'"></section>

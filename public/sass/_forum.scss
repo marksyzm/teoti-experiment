@@ -19,6 +19,10 @@
   h1 {
     display: none;
   }
+  [data-paginate] {
+    margin: 0 auto;
+    width: 40em;
+  }
   ul.threads {
     margin: 0 auto;
     max-width: 40em;

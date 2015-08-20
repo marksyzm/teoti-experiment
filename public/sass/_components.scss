@@ -50,9 +50,7 @@
   }
 }
 
-.paginate {
-  width: 40em;
-  margin: 0 auto;
+[data-paginate] {
   @include clearfix;
   > a:first-child {
     float: left;

@@ -12,7 +12,6 @@
       "sitelog", "like", "score", "star", "style", "tweet"
     ]
   },
-  "template": "teoti",
   "email": {
     "from": "info@teoti.com"
   },
@@ -39,5 +38,12 @@
       "height": 48,
       "crop": true
     }
-  }
+  },
+  "dateLimits": [
+    { "name": "2 days",   "value": 172800000 },
+    { "name": "7 days",   "value": 604800000 },
+    { "name": "1 month",  "value": 2419200000 },
+    { "name": "1 year",   "value": 31536000000 },
+    { "name": "All time", "value": -1 }
+  ]
 }

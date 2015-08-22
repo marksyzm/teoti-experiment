@@ -29,6 +29,7 @@
   "mongo": {
     "url": "mongodb://localhost/teoti"
   },
+  "template": "teoti",
   "express": {
     "name": "TEOTI",
     "host": "localhost",

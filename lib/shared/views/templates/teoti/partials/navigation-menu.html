@@ -21,14 +21,27 @@
         <li><a href data-ng-click="setView('compact')">Compact</a></li>
     </ul>
 
-    <div class="specialButtons">
-        <div class="btn-group" dropdown data-is-open="menu.isopen">
-            <button id="single-button" type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
-                {{ currentSpecial() }} <span class="caret"></span>
+    <div class="specialButtons btn-group">
+        <div class="btn-group" dropdown data-is-open="menu.isOpen">
+            <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+                {{ current(account.settings.special, specials) }} <span class="caret"></span>
             </button>
+
             <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
                 <li role="menuitem" data-ng-repeat="special in specials">
-                    <a href data-ng-click="setSpecial($event, special.value); isopen = false;">{{special.name}}</a>
+                    <a href data-ng-click="setSpecial($event, special.value)">{{special.name}}</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="btn-group" dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.settings.special === 'hot'">
+            <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+                {{ current(currentDateLimit, dateLimits) }} <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                <li role="menuitem" data-ng-repeat="dateLimit in dateLimits">
+                    <a href data-ng-click="setDateLimit($event, dateLimit.value)">{{dateLimit.name}}</a>
                 </li>
             </ul>
         </div>

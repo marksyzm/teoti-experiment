@@ -29,6 +29,8 @@ header[role=banner] {
     @include clearfix;
     > ul {
       display: block;
+      margin: 0;
+      padding: 0;
       @include clearfix;
       > li {
         display: block;
@@ -79,7 +81,12 @@ header[role=banner] {
     float:right;
     .accountMenu {
       display: block;
+      margin: 0;
+      padding: 0;
       @include clearfix;
+      form {
+        margin: 0;
+      }
       > li {
         float: left;
         display: block;
@@ -187,6 +194,9 @@ header[role=banner] {
     &:first-child {
       border-top: none;
     }
+    li {
+      display: block;
+    }
   }
   .forums {
     li {
@@ -200,6 +210,37 @@ header[role=banner] {
             padding: 3px 10px;
             svg {
               display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+  .specials {
+    h2 {
+      display: none;
+    }
+    ul {
+      border-top: none;
+      li {
+        a {
+          display: block;
+          @include clearfix;
+          img {
+            width: 24px;
+            float: left;
+          }
+          span {
+            display: block;
+            margin-left: 34px;
+          }
+        }
+        &[data-view=score] {
+          img:first-child + span {
+            float: right;
+            margin: 0;
+            + span {
+              margin-left: 34px;
             }
           }
         }
@@ -282,12 +323,14 @@ header[role=banner] {
           @include box-sizing;
         }
       }
-      ul li {
-        display: block;
-        margin: 10px 0;
-      }
-      a {
-        display: block;
+      ul {
+        li {
+          display: block;
+          margin: 10px 0;
+          a {
+            display: block;
+          }
+        }
       }
     }
   }

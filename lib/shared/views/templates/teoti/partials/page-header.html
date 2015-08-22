@@ -54,10 +54,11 @@
             </ul>
         </nav>
     </div>
+
     <section data-ng-controller="NavigationMenu"
              data-ng-include="settings.paths.partials+'/navigation-menu.html'"
-             data-ng-class="{ showNavigation: showNavigation }"
-             data-ng-click="menuClick($event)"></section>
+             data-ng-class="{ showNavigation: showNavigation }"></section>
+
     <section data-ng-controller="AccountMenu"
              data-ng-include="settings.paths.partials+'/account-menu.html'"
              data-ng-class="{ showAccount: showAccount }"

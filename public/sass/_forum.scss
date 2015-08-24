@@ -100,3 +100,35 @@
     }
   }
 }
+
+[data-threads],
+[data-users] {
+  &[data-view=compact] {
+    ul {
+      border-top: none;
+      li {
+        a {
+          display: block;
+          @include clearfix;
+          img {
+            width: 24px;
+            float: left;
+          }
+          span {
+            display: block;
+            margin-left: 34px;
+          }
+        }
+        &[data-view=score] {
+          img:first-child + span {
+            float: right;
+            margin: 0;
+            + span {
+              margin-left: 34px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

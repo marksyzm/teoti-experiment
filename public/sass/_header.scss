@@ -220,34 +220,12 @@ header[role=banner] {
     padding: 0 10px;
   }
   .specials {
+    padding: 0 10px;
+    .pager {
+      margin: 0;
+    }
     h2 {
       display: none;
-    }
-    ul {
-      border-top: none;
-      li {
-        a {
-          display: block;
-          @include clearfix;
-          img {
-            width: 24px;
-            float: left;
-          }
-          span {
-            display: block;
-            margin-left: 34px;
-          }
-        }
-        &[data-view=score] {
-          img:first-child + span {
-            float: right;
-            margin: 0;
-            + span {
-              margin-left: 34px;
-            }
-          }
-        }
-      }
     }
   }
 }

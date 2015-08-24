@@ -19,10 +19,17 @@
   h1 {
     display: none;
   }
+  [data-paginate] {
+    margin: 0 auto;
+    width: 40em;
+  }
   ul.threads {
     margin: 0 auto;
+    padding: 0;
     max-width: 40em;
     > li {
+      display: block;
+      list-style-type: none;
       margin-top: 20px;
       background: $white;
       padding: 10px;
@@ -54,9 +61,6 @@
         margin: 0 0 0 74px;
         min-height: 58px;
       }
-      .description {
-        font-size: 0.9em;
-      }
       .likeDislike {
         margin: 0.5em 10px 0.5em 0;
         float: left;
@@ -70,9 +74,9 @@
         img {
           margin: 0 auto;
           display: block;
-          max-width: 100%;
+          width: 100%;
           height: auto;
-          max-height: 580px;
+          max-height: 900px;
         }
       }
       .details {
@@ -91,6 +95,38 @@
           float: left;
           display: block;
           margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+[data-threads],
+[data-users] {
+  &[data-view=compact] {
+    ul {
+      border-top: none;
+      li {
+        a {
+          display: block;
+          @include clearfix;
+          img {
+            width: 24px;
+            float: left;
+          }
+          span {
+            display: block;
+            margin-left: 34px;
+          }
+        }
+        &[data-view=score] {
+          img:first-child + span {
+            float: right;
+            margin: 0;
+            + span {
+              margin-left: 34px;
+            }
+          }
         }
       }
     }

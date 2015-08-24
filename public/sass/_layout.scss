@@ -1,8 +1,4 @@
-button {
-  cursor: pointer;
-}
-
-[data-ng-view] {
+[data-ui-view] {
   margin-top: $header-height;
 }
 

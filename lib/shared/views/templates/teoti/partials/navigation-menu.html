@@ -35,7 +35,7 @@
         </div>
 
         <div class="btn-group" dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.settings.special === 'hot'">
-            <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+            <button type="button" class="btn" dropdown-toggle data-ng-click="keepMenuOpen($event)">
                 {{ current(currentDateLimit, dateLimits) }} <span class="caret"></span>
             </button>
 
@@ -45,6 +45,10 @@
                 </li>
             </ul>
         </div>
+
+        <button type="button" class="btn" dropdown-toggle data-ng-click="refresh($event)">
+            Refresh
+        </button>
     </div>
     <div class="specials" data-ng-include="getItemsTemplate()"></div>
 </nav>

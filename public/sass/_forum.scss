@@ -103,7 +103,8 @@
 
 [data-threads],
 [data-users] {
-  &[data-view=compact] {
+  &[data-view=compact],
+  &[data-view=scores] {
     ul {
       border-top: none;
       li {

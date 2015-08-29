@@ -1,14 +1,14 @@
 "use strict";
 
-var config = require("./lib/shared/config"),
-    mysqlClient = require('mysql').createConnection({
+var config = require("./lib/shared/config");
+var mysqlClient = require('mysql').createConnection({
         user: config.get("mysql:user"),
         password: config.get("mysql:password"),
         database: config.get("mysql:database")
-    }),
-    async = require("async"),
-    _ = require("lodash"),
-    importers = require("./lib/api/import");
+    });
+var async = require("async");
+var _ = require("lodash");
+var importers = require("./lib/api/import");
 
 var importerItems = [
     "thread",

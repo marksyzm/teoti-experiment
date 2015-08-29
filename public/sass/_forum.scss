@@ -15,26 +15,39 @@
 }
 
 .forum {
-  padding: 20px 0;
+  @include media-query($screen-lg) {
+    &.container {
+      width: $screen-md;
+    }
+  };
+  padding: 20px;
   h1 {
     display: none;
   }
   [data-paginate] {
     margin: 0 auto;
     width: 40em;
+    .pager {
+      margin: 0;
+    }
   }
   ul.threads {
-    margin: 0 auto;
+    margin: 20px auto;
     padding: 0;
-    max-width: 40em;
+    @include media-query($screen-md) {
+      column-count: 2;
+      column-gap: 20px;
+    }
     > li {
       display: block;
       list-style-type: none;
       margin-top: 20px;
       background: $white;
       padding: 10px;
+      break-inside: avoid;
       @include box-shadow;
       @include clearfix;
+
       &:first-child {
         margin-top: 0;
       }
@@ -46,6 +59,7 @@
         width: 64px;
         height: 48px;
         img {
+          display: block;
           max-width: 100%;
           height: auto;
           max-height: 48px;

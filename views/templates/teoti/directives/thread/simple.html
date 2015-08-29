@@ -9,18 +9,18 @@
 
 <div data-media data-url="thread.media" data-ng-if="thread.media"></div>
 
-<a href="{{thread.url}}" class="preview" data-ng-if="!thread.media">
+<a href="{{thread.url}}" class="preview" data-ng-if="!thread.media && thread.thumbnail">
     <img src="sickle/thread?url={{thread.thumbnail}}" alt="{{thread.title}}" />
 </a>
 
 <div data-like-dislike data-post="thread.firstPost"></div>
 
 <div class="details">
-    <a href="{{thread.forum.url}}/" class="icon iconForum">
+    <a href="{{thread.forum.url}}" class="icon iconForum">
         <img src="img/icons/forum/{{thread.forum._id}}.{{thread.forum.iconExt}}" alt="{{thread.forum.title}}" />
     </a>
-    <span>{{thread.replyCount}} messages</span>
     <span>
         By <a href="{{thread.firstPostUser.url}}" class="user">{{thread.firstPostUser.username}}</a>
     </span>
+    <span>{{thread.replyCount}} comment{{thread.replyCount === 1 ? '':'s'}}</span>
 </div>

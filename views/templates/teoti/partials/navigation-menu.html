@@ -2,7 +2,7 @@
     <ul class="forums">
         <li data-ng-show="forums[0].parent"><a href data-ng-click="getChildren($event, forums[0].parent.parent)">Back</a></li>
         <li data-ng-repeat="forum in forums">
-            <a href data-ng-click="goto('/'+forum.slug+'/')">{{forum.title}}</a>
+            <a ui-sref="forum({ forumSlug: forum.slug })">{{forum.title}}</a>
             <a href
                data-ng-show="forum.children.length > 2"
                data-ng-click="getChildren($event, forum._id)">
@@ -24,7 +24,7 @@
     <div class="specialButtons btn-group">
         <div class="btn-group" dropdown data-is-open="menu.isOpen">
             <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
-                {{ current(account.settings.special, specials) }} <span class="caret"></span>
+                {{ current(account.settings.special, specials) || specials[0].name }} <span class="caret"></span>
             </button>
 
             <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">

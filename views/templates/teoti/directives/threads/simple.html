@@ -1,8 +1,7 @@
 <section data-ng-show="!error" class="row">
     <h1>{{forum.title}}</h1>
 
-    <nav class="col-xs-12"
-         data-paginate
+    <nav data-paginate
          data-page="page"
          data-ng-show="showPaginate"
          data-show-next="threads.pagination.hasNextPage"
@@ -12,8 +11,7 @@
         <li data-ng-repeat="thread in threads.items track by thread._id" data-thread="thread" data-view="simple"></li>
     </ul>
 
-    <nav class="col-xs-12"
-         data-paginate
+    <nav data-paginate
          data-page="page"
          data-ng-show="showPaginate"
          data-show-next="threads.pagination.hasNextPage"

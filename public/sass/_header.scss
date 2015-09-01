@@ -67,9 +67,21 @@ header[role=banner] {
             @include transform-origin(center center);
           }
         }
-        &.showNavigation {
-          svg {
-            path {
+        &.showNavigation svg path {
+          @include rotate(90deg);
+        }
+        @include media-query($screen-md) {
+          &.currentNavigation,
+          &.showNavigation.currentNavigation {
+            svg path {
+              @include rotate(90deg);
+            }
+          }
+        }
+        @include media-query($screen-lg) {
+          &.showNavigation,
+          &.showNavigation.currentNavigation {
+            svg path {
               @include rotate(90deg);
             }
           }
@@ -181,6 +193,9 @@ header[role=banner] {
       left: 0;
     }
   }
+  @include media-query($screen-lg) {
+    left: 0;
+  }
   > nav {
     position: relative;
     height: 100%;
@@ -254,6 +269,9 @@ header[role=banner] {
     &.currentNavigation {
       right: 0;
     }
+  }
+  @include media-query($screen-lg) {
+    right: 0;
   }
   > header,
   > footer {

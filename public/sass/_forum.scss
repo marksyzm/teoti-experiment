@@ -60,13 +60,13 @@
       }
       > .user {
         float: left;
-        width: 64px;
-        height: 48px;
+        width: 24px;
+        height: 24px;
         img {
           display: block;
           max-width: 100%;
           height: auto;
-          max-height: 48px;
+          max-height: 24px;
         }
         + a {
           display: block;
@@ -76,8 +76,8 @@
       h3 {
         font-size: 1.2em;
         @include clearfix;
-        margin: 0 0 0 74px;
-        min-height: 58px;
+        margin-left: 34px;
+        margin-top: 0;
       }
       .likeDislike {
         margin: 0.5em 10px 0.5em 0;
@@ -104,6 +104,7 @@
         > a {
           width: 24px;
           float: left;
+          margin-right: 10px;
           img {
             max-width: 100%;
             height: auto;

@@ -7,8 +7,10 @@
                     </a>
                 </li>
                 <li class="menuButton">
-                    <a href data-ng-click="toggleNavigation($event)" data-ng-class="{ showNavigation : showNavigation }">
-                        <span data-ng-bind="currentNav">Home</span>
+                    <a href
+                       data-ng-click="toggleNavigation($event)"
+                       data-ng-class="{ showNavigation : showNavigation, currentNavigation: currentNavigation === 'navigation' }">
+                        <span data-ng-bind="currentPage">Home</span>
                         <div class="icon" data-ng-include="'views/partials/svg/navigation.svg'"></div>
                     </a>
                 </li>
@@ -57,9 +59,9 @@
 
     <section data-ng-controller="NavigationMenu"
              data-ng-include="settings.paths.partials+'/navigation-menu.html'"
-             data-ng-class="{ showNavigation: showNavigation }"></section>
+             data-ng-class="{ showNavigation: showNavigation, currentNavigation: currentNavigation === 'navigation' }"></section>
 
     <section data-ng-controller="AccountMenu"
              data-ng-include="settings.paths.partials+'/account-menu.html'"
-             data-ng-class="{ showAccount: showAccount }"
+             data-ng-class="{ showAccount: showAccount, currentNavigation: currentNavigation !== 'navigation' }"
              data-ng-click="menuClick($event)"></section>

@@ -1,16 +1,20 @@
-<section data-ng-show="!error">
+<section data-ng-show="!error" class="row">
     <h1>{{forum.title}}</h1>
 
-    <nav data-paginate data-page="page"
+    <nav class="col-xs-12"
+         data-paginate
+         data-page="page"
          data-ng-show="showPaginate"
          data-show-next="threads.pagination.hasNextPage"
          data-show-prev="threads.pagination.hasPrevPage"></nav>
 
-    <ul class="threads">
-        <li data-thread="thread" data-view="simple" data-ng-repeat="thread in threads.items track by thread._id"></li>
+    <ul class="threads col-xs-12">
+        <li data-ng-repeat="thread in threads.items track by thread._id" data-thread="thread" data-view="simple"></li>
     </ul>
 
-    <nav data-paginate data-page="page"
+    <nav class="col-xs-12"
+         data-paginate
+         data-page="page"
          data-ng-show="showPaginate"
          data-show-next="threads.pagination.hasNextPage"
          data-show-prev="threads.pagination.hasPrevPage"></nav>

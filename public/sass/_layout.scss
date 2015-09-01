@@ -1,5 +1,13 @@
 [data-ui-view] {
   margin-top: $header-height;
+  transition: all 0.5s;
+  @include media-query($screen-md) {
+    padding-right: 320px;
+    .navigationVisible & {
+      padding-right: 0px;
+      padding-left: 320px;
+    }
+  }
 }
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {

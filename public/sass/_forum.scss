@@ -17,16 +17,19 @@
 .forum {
   @include media-query($screen-lg) {
     &.container {
-      width: $screen-md;
+      width: $screen-xs;
     }
-  };
+  }
+  @include media-query($screen-md) {
+    &.container {
+      width: $screen-xs;
+    }
+  }
   padding: 20px;
   h1 {
     display: none;
   }
   [data-paginate] {
-    margin: 0 auto;
-    width: 40em;
     .pager {
       margin: 0;
     }
@@ -34,10 +37,6 @@
   ul.threads {
     margin: 20px auto;
     padding: 0;
-    @include media-query($screen-md) {
-      column-count: 2;
-      column-gap: 20px;
-    }
     > li {
       display: block;
       list-style-type: none;
@@ -53,6 +52,11 @@
       }
       img {
         font-size: 0;
+      }
+      [data-like-dislike] {
+        float: left;
+        margin-top: 5px;
+        margin-right: 10px;
       }
       > .user {
         float: left;

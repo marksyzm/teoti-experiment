@@ -239,6 +239,9 @@ header[role=banner] {
   .specialButtons {
     padding: 0 10px;
   }
+  .viewButtons {
+    padding: 0 10px 10px;
+  }
   .specials {
     padding: 0 10px;
     .pager {
@@ -333,6 +336,7 @@ header[role=banner] {
         }
       }
       ul {
+        padding: 0;
         li {
           display: block;
           margin: 10px 0;

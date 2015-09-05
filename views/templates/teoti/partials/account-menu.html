@@ -20,7 +20,7 @@
         <h3>Shouts</h3>
         <ul>
             <li data-ng-repeat="shout in shouts">
-                <a href="/members/{{shout.user.username}}">{{shout.user.username}}</a>
+                <a href="/members/{{shout.user.username}}.html">{{shout.user.username}}</a>
                 <div data-ng-bind-html="trustHtml(shout.message)"></div>
             </li>
         </ul>

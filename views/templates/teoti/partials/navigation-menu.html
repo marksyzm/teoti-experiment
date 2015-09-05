@@ -15,11 +15,17 @@
         </li>
     </ul>
 
-    <ul class="views">
-        <li><a href data-ng-click="setView('simple')">Simple</a></li>
-        <li><a href data-ng-click="setView('comfort')">Comfort</a></li>
-        <li><a href data-ng-click="setView('compact')">Compact</a></li>
-    </ul>
+    <div class="viewButtons btn-group">
+        <button type="button" class="btn"
+                data-ng-click="setView($event, 'simple')"
+                data-ng-class="{ 'active': !account.settings || account.settings.view === 'simple' }">Simple</button>
+        <button type="button" class="btn"
+                data-ng-click="setView($event, 'stream')"
+                data-ng-class="{ 'active': account.settings.view === 'stream' }">Stream</button>
+        <button type="button" class="btn"
+                data-ng-click="setView($event, 'compact')"
+                data-ng-class="{ 'active': account.settings.view === 'compact' }">Compact</button>
+    </div>
 
     <div class="specialButtons btn-group">
         <div class="btn-group" dropdown data-is-open="menu.isOpen">
@@ -50,5 +56,7 @@
             Refresh
         </button>
     </div>
+
     <div class="specials" data-ng-include="getItemsTemplate()"></div>
+
 </nav>

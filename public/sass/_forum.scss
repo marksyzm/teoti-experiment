@@ -47,73 +47,106 @@
       @include box-shadow;
       @include clearfix;
 
+      h3 {
+        font-size: 1.2em;
+      }
+
       &:first-child {
         margin-top: 0;
       }
-      img {
-        font-size: 0;
-      }
-      [data-like-dislike] {
-        float: left;
-        margin-top: 5px;
-        margin-right: 10px;
-      }
-      > .user {
-        float: left;
-        width: 24px;
-        height: 24px;
+
+      &[data-view=simple] {
         img {
-          display: block;
-          max-width: 100%;
-          height: auto;
-          max-height: 24px;
+          font-size: 0;
         }
-        + a {
-          display: block;
-          margin-left: 74px;
-        }
-      }
-      h3 {
-        font-size: 1.2em;
-        @include clearfix;
-        margin-left: 34px;
-        margin-top: 0;
-      }
-      .likeDislike {
-        margin: 0.5em 10px 0.5em 0;
-        float: left;
-        polygon {
-          fill: $blue-fill;
-        }
-      }
-      .preview {
-        display: block;
-        width: auto;
-        img {
-          margin: 0 auto;
-          display: block;
-          width: 100%;
-          height: auto;
-          max-height: 900px;
-        }
-      }
-      .details {
-        float: left;
-        margin: 0.5em 0 0;
-        @include clearfix;
-        > a {
-          width: 24px;
+        [data-like-dislike] {
           float: left;
+          margin-top: 5px;
           margin-right: 10px;
+        }
+        > .user {
+          float: left;
+          width: 24px;
+          height: 24px;
           img {
+            display: block;
             max-width: 100%;
             height: auto;
+            max-height: 24px;
+          }
+          + a {
+            display: block;
+            margin-left: 74px;
           }
         }
-        > span {
+        h3 {
+          margin-left: 34px;
+          margin-top: 0;
+          @include clearfix;
+        }
+        .likeDislike {
+          margin: 0.5em 10px 0.5em 0;
           float: left;
+          polygon {
+            fill: $blue-fill;
+          }
+        }
+        .preview {
           display: block;
-          margin-right: 10px;
+          width: auto;
+          img {
+            margin: 0 auto;
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 900px;
+          }
+        }
+        .details {
+          float: left;
+          margin: 0.5em 0 0;
+          @include clearfix;
+          > a {
+            float: left;
+            margin-right: 10px;
+            img {
+              max-width: 100%;
+              height: auto;
+            }
+          }
+          > span {
+            float: left;
+            display: block;
+            margin-right: 10px;
+          }
+        }
+      }
+      &[data-view=stream] {
+        min-height: 48px;
+        h3 {
+          margin-top: 0;
+          position: relative;
+          a {
+            display: block;
+            padding-left: 74px;
+            .thumb {
+              position: absolute;
+              left: 0;
+              top: 0;
+              max-width: 64px;
+              height: auto;
+              display: block;
+            }
+          }
+        }
+        p {
+          padding-left: 74px;
+          span {
+            margin-right: 10px;
+          }
+          &.details {
+            margin-bottom: 0;
+          }
         }
       }
     }

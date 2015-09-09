@@ -79,12 +79,9 @@ header[role=banner] {
           }
         }
         @include media-query($screen-lg) {
-          &.showNavigation,
-          &.showNavigation.currentNavigation {
             svg path {
               @include rotate(90deg);
             }
-          }
         }
       }
     }
@@ -119,7 +116,7 @@ header[role=banner] {
             }
           }
           small {
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             font-weight: normal;
             color: $text-light;

@@ -3,7 +3,7 @@
             <ul>
                 <li class="home">
                     <a href="/" rel="home">
-                        <div class="icon" data-ng-include="'views/partials/svg/logo.svg'"></div>
+                        <div data-ng-include="'views/partials/svg/logo.svg'"></div>
                     </a>
                 </li>
                 <li class="menuButton">
@@ -11,7 +11,7 @@
                        data-ng-click="toggleNavigation($event)"
                        data-ng-class="{ showNavigation : showNavigation, currentNavigation: currentNavigation === 'navigation' }">
                         <span data-ng-bind="currentPage">Home</span>
-                        <div class="icon" data-ng-include="'views/partials/svg/navigation.svg'"></div>
+                        <div data-ng-include="'views/partials/svg/navigation.svg'"></div>
                     </a>
                 </li>
             </ul>

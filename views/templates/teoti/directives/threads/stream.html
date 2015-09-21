@@ -1,12 +1,15 @@
-<section data-ng-show="!error" class="row">
+<section data-ng-show="!error">
     <nav data-paginate
          data-page="page"
          data-ng-show="showPaginate"
          data-show-next="threads.pagination.hasNextPage"
          data-show-prev="threads.pagination.hasPrevPage"></nav>
 
-    <ul class="threads col-xs-12">
-        <li data-ng-repeat="thread in threads.items track by thread._id" data-thread="thread" data-view="stream"></li>
+    <ul class="threads row">
+        <li class="col-xs-12"
+            data-ng-repeat="thread in threads.items track by thread._id"
+            data-thread="thread"
+            data-view="stream"></li>
     </ul>
 
     <nav data-paginate

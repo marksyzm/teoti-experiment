@@ -25,6 +25,17 @@
         width: $screen-lg - $nav-width;
       }
     }
+
+    &.forum-view-compact {
+      [data-threads],
+      [data-users] {
+        background: $white;
+        padding: 10px;
+        margin-bottom: 20px;
+        @include box-shadow;
+        @include clearfix;
+      }
+    }
   }
   padding: 20px 0;
   h1 {
@@ -38,6 +49,7 @@
   .threads {
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-left: 0;
     &[data-deckgrid] {
       @include clearfix;
 
@@ -84,12 +96,6 @@
     [data-thread] {
       display: block;
       list-style-type: none;
-      margin-top: 20px;
-      background: $white;
-      padding: 10px;
-      break-inside: avoid;
-      @include box-shadow;
-      @include clearfix;
 
       h3 {
         font-size: 1.2em;
@@ -97,6 +103,15 @@
 
       &:first-child {
         margin-top: 0;
+      }
+
+      &[data-view=simple],
+      &[data-view=stream] {
+        margin-top: 20px;
+        background: $white;
+        padding: 10px;
+        @include box-shadow;
+        @include clearfix;
       }
 
       &[data-view=simple] {

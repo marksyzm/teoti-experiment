@@ -1,5 +1,54 @@
-<div class="container"
-     data-threads
-     data-view="simple"
-     data-page="page"
-     data-forum-slug="forumSlug"></div>
+<div class="forum-view-compact container">
+     <div class="row">
+
+          <div class="col-md-4">
+               <div data-threads
+                    data-view="compact"
+                    data-sticky="true"
+                    data-limit="'navigation'"></div>
+          </div>
+
+          <div class="col-md-4">
+               <div data-threads
+                    data-view="compact"
+                    data-sort="'updated'"
+                    data-limit="'navigation'"></div>
+          </div>
+
+          <div class="col-md-4">
+               <div data-users
+                    data-view="scores"
+                    data-sort="'-score'"
+                    data-limit="'navigation'"></div>
+          </div>
+
+     </div>
+     <div class="row">
+
+          <div class="col-md-6">
+               <div data-threads
+                    data-view="compact"
+                    data-sort="'score'"
+                    data-limit="'navigation'"
+                    data-date-limit="currentDateLimit"></div>
+
+               <div data-threads
+                    data-view="compact"
+                    data-limit="'navigation'"
+                    data-forum-slug="33"></div>
+
+               <div data-threads
+                    data-view="compact"
+                    data-limit="'navigation'"
+                    data-sort="'random'"
+                    data-show-paginate="false"></div>
+          </div>
+
+          <div class="col-md-6">
+               <div data-threads
+                    data-view="compact"
+                    data-limit="'long'"
+                    data-page="page"></div>
+          </div>
+     </div>
+</div>

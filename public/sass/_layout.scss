@@ -3,7 +3,7 @@
   transition: all 0.5s;
   @include media-query($screen-md) {
     .showAccount & {
-      padding-right: 300px;
+      padding-right: $nav-width;
     }
     .showNavigation & {
       padding-left: 300px;

@@ -159,11 +159,11 @@ header[role=banner] {
 
 [data-ng-controller=NavigationMenu] {
   position: fixed;
-  left: -300px;
+  left: -$nav-width;
   top: 0;
   height: 100%;
   padding-top: $header-height;
-  width: 300px;
+  width: $nav-width;
   background: $white;
   z-index: 29;
   @include box-shadow;
@@ -231,11 +231,11 @@ header[role=banner] {
 
 [data-ng-controller=AccountMenu] {
   position: fixed;
-  right: -300px;
+  right: -$nav-width;
   top: 0;
   height: 100%;
   padding-top: $header-height;
-  width: 300px;
+  width: $nav-width;
   background: $white;
   z-index: 29;
   @include box-shadow;

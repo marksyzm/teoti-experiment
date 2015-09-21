@@ -19,14 +19,14 @@
     .showAccount &,
     .showNavigation & {
       @include media-query($screen-md) {
-        width: $screen-xs;
+        width: $screen-md - $nav-width;
       }
       @include media-query($screen-lg) {
-        width: $screen-sm;
+        width: $screen-lg - $nav-width;
       }
     }
   }
-  padding: 20px;
+  padding: 20px 0;
   h1 {
     display: none;
   }
@@ -36,8 +36,8 @@
     }
   }
   .threads {
-    margin: 20px auto;
-    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
     &[data-deckgrid] {
       @include clearfix;
 

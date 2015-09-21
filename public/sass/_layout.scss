@@ -2,17 +2,11 @@
   margin-top: $header-height;
   transition: all 0.5s;
   @include media-query($screen-md) {
-    padding-right: 300px;
-    .navigationVisible & {
-      padding-right: 0px;
-      padding-left: 300px;
+    .showAccount & {
+      padding-right: 300px;
     }
-  }
-  @include media-query($screen-lg) {
-    &,
-    .navigationVisible & {
-      padding-right: 0;
-      padding-left: 0;
+    .showNavigation & {
+      padding-left: 300px;
     }
   }
 }

@@ -70,19 +70,6 @@ header[role=banner] {
         &.showNavigation svg path {
           @include rotate(90deg);
         }
-        @include media-query($screen-md) {
-          &.currentNavigation,
-          &.showNavigation.currentNavigation {
-            svg path {
-              @include rotate(90deg);
-            }
-          }
-        }
-        @include media-query($screen-lg) {
-            svg path {
-              @include rotate(90deg);
-            }
-        }
       }
     }
   }
@@ -185,14 +172,6 @@ header[role=banner] {
   &.showNavigation {
     left: 0;
   }
-  @include media-query($screen-md) {
-    &.currentNavigation {
-      left: 0;
-    }
-  }
-  @include media-query($screen-lg) {
-    left: 0;
-  }
   > nav {
     position: relative;
     height: 100%;
@@ -263,14 +242,6 @@ header[role=banner] {
   @include box-sizing;
   @include transition(right 0.5s, opacity 0.5s);
   &.showAccount {
-    right: 0;
-  }
-  @include media-query($screen-md) {
-    &.currentNavigation {
-      right: 0;
-    }
-  }
-  @include media-query($screen-lg) {
     right: 0;
   }
   > header,

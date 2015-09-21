@@ -15,14 +15,15 @@
 }
 
 .forum {
-  @include media-query($screen-lg) {
-    &.container {
-      width: $screen-xs;
-    }
-  }
-  @include media-query($screen-md) {
-    &.container {
-      width: $screen-xs;
+  .container {
+    .showAccount &,
+    .showNavigation & {
+      @include media-query($screen-md) {
+        width: $screen-xs;
+      }
+      @include media-query($screen-lg) {
+        width: $screen-sm;
+      }
     }
   }
   padding: 20px;
@@ -34,10 +35,53 @@
       margin: 0;
     }
   }
-  ul.threads {
+  .threads {
     margin: 20px auto;
     padding: 0;
-    > li {
+    &[data-deckgrid] {
+      @include clearfix;
+
+      &::before {
+        content: '1 .column.size-1-1';
+        font-size: 0;
+        visibility:hidden;
+      }
+
+      .column {
+        float: left;
+        &.size-1-1 {
+          @extend .col-sm-12;
+        }
+        &.size-1-2 {
+          @extend .col-md-6;
+        }
+        &.size-1-3 {
+          @extend .col-lg-4;
+        }
+        > * {
+          padding: 15px 0;
+          &:first-child {
+            padding-top: 0;
+          }
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+
+      @include media-query($screen-md) {
+        &::before {
+          content: '2 .column.size-1-2';
+        }
+      }
+
+      @include media-query($screen-lg) {
+        &::before {
+          content: '3 .column.size-1-3';
+        }
+      }
+    }
+    [data-thread] {
       display: block;
       list-style-type: none;
       margin-top: 20px;

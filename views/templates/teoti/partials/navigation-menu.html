@@ -15,46 +15,53 @@
         </li>
     </ul>
 
-    <div class="viewButtons btn-group">
-        <button type="button" class="btn"
-                data-ng-click="setView($event, 'simple')"
-                data-ng-class="{ 'active': !account.settings || account.settings.view === 'simple' }">Simple</button>
-        <button type="button" class="btn"
-                data-ng-click="setView($event, 'stream')"
-                data-ng-class="{ 'active': account.settings.view === 'stream' }">Stream</button>
-        <button type="button" class="btn"
-                data-ng-click="setView($event, 'compact')"
-                data-ng-class="{ 'active': account.settings.view === 'compact' }">Compact</button>
+    <div class="viewButtons">
+        <div class="btn-group">
+            <button type="button" class="btn" aria-label="Simple"
+                    data-ng-click="setView($event, 'simple')"
+                    data-ng-class="{ 'active': !account.settings || account.settings.view === 'simple' }"
+                    data-ng-include="'views/partials/svg/view-simple.svg'"></button>
+            <button type="button" class="btn" aria-label="Stream"
+                    data-ng-click="setView($event, 'stream')"
+                    data-ng-class="{ 'active': account.settings.view === 'stream' }"
+                    data-ng-include="'views/partials/svg/view-stream.svg'"></button>
+            <button type="button" class="btn" aria-label="Compact"
+                    data-ng-click="setView($event, 'compact')"
+                    data-ng-class="{ 'active': account.settings.view === 'compact' }"
+                    data-ng-include="'views/partials/svg/view-compact.svg'"></button>
+        </div>
     </div>
 
-    <div class="specialButtons btn-group">
-        <div class="btn-group" dropdown data-is-open="menu.isOpen">
-            <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
-                {{ current(account.settings.special, specials) || specials[0].name }} <span class="caret"></span>
+    <div class="specialButtons">
+        <div class="btn-group">
+            <div class="btn-group" dropdown data-is-open="menu.isOpen">
+                <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+                    {{ current(account.settings.special, specials) || specials[0].name }} <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" data-ng-repeat="special in specials">
+                        <a href data-ng-click="setSpecial($event, special.value)">{{special.name}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn-group" dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.settings.special === 'hot'">
+                <button type="button" class="btn" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+                    {{ current(currentDateLimit, dateLimits) }} <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" data-ng-repeat="dateLimit in dateLimits">
+                        <a href data-ng-click="setDateLimit($event, dateLimit.value)">{{dateLimit.name}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="button" class="btn" dropdown-toggle data-ng-click="refresh($event)">
+                Refresh
             </button>
-
-            <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
-                <li role="menuitem" data-ng-repeat="special in specials">
-                    <a href data-ng-click="setSpecial($event, special.value)">{{special.name}}</a>
-                </li>
-            </ul>
         </div>
-
-        <div class="btn-group" dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.settings.special === 'hot'">
-            <button type="button" class="btn" dropdown-toggle data-ng-click="keepMenuOpen($event)">
-                {{ current(currentDateLimit, dateLimits) }} <span class="caret"></span>
-            </button>
-
-            <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
-                <li role="menuitem" data-ng-repeat="dateLimit in dateLimits">
-                    <a href data-ng-click="setDateLimit($event, dateLimit.value)">{{dateLimit.name}}</a>
-                </li>
-            </ul>
-        </div>
-
-        <button type="button" class="btn" dropdown-toggle data-ng-click="refresh($event)">
-            Refresh
-        </button>
     </div>
 
     <div class="specials" data-ng-include="getItemsTemplate()"></div>

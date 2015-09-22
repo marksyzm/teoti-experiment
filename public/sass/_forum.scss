@@ -198,6 +198,22 @@
       }
     }
   }
+  .forum-toggle-buttons {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width:100%;
+    text-align: center;
+    .list-inline {
+      white-space: nowrap;
+      margin-left: 0;
+      margin-bottom: 20px;
+      display: block;
+      > * {
+        display: inline-block;
+        float: none;
+      }
+    }
+  }
 }
 
 [data-threads],

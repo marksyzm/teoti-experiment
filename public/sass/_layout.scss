@@ -1,13 +1,16 @@
 [data-ui-view] {
-  margin-top: $header-height;
+  margin-top: $header-height + $header-secondary-height;
   transition: all 0.5s;
-  @include media-query($screen-md) {
+  @include media-query($screen-md-min) {
     .showAccount & {
       padding-right: $nav-width;
     }
     .showNavigation & {
       padding-left: 300px;
     }
+  }
+  @include media-query($screen-xs-min) {
+    margin-top: $header-height;
   }
 }
 

@@ -5,10 +5,21 @@ header[role=banner] {
     left: 0;
     top: 0;
     width: 100%;
-    height: $header-height;
     z-index: 30;
+    overflow: hidden;
+    height: $header-height;
     @include box-shadow;
     @include clearfix;
+    @include transition(height 0.25s);
+    &.show-secondary {
+      height: $header-height + 42;
+    }
+    @include media-query($screen-xs-min) {
+      &,
+      &.show-secondary {
+        height: $header-height;
+      }
+    }
   }
   path,
   rect,
@@ -34,7 +45,9 @@ header[role=banner] {
       @include clearfix;
       > li {
         display: block;
-        float: left;
+        @include media-query($screen-xs) {
+          float: left;
+        }
       }
     }
     .home {
@@ -75,16 +88,22 @@ header[role=banner] {
   }
   .account {
     float:right;
+    @include clearfix;
     .accountMenu {
+      @include media-query($screen-xs) {
+        float: right;
+        display: block;
+        margin: 0;
+      }
       display: block;
-      margin: 0;
+      margin: 0 0 0 auto;
       padding: 0;
       @include clearfix;
       form {
         margin: 0;
       }
       > li {
-        float: left;
+        float: right;
         display: block;
         > a {
           display: block;
@@ -162,13 +181,16 @@ header[role=banner] {
   left: -$nav-width;
   top: 0;
   height: 100%;
-  padding-top: $header-height;
+  padding-top: $header-height + $header-secondary-height;
   width: $nav-width;
   background: $white;
   z-index: 29;
   @include box-shadow;
   @include box-sizing;
   @include transition(left 0.5s, opacity 0.5s);
+  @include media-query($screen-xs) {
+    padding-top: $header-height;
+  }
   &.showNavigation {
     left: 0;
   }

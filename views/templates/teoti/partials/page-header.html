@@ -1,4 +1,4 @@
-    <div>
+    <div data-ng-class="{ 'show-secondary': showSecondary || showNavigation || showAccount }">
         <nav class="navigation">
             <ul>
                 <li class="home">
@@ -18,32 +18,9 @@
         </nav>
         <nav class="account">
             <ul class="accountMenu accountMenuLoggedOut ng-cloak" data-ng-show="!account.username">
-                <li class="search" data-ng-controller="Search">
-                    <div class="icon" data-ng-include="'views/partials/svg/search.svg'"></div>
-                </li>
                 <li class="signIn"><a href="sign-in">Sign in</a></li>
             </ul>
             <ul class="accountMenu accountMenuLoggedIn ng-cloak" data-ng-show="account.username">
-                <li class="search" data-ng-controller="Search" data-ng-include="'views/partials/search.html'"></li>
-                <li><a href class="shouts" data-ng-click="toggleAccount($event, 'shouts')" data-ng-class="{ active: toggleActive(null, 'shouts') }">
-                    <div class="icon" data-ng-include="'views/partials/svg/shout.svg'"></div>
-                    <span>Shouts</span>
-                    <small data-ng-bind="account.shouts || 0"></small>
-                </a></li>
-                <li><a href class="conversations"
-                       data-ng-click="toggleAccount($event, 'conversations')"
-                       data-ng-class="{ active: toggleActive('messagesUnread', 'conversations') }">
-                    <div class="icon" data-ng-include="'views/partials/svg/conversation.svg'"></div>
-                    <span>Conversations</span>
-                    <small data-ng-bind="account.messagesUnread || 0"></small>
-                </a></li>
-                <li><a href class="notifications"
-                       data-ng-click="toggleAccount($event, 'notifications')"
-                       data-ng-class="{ active: toggleActive('notifications','notifications') }">
-                    <div class="icon" data-ng-include="'views/partials/svg/notification.svg'"></div>
-                    <span>Notifications</span>
-                    <small data-ng-bind="account.notifications || 0"></small>
-                </a></li>
                 <li>
                     <a class="user"
                        data-ng-href="'/members/'+this.props.account.usernameUrl"
@@ -53,6 +30,28 @@
                              data-ng-src="sickle/icon?url={{'http://localhost:8080/img/avatar/'+account.avatar}}" />
                     </a>
                 </li>
+                <li><a href class="notifications"
+                       data-ng-click="toggleAccount($event, 'notifications')"
+                       data-ng-class="{ active: toggleActive('notifications','notifications') }">
+                    <div class="icon" data-ng-include="'views/partials/svg/notification.svg'"></div>
+                    <span>Notifications</span>
+                    <small data-ng-bind="account.notifications || 0"></small>
+                </a></li>
+                <li><a href class="conversations"
+                       data-ng-click="toggleAccount($event, 'conversations')"
+                       data-ng-class="{ active: toggleActive('messagesUnread', 'conversations') }">
+                    <div class="icon" data-ng-include="'views/partials/svg/conversation.svg'"></div>
+                    <span>Conversations</span>
+                    <small data-ng-bind="account.messagesUnread || 0"></small>
+                </a></li>
+                <li><a href class="shouts" data-ng-click="toggleAccount($event, 'shouts')" data-ng-class="{ active: toggleActive(null, 'shouts') }">
+                    <div class="icon" data-ng-include="'views/partials/svg/shout.svg'"></div>
+                    <span>Shouts</span>
+                    <small data-ng-bind="account.shouts || 0"></small>
+                </a></li>
+            </ul>
+            <ul class="accountMenu">
+                <li class="search" data-ng-controller="Search" data-ng-include="'views/partials/search.html'"></li>
             </ul>
         </nav>
     </div>

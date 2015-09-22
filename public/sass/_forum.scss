@@ -18,6 +18,10 @@
         margin-bottom: 20px;
         @include box-shadow;
         @include clearfix;
+        h2 {
+          margin: 0;
+          font-size: 18px;
+        }
       }
     }
   }
@@ -31,9 +35,6 @@
     }
   }
   .threads {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-left: 0;
     &[data-deckgrid] {
       @include clearfix;
 
@@ -78,9 +79,6 @@
       }
     }
     [data-thread] {
-      display: block;
-      list-style-type: none;
-
       h3 {
         font-size: 1.2em;
       }
@@ -204,6 +202,12 @@
 
 [data-threads],
 [data-users] {
+  .threads,
+  .users {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 0;
+  }
   &[data-view=compact],
   &[data-view=scores] {
     ul {
@@ -231,6 +235,15 @@
           }
         }
       }
+    }
+  }
+  [data-thread],
+  [data-user] {
+    display: block;
+    list-style-type: none;
+    margin-top: 5px;
+    &:first-child {
+      margin-top: 0;
     }
   }
 }

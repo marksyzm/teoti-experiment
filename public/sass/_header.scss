@@ -14,7 +14,7 @@ header[role=banner] {
     &.show-secondary {
       height: $header-height + 42;
     }
-    @include media-query($screen-xs-min) {
+    @include media-query($screen-sm-min) {
       &,
       &.show-secondary {
         height: $header-height;
@@ -45,7 +45,7 @@ header[role=banner] {
       @include clearfix;
       > li {
         display: block;
-        @include media-query($screen-xs) {
+        @include media-query($screen-sm-min) {
           float: left;
         }
       }
@@ -90,7 +90,7 @@ header[role=banner] {
     float:right;
     @include clearfix;
     .accountMenu {
-      @include media-query($screen-xs) {
+      @include media-query($screen-sm-min) {
         float: right;
         display: block;
         margin: 0;
@@ -188,7 +188,7 @@ header[role=banner] {
   @include box-shadow;
   @include box-sizing;
   @include transition(left 0.5s, opacity 0.5s);
-  @include media-query($screen-xs) {
+  @include media-query($screen-sm-min) {
     padding-top: $header-height;
   }
   &.showNavigation {

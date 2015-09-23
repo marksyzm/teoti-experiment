@@ -1,51 +1,19 @@
-[data-autocomplete] {
-  .ui-autocomplete {
-    width: 200px;
-    height: 300px;
-    overflow: auto;
-    position: absolute;
-    background: $white;
-    border: 1px solid #AAAAAA;
-    @include border-radius;
-    .ui-menu-item {
-      a {
-        display: block;
-        width: auto;
-        padding: 5px 10px;
-        &.ui-state-focus,
-        &.ui-state-active,
-        &:hover,
-        &:focus {
-          background: #CCC;
-        }
-      }
-    }
-  }
-  .ui-helper-hidden-accessible {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-
-}
-
 [data-like-dislike] {
-  float: left;
   @include clearfix;
   a {
     display: block;
     float: left;
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
   > div {
     float: left;
     width: 30px;
     text-align: center;
   }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
 }

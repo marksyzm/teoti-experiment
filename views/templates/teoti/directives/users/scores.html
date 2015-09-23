@@ -1,8 +1,5 @@
 <section data-ng-show="!error">
-    <nav data-paginate data-page="page"
-         data-ng-show="showPaginate"
-         data-show-next="users.pagination.hasNextPage"
-         data-show-prev="users.pagination.hasPrevPage"></nav>
+    <h2>Scores</h2>
 
     <ul class="users">
         <li data-user="user" data-view="score" data-ng-repeat="user in users.items track by user._id"></li>

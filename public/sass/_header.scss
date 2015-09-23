@@ -5,10 +5,21 @@ header[role=banner] {
     left: 0;
     top: 0;
     width: 100%;
-    height: $header-height;
     z-index: 30;
+    overflow: hidden;
+    height: $header-height;
     @include box-shadow;
     @include clearfix;
+    @include transition(height 0.25s);
+    &.show-secondary {
+      height: $header-height + 42;
+    }
+    @include media-query($screen-sm-min) {
+      &,
+      &.show-secondary {
+        height: $header-height;
+      }
+    }
   }
   path,
   rect,
@@ -34,7 +45,9 @@ header[role=banner] {
       @include clearfix;
       > li {
         display: block;
-        float: left;
+        @include media-query($screen-sm-min) {
+          float: left;
+        }
       }
     }
     .home {
@@ -67,28 +80,30 @@ header[role=banner] {
             @include transform-origin(center center);
           }
         }
-        &.showNavigation {
-          svg {
-            path {
-              @include rotate(90deg);
-            }
-          }
+        &.showNavigation svg path {
+          @include rotate(90deg);
         }
       }
     }
   }
   .account {
     float:right;
+    @include clearfix;
     .accountMenu {
+      @include media-query($screen-sm-min) {
+        float: right;
+        display: block;
+        margin: 0;
+      }
       display: block;
-      margin: 0;
+      margin: 0 0 0 auto;
       padding: 0;
       @include clearfix;
       form {
         margin: 0;
       }
       > li {
-        float: left;
+        float: right;
         display: block;
         > a {
           display: block;
@@ -107,7 +122,7 @@ header[role=banner] {
             }
           }
           small {
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             font-weight: normal;
             color: $text-light;
@@ -163,16 +178,19 @@ header[role=banner] {
 
 [data-ng-controller=NavigationMenu] {
   position: fixed;
-  left: -300px;
+  left: -$nav-width;
   top: 0;
   height: 100%;
-  padding-top: $header-height;
-  width: 300px;
+  padding-top: $header-height + $header-secondary-height;
+  width: $nav-width;
   background: $white;
   z-index: 29;
   @include box-shadow;
   @include box-sizing;
   @include transition(left 0.5s, opacity 0.5s);
+  @include media-query($screen-sm-min) {
+    padding-top: $header-height;
+  }
   &.showNavigation {
     left: 0;
   }
@@ -219,6 +237,13 @@ header[role=banner] {
   .specialButtons {
     padding: 0 10px;
   }
+  .viewButtons {
+    padding: 0 10px 10px;
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
   .specials {
     padding: 0 10px;
     .pager {
@@ -232,11 +257,11 @@ header[role=banner] {
 
 [data-ng-controller=AccountMenu] {
   position: fixed;
-  right: -300px;
+  right: -$nav-width;
   top: 0;
   height: 100%;
   padding-top: $header-height;
-  width: 300px;
+  width: $nav-width;
   background: $white;
   z-index: 29;
   @include box-shadow;
@@ -305,6 +330,7 @@ header[role=banner] {
         }
       }
       ul {
+        padding: 0;
         li {
           display: block;
           margin: 10px 0;

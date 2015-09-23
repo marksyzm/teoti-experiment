@@ -3,24 +3,22 @@
 
 $font-family-base: 'Open Sans', sans-serif;
 $font-size-base: 14px;
-$text-default: #444444;
 $text-disabled: #aaaaaa;
 $text-dark: #444444;
 $text-light: #aaaaaa;
 $black: black;
 $white: white;
 
-$max-width: 100em; //1600px
-$tablet-landscape: 60em; //960px
-$tablet-portrait: 48em; //768px
-$mobile: 30em; //480px
-$mobile-min: 20em; //320px
-
 $header-height: 50px;
+$header-secondary-height: 42px;
+$nav-width: 300px;
 
 $main-background: #f1f1f1;
 
 $blue-fill: #0040a1;
 $blue-fill-light: #7f9fd0;
 
+$screen-lg: 1450px;
+$grid-gutter-width: 30px;
+$container-large-desktop: (1390px + $grid-gutter-width);
 

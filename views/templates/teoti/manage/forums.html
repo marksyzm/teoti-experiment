@@ -1,10 +1,23 @@
-<h1>Forums</h1>
-<a data-ng-href="/manage/forum">Create forum</a>
-<ul data-ng-init="fetch(-1)">
-    <li data-ng-repeat="forum in forums">
-        <button type="button" data-ng-click="delete(forum)">Delete</button>
-        <button type="button" data-ng-click="fetch(forum._id)">&rarr;</button>
-        <a href="/manage/forum/{{forum._id}}">({{forum._id}}) {{forum.title}}</a>
-    </li>
-</ul>
-<button type="button" data-ng-click="fetch(forums[0] ? forums[0].parent.parent : -1)">Back</button>
+<div class="container">
+    <h1>Forums</h1>
+    <p><a class="btn btn-success" data-ng-href="/manage/forum">Create forum</a></p>
+    <ul class="list-group" data-ng-init="fetch(parent)">
+        <li class="list-group-item" data-ng-repeat="forum in forums">
+            <span class="badge">{{forum._id}}</span>
+            <div class="btn-toolbar">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" aria-label="Delete"
+                            data-ng-click="delete(forum)">&times;</button>
+                    <a class="btn btn-default" aria-label="Get children"
+                       data-ui-sref="manageForums({ parent: forum._id })"
+                       data-ng-if="forum.children && forum.children.length">&rarr;</a>
+                </div>
+                <div class="btn-group">
+                    <a href="/manage/forum/{{forum._id}}" class="btn btn-link">{{forum.title}}</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <p><button type="button" class="btn" data-ng-click="fetch(forums[0] ? forums[0].parent.parent : -1)">Back to start</button></p>
+    <p><a href="manage" class="btn btn-info">Back to admin system</a></p>
+</div>

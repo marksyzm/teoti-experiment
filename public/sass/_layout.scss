@@ -9,7 +9,7 @@
       padding-left: 300px;
     }
   }
-  @include media-query($screen-xs-min) {
+  @include media-query($screen-sm-min) {
     margin-top: $header-height;
   }
 }

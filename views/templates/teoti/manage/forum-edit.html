@@ -6,20 +6,17 @@
             <input type="text" data-ng-model="forum.title" id="forumEditTitle" name="title" class="form-control" required>
             <p data-ng-show="forumEdit.title.$error.required">Supply a forum title, please!</p>
         </div>
-        <div class="form-group">
-            <label for="forumEditParent">Parent</label>
-            <input type="number" data-ng-model="forum.parent" id="forumEditParent" name="parent" data-ng-pattern="/^[-]?\d+$/" class="form-control">
-            <p data-ng-show="forumEdit.parent.$error.pattern">Must be an integer!</p>
-        </div>
-        <div class="form-group">
-            <label for="forumEditStyle">Style</label>
-            <input type="number" data-ng-model="forum.style" id="forumEditStyle" name="style" data-ng-pattern="/^[-]?\d+$/" class="form-control">
-            <p data-ng-show="forumEdit.style.$error.pattern">Must be an integer!</p>
-        </div>
-        <div class="form-group">
-            <label for="forumEditOrder">Order</label>
-            <input type="number" data-ng-model="forum.order" id="forumEditOrder" name="order" class="form-control">
-            <p data-ng-show="forumEdit.style.$error.number">Must be a number!</p>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="forumEditParent">Parent</label>
+                <input type="number" data-ng-model="forum.parent" id="forumEditParent" name="parent" data-ng-pattern="/^[-]?\d+$/" class="form-control">
+                <p data-ng-show="forumEdit.parent.$error.pattern">Must be an integer!</p>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="forumEditStyle">Style</label>
+                <input type="number" data-ng-model="forum.style" id="forumEditStyle" name="style" data-ng-pattern="/^[-]?\d+$/" class="form-control">
+                <p data-ng-show="forumEdit.style.$error.pattern">Must be an integer!</p>
+            </div>
         </div>
         <div class="form-group">
             <label for="forumEditDescription">Description</label>
@@ -34,34 +31,40 @@
             <label for="forumEditHashTags">Hash tags</label>
             <input type="text" data-ng-model="forum.hashTags" id="forumEditHashTags" name="hashTags" class="form-control">
         </div>
-        <div class="form-group">
-            <label for="forumEditGroups">Groups</label>
-            <select multiple id="forumEditGroups"
-                    data-ng-model="forum.groups"
-                    data-ng-options="group._id as group.name for group in groups"
-                    data-ng-readonly="forum.override" class="form-control"></select>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="forumEditGroups">Groups</label>
+                <select multiple id="forumEditGroups"
+                        data-ng-model="forum.groups"
+                        data-ng-options="group._id as group.name for group in groups"
+                        data-ng-readonly="forum.override" class="form-control"></select>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="forumEditAutoSubscribe">Auto subscribe group users to new threads</label>
+                <select multiple id="forumEditAutoSubscribe" class="form-control"
+                        data-ng-model="forum.autoSubscribe"
+                        data-ng-options="group._id as group.name for group in groups"></select>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="forumEditAutoSubscribe">Auto subscribe group users to new threads</label>
-            <select multiple id="forumEditAutoSubscribe" class="form-control"
-                    data-ng-model="forum.autoSubscribe"
-                    data-ng-options="group._id as group.name for group in groups"></select>
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="forumEditPublic">Public</label>
+                <input type="checkbox" id="forumEditPublic" data-ng-model="forum.public" class="form-control">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="forumEditOverride">Override inherited settings</label>
+                <input type="checkbox" id="forumEditOverride" data-ng-model="forum.override" class="form-control">
+            </div>
         </div>
-        <div class="form-group">
-            <label for="forumEditPublic">Public</label>
-            <input type="checkbox" id="forumEditPublic" data-ng-model="forum.public" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="forumEditOverride">Override inherited settings</label>
-            <input type="checkbox" id="forumEditOverride" data-ng-model="forum.override" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="forumEditCreateThread">Allow creation of threads</label>
-            <input type="checkbox" id="forumEditCreateThread" data-ng-model="forum.createThread" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="forumEditNsfw">All content is NSFW?</label>
-            <input type="checkbox" id="forumEditNsfw" data-ng-model="forum.nsfw" class="form-control">
+        <div class="row">
+            <div class="form-group col-sm-6">
+                <label for="forumEditCreateThread">Allow creation of threads</label>
+                <input type="checkbox" id="forumEditCreateThread" data-ng-model="forum.createThread" class="form-control">
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="forumEditNsfw">All content is NSFW?</label>
+                <input type="checkbox" id="forumEditNsfw" data-ng-model="forum.nsfw" class="form-control">
+            </div>
         </div>
         <div class="btn-group">
             <button type="submit" class="btn btn-default">Submit</button>

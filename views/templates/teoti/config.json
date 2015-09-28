@@ -17,8 +17,7 @@
   },
   "limit": {
     "navigation": 10,
-    "main": 20,
-    "long": 40
+    "main": 40
   },
   "image": {
     "thumbnail": {

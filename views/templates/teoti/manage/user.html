@@ -1,9 +1,5 @@
-<div data-autocomplete
-     data-url="/api/user"
-     data-id="_id"
-     data-label="username"
-     data-value="username">
-    <input type="text">
+<div>
+    <input type="text" typeahead="userItem as userItem.username for userItem in getUsers($viewValue)" data-ng-model="user">
 </div>
 <h2>{{ editMode ? 'Update user' : 'Create user' }}</h2>
 <form name="editUser" novalidate data-ng-submit="submit()">
@@ -57,7 +53,7 @@
     </div>
     <div class="inputWrapper">
         <label for="editUserAvatar">Avatar</label>
-        <img data-ng-src="{{user.avatar}}" alt="{{user.username}}">
+        <img data-ng-src="img/avatar/{{user.avatar}}" alt="{{user.username}}">
         <input type="file" id="editUserAvatar">
     </div>
     <div class="inputWrapper">

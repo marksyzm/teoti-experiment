@@ -1,5 +1,6 @@
 {
   "forumAccessRoutes": [
+    "/forum/{id}",
     "/forum/{id}/thread",
     "/forum/{id}/thread/{id}",
     "/forum/{id}/thread/{id}/post",

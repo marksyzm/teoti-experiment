@@ -34,10 +34,10 @@
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="forumEditGroups">Groups</label>
-                <select multiple id="forumEditGroups"
+                <select multiple id="forumEditGroups" class="form-control"
                         data-ng-model="forum.groups"
                         data-ng-options="group._id as group.name for group in groups"
-                        data-ng-readonly="forum.override" class="form-control"></select>
+                        data-ng-readonly="!forum.override"></select>
             </div>
             <div class="form-group col-sm-6">
                 <label for="forumEditAutoSubscribe">Auto subscribe group users to new threads</label>
@@ -69,6 +69,5 @@
         <div class="btn-group">
             <button type="submit" class="btn btn-default">Submit</button>
         </div>
-        <pre>{{ forum | json }}</pre>
     </form>
 </div>

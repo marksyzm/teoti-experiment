@@ -1,12 +1,6 @@
 <section data-ng-show="!error">
     <h1>{{title || forum.title}}</h1>
 
-    <nav data-paginate
-         data-page="page"
-         data-ng-show="showPaginate"
-         data-show-next="threads.pagination.hasNextPage"
-         data-show-prev="threads.pagination.hasPrevPage"></nav>
-
     <div class="threads row" data-deckgrid data-source="threads.items">
         <div data-thread="card" data-view="simple"></div>
     </div>

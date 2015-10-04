@@ -1,0 +1,11 @@
+<form name="formSearch" novalidate data-ng-submit="submit()">
+    <input type="text" placeholder="Search"
+           data-ng-model="search"
+           data-ng-init="setForm(formSearch)"
+           data-focus-element="searchActive"
+           data-ng-class="{ searchActive: searchActive }">
+    <button data-ng-class="{ searchActive: searchActive }">
+        <div class="icon" data-ng-include="'views/partials/svg/search.svg'"></div>
+        Search
+    </button>
+</form>

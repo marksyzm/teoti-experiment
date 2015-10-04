@@ -1,0 +1,23 @@
+<div class="container">
+    <h1>Forums</h1>
+    <p><a class="btn btn-success" data-ng-href="/manage/forum">Create forum</a></p>
+    <ul class="list-group" data-ng-init="fetch(parent)">
+        <li class="list-group-item" data-ng-repeat="forum in forums">
+            <span class="badge">{{forum._id}}</span>
+            <div class="btn-toolbar">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-danger" aria-label="Delete"
+                            data-ng-click="delete(forum)">&times;</button>
+                    <a class="btn btn-default" aria-label="Get children"
+                       data-ui-sref="manageForums({ parent: forum._id })"
+                       data-ng-if="forum.children && forum.children.length">&rarr;</a>
+                </div>
+                <div class="btn-group">
+                    <a href="/manage/forum/{{forum._id}}" class="btn btn-link">{{forum.title}}</a>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <p><a data-ui-sref="manageForums({ parent: -1 })" class="btn btn-default">Back to start</a></p>
+    <p><a href="manage" class="btn btn-info">Back to admin system</a></p>
+</div>

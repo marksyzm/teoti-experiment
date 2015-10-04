@@ -1,0 +1,54 @@
+<header>
+    <a href>{{account.username}}</a>
+    <div><a href>{{account.score}}</a> / {{account.limitPoints}}</div>
+</header>
+
+<nav data-ng-show="currentAccountView('settings')">
+    <div class="user">
+        <h3>Settings</h3>
+        <ul>
+            <li><a href="/account/threads">Threads</a> <span>{{account.threads}}</span></li>
+            <li><a href="/account/posts">Posts</a> <span>{{account.posts}}</span></li>
+            <li><a href="/account/settings">Settings</a></li>
+            <li><a href="/sign-out" target="_self">Sign out</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section data-ng-show="currentAccountView('shouts')">
+    <div class="shouts" data-ng-controller="Shout">
+        <h3>Shouts</h3>
+        <ul>
+            <li data-ng-repeat="shout in shouts">
+                <a href="/members/{{shout.user.username}}.html">{{shout.user.username}}</a>
+                <div data-ng-bind-html="trustHtml(shout.message)"></div>
+            </li>
+        </ul>
+        <div>
+            <form name="formShout" novalidate data-ng-init="setForm(formShout);">
+                <textarea data-ng-model="message" placeholder="Shout..."></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section data-ng-show="currentAccountView('conversations')">
+    <div class="Conversations">
+        <h3>Conversations</h3>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</section>
+
+<section data-ng-show="currentAccountView('notifications')">
+    <div class="notifications">
+        <h3>Notifications</h3>
+        <ul>
+            <li></li>
+        </ul>
+    </div>
+</section>
+
+<footer>3498 Members Have Submitted 118838 Threads Containing 566616 Posts.</footer>

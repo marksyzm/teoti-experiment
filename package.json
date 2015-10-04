@@ -78,6 +78,7 @@
     "speakingurl": "^0.18.1",
     "uglifyify": "^3.0.1",
     "w3cjs": "^0.1.25",
+    "webpack": "^1.12.2",
     "winston": "^0.8.1"
   },
   "devDependencies": {

@@ -1,0 +1,49 @@
+{
+  "brand": {
+    "name": "TEOTI - The End Of The Internet"
+  },
+  "superAdmin": [ 2 ],
+  "banned": [ 6 ],
+  "registered": [ 5 ],
+  "defaultForum": 15,
+  "permissions": {
+    "types": [
+      "user", "group", "forum", "thread", "post", "conversation", "message", "bbcode", "shout",
+      "sitelog", "like", "score", "star", "style", "tweet"
+    ]
+  },
+  "email": {
+    "from": "info@teoti.com"
+  },
+  "limit": {
+    "navigation": 10,
+    "main": 40
+  },
+  "image": {
+    "thumbnail": {
+      "error": "public/img/error.png",
+      "width": 128,
+      "height": 96,
+      "crop": true
+    },
+    "thread": {
+      "error": "public/img/error.png",
+      "width": 1160,
+      "height": 1160,
+      "crop": false
+    },
+    "icon": {
+      "error": "public/img/error.png",
+      "width": 48,
+      "height": 48,
+      "crop": true
+    }
+  },
+  "dateLimits": [
+    { "name": "2 days",   "value": 172800000 },
+    { "name": "7 days",   "value": 604800000 },
+    { "name": "1 month",  "value": 2419200000 },
+    { "name": "1 year",   "value": 31536000000 },
+    { "name": "All time", "value": -1 }
+  ]
+}

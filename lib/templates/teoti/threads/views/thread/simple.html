@@ -1,0 +1,26 @@
+<a href="{{thread.firstPostUser.url}}" class="user">
+    <img src="sickle/icon?url=http://localhost:8080/img/avatar/{{thread.firstPostUser.avatar}}"
+         alt="{{thread.firstPostUser.username}}" />
+</a>
+
+<h3><a href="{{thread.url}}">{{thread.title}}</a></h3>
+
+<p class="description">{{thread.description}}</p>
+
+<div data-media data-url="thread.media" data-ng-if="thread.media"></div>
+
+<a href="{{thread.url}}" class="preview" data-ng-if="!thread.media && thread.thumbnail">
+    <img src="sickle/thread?url={{thread.thumbnail}}" alt="{{thread.title}}" />
+</a>
+
+<div data-like-dislike data-post="thread.firstPost"></div>
+
+<div class="details">
+    <a href="{{thread.forum.url}}" class="icon iconForum">
+        <img src="{{thread.forum.iconUrl}}" alt="{{thread.forum.title}}" />
+    </a>
+    <span>
+        By <a href="{{thread.firstPostUser.url}}" class="user">{{thread.firstPostUser.username}}</a>
+    </span>
+    <span>{{thread.replyCount}} comment{{thread.replyCount === 1 ? '':'s'}}</span>
+</div>

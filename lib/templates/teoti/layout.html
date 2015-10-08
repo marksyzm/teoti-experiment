@@ -7,8 +7,8 @@
     <link type="text/css" href="css/style.css" rel="stylesheet">
 </head>
 <body data-ng-class="{ showNavigation: showNavigation, showAccount: showAccount }">
-    <header role="banner" data-ng-include="'views/partials/page-header.html'" data-ng-controller="Header"></header>
+    <header role="banner" data-ng-include="'./views/page-header.html'" data-ng-controller="Header"></header>
     <main data-ui-view class="ng-cloak"></main>
-    <script src="js/app.js"></script>
+    <script src="bundle/app.js"></script>
 </body>
 </html>

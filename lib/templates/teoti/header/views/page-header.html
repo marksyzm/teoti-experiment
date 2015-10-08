@@ -3,7 +3,7 @@
             <ul>
                 <li class="home">
                     <a href="/" rel="home">
-                        <div data-ng-include="'views/svg/logo.svg'"></div>
+                        <div data-ng-include="'./svg/logo.svg'"></div>
                     </a>
                 </li>
                 <li class="menuButton">
@@ -11,7 +11,7 @@
                        data-ng-click="toggleNavigation($event)"
                        data-ng-class="{ showNavigation : showNavigation, currentNavigation: currentNavigation === 'navigation' }">
                         <span data-ng-bind="currentPage">Home</span>
-                        <div data-ng-include="'views/svg/navigation.svg'"></div>
+                        <div data-ng-include="'./svg/navigation.svg'"></div>
                     </a>
                 </li>
             </ul>
@@ -26,41 +26,41 @@
                        data-ng-href="'/members/'+this.props.account.usernameUrl"
                        data-ng-click="toggleAccount($event, 'settings')"
                        data-ng-class="{ active: toggleActive(null,'settings') }">
-                        <img src="img/error.png" alt="{{account.username}}"
-                             data-ng-src="sickle/icon?url={{'http://localhost:8080/img/avatar/'+account.avatar}}" />
+                        <img alt="{{account.username}}"
+                             src="/sickle/icon?url={{'http://localhost:8080/img/avatar/'+account.avatar}}" />
                     </a>
                 </li>
                 <li><a href class="notifications"
                        data-ng-click="toggleAccount($event, 'notifications')"
                        data-ng-class="{ active: toggleActive('notifications','notifications') }">
-                    <div class="icon" data-ng-include="'views/svg/notification.svg'"></div>
+                    <div class="icon" data-ng-include="'./svg/notification.svg'"></div>
                     <span>Notifications</span>
                     <small data-ng-bind="account.notifications || 0"></small>
                 </a></li>
                 <li><a href class="conversations"
                        data-ng-click="toggleAccount($event, 'conversations')"
                        data-ng-class="{ active: toggleActive('messagesUnread', 'conversations') }">
-                    <div class="icon" data-ng-include="'views/svg/conversation.svg'"></div>
+                    <div class="icon" data-ng-include="'./svg/conversation.svg'"></div>
                     <span>Conversations</span>
                     <small data-ng-bind="account.messagesUnread || 0"></small>
                 </a></li>
                 <li><a href class="shouts" data-ng-click="toggleAccount($event, 'shouts')" data-ng-class="{ active: toggleActive(null, 'shouts') }">
-                    <div class="icon" data-ng-include="'views/svg/shout.svg'"></div>
+                    <div class="icon" data-ng-include="'./svg/shout.svg'"></div>
                     <span>Shouts</span>
                     <small data-ng-bind="account.shouts || 0"></small>
                 </a></li>
             </ul>
             <ul class="accountMenu">
-                <li class="search" data-ng-controller="Search" data-ng-include="'views/search.html'"></li>
+                <li class="search" data-ng-controller="Search" data-ng-include="'../search/views/search.html'"></li>
             </ul>
         </nav>
     </div>
 
     <section data-ng-controller="NavigationMenu"
-             data-ng-include="settings.paths.partials+'/navigation-menu.html'"
+             data-ng-include="'../navigation-menu/views/navigation-menu.html'"
              data-ng-class="{ showNavigation: showNavigation, currentNavigation: currentNavigation === 'navigation' }"></section>
 
     <section data-ng-controller="AccountMenu"
-             data-ng-include="settings.paths.partials+'/account-menu.html'"
+             data-ng-include="'../account-menu/views/account-menu.html'"
              data-ng-class="{ showAccount: showAccount, currentNavigation: currentNavigation !== 'navigation' }"
              data-ng-click="menuClick($event)"></section>

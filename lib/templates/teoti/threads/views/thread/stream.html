@@ -1,8 +1,8 @@
 <div>
     <h3>
         <a href="{{thread.url}}">
-            <img class="thumb" src="sickle/thumbnail?url={{thread.thumbnail}}" alt="{{thread.title}}" data-ng-if="thread.thumbnail" />
-            <img class="thumb" src="sickle/thumbnail?url=http://localhost:8080/img/avatar/{{thread.firstPostUser.avatar}}"
+            <img class="thumb" src="/sickle/thumbnail?url={{thread.thumbnail}}" alt="{{thread.title}}" data-ng-if="thread.thumbnail" />
+            <img class="thumb" src="/sickle/thumbnail?url=http://localhost:8080/img/avatar/{{thread.firstPostUser.avatar}}"
                  alt="{{thread.firstPostUser.username}}" data-ng-if="!thread.thumbnail" />
             {{thread.title}}
         </a>

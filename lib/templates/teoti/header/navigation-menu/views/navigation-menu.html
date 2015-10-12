@@ -20,15 +20,15 @@
             <button type="button" class="btn" aria-label="Simple"
                     data-ng-click="setView($event, 'simple')"
                     data-ng-class="{ 'active': !account.settings || account.settings.view === 'simple' }"
-                    data-ng-include="'./svg/view-simple.svg'"></button>
+                    data-ng-include="include('../views/svg/view-simple.svg')"></button>
             <button type="button" class="btn" aria-label="Stream"
                     data-ng-click="setView($event, 'stream')"
                     data-ng-class="{ 'active': account.settings.view === 'stream' }"
-                    data-ng-include="'./svg/view-stream.svg'"></button>
+                    data-ng-include="include('view-stream', 'svg')"></button>
             <button type="button" class="btn" aria-label="Compact"
                     data-ng-click="setView($event, 'compact')"
                     data-ng-class="{ 'active': account.settings.view === 'compact' }"
-                    data-ng-include="'./svg/view-compact.svg'"></button>
+                    data-ng-include="include('view-compact', 'svg')"></button>
         </div>
     </div>
 

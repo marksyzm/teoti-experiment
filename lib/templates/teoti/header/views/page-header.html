@@ -51,16 +51,16 @@
                 </a></li>
             </ul>
             <ul class="accountMenu">
-                <li class="search" data-ng-controller="Search" data-ng-include="include('/../search/views/search')"></li>
+                <li class="search" data-search></li>
             </ul>
         </nav>
     </div>
 
     <section data-ng-controller="NavigationMenu"
-             data-ng-include="include('/navigation-menu/views/navigation-menu')"
+             data-ng-include="include('navigation-menu')"
              data-ng-class="{ showNavigation: showNavigation, currentNavigation: currentNavigation === 'navigation' }"></section>
 
     <section data-ng-controller="AccountMenu"
-             data-ng-include="include('/account-menu/views/account-menu')"
+             data-ng-include="include('account-menu')"
              data-ng-class="{ showAccount: showAccount, currentNavigation: currentNavigation !== 'navigation' }"
              data-ng-click="menuClick($event)"></section>

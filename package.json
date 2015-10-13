@@ -14,7 +14,7 @@
     "test-mocha": "mocha",
     "test": "gulp test",
     "watch": "gulp watch",
-    "webpack-watch": "webpack --colors --progress --watch --watch-poll -d --devtool inline-source-map"
+    "webpack-watch": "webpack --colors --progress --watch -d --devtool inline-source-map"
   },
   "repository": {
     "type": "git",
@@ -97,6 +97,7 @@
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-util": "^3.0.4",
+    "gulp-webpack": "^1.5.0",
     "html-loader": "^0.3.0",
     "istanbul": "^0.3.2",
     "json-loader": "^0.5.3",

@@ -1,0 +1,34 @@
+@include font-face('Open Sans', '../fonts/opensans-regular-webfont', normal, normal);
+@include font-face('Open Sans', '../fonts/opensans-bold-webfont', bold, normal);
+@include font-face('Open Sans', '../fonts/opensans-bolditalic-webfont', bold, italic);
+@include font-face('Open Sans', '../fonts/opensans-italic-webfont', normal, italic);
+
+body {
+  font-family: $font-family-base;
+  background: $main-background;
+  color: $text-color;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+}
+
+label {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  font-weight: normal;
+  color: $blue-fill;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: bold;
+  a {
+    font-weight: bold;
+  }
+}

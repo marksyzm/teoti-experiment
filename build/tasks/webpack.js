@@ -40,16 +40,18 @@ gulp.task("webpack:build", function(callback) {
     });
 });
 
-// modify some webpack config options
-var devConfig = Object.create(webpackConfig);
-devConfig.devtool = "source-map";
-devConfig.debug = true;
-
 var devCompiler;
 
 gulp.task("webpack:build-dev", function(callback) {
     // create a single instance of the compiler to allow caching
-    if (!devCompiler) devCompiler = webpack(devConfig);
+    if (!devCompiler) {
+        // modify some webpack config options
+        var devConfig = Object.create(webpackConfig);
+        devConfig.devtool = "source-map";
+        devConfig.debug = true;
+
+        devCompiler = webpack(devConfig);
+    }
     // run webpack
     devCompiler.run(function(err, stats) {
         if(err) throw new gutil.PluginError("webpack:build-dev", err);

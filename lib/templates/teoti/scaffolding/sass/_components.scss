@@ -1,0 +1,19 @@
+[data-like-dislike] {
+  @include clearfix;
+  a {
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+  }
+  > div {
+    float: left;
+    width: 30px;
+    text-align: center;
+  }
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}

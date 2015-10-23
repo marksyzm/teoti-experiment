@@ -121,7 +121,7 @@
     {
       "path": "/shout",
       "permissions": {
-        "read"  : { "own": ["shout"], "all": ["shout"] },
+        "read"  : { "own": [], "all": [], "public": true },
         "create"  : { "own": ["shout"], "all": [] }
       }
     },
@@ -129,7 +129,7 @@
       "path": "/shout/{id}",
       "permissions": {
         "update"  : { "own": ["shout"], "all": [] },
-        "delete"  : { "own": ["shout"], "all": [] }
+        "delete"  : { "own": ["shout"], "all": ["shout"] }
       }
     }
   ]

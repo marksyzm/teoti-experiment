@@ -12,9 +12,9 @@ module.exports = {
     module: {
         loaders: [
             { test: /\.json$/, loader: 'json'},
-            { test: /\.(html|svg)$/, loader: 'file' },
+            { test: /\.(html|svg|woff2?|ttf|eot)$/, loader: 'file' },
             //{ test: /\.(html|svg)$/, loader: 'ngtemplate!html' },
-            { test: /\.(png|woff2?|gif|jpe?g|ttf|eot)$/, loader: 'url', exclude: [/sickle\//] },
+            { test: /\.(png|gif|jpe?g)$/, loader: 'url', exclude: [/sickle\//] },
             { test: /\.scss$/, loader: ExtractTextPlugin.extract("css?sourceMap!sass?sourceMap") }
         ],
         exprContextCritical: false

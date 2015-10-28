@@ -1,0 +1,5 @@
+<a href="/members/{{shout.user.username}}.html">
+    <img src="/sickle/icon?url=http://localhost:8080/{{shout.user.avatarUrl}}" alt="{{shout.user.username}}">
+    <span>{{shout.user.username}}</span>
+</a>
+<div ng-bind-html="shout.message | toTrusted"></div>

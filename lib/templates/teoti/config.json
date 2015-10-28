@@ -18,7 +18,8 @@
   },
   "limit": {
     "navigation": 10,
-    "main": 40
+    "main": 40,
+    "max": 999
   },
   "image": {
     "thumbnail": {

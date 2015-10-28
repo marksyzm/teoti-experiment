@@ -1,0 +1,16 @@
+[shout] {
+  display: block;
+  border: none;
+  a {
+    display: block;
+    @include clearfix();
+    img {
+      float: left;
+      width: 24px;
+    }
+    span {
+      display: block;
+      margin-left: 34px;
+    }
+  }
+}

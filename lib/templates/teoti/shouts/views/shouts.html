@@ -1,0 +1,15 @@
+<h3>Shouts</h3>
+<p>{{shouts.length !== 0}}</p>
+<div class="shout-list">
+    <ul class="list-group" scroll-glue>
+        <li data-ng-repeat="shout in shouts" class="list-group-item" shout="shout"></li>
+    </ul>
+</div>
+<div class="shout-submit">
+    <form name="formShout" novalidate data-ng-submit="submit(formShout)">
+        <div class="form-group">
+            <textarea data-ng-model="message" placeholder="Shout..." class="form-control"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div>

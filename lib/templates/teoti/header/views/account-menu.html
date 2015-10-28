@@ -16,21 +16,7 @@
 </nav>
 
 <section data-ng-show="currentAccountView('shouts')">
-    <div class="shouts" data-ng-controller="Shout">
-        <h3>Shouts</h3>
-        <ul>
-            <li data-ng-repeat="shout in shouts">
-                <a href="/members/{{shout.user.username}}.html">{{shout.user.username}}</a>
-                <div data-ng-bind-html="trustHtml(shout.message)"></div>
-            </li>
-        </ul>
-        <div>
-            <form name="formShout" novalidate data-ng-init="setForm(formShout);">
-                <textarea data-ng-model="message" placeholder="Shout..."></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
+    <div shouts></div>
 </section>
 
 <section data-ng-show="currentAccountView('conversations')">

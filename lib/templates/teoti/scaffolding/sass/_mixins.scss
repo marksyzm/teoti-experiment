@@ -60,22 +60,6 @@
   box-shadow:  $vars $color;
 }
 
-@mixin clearfix {
-  &:after {
-    clear: both;
-  }
-
-  &:before,
-  &:after {
-    display: table;
-    content: "";
-  }
-
-  .lt-ie8 & {
-    zoom: 1;
-  }
-}
-
 @mixin media-query($value, $operator: 'min-width', $query: 'screen') {
   @media #{$query} and (#{$operator}: #{$value}) {
     @content;

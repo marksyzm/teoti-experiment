@@ -15,11 +15,11 @@
     </div>
 </nav>
 
-<section data-ng-show="currentAccountView('shouts')">
+<section data-ng-if="currentAccountView('shouts')">
     <div shouts></div>
 </section>
 
-<section data-ng-show="currentAccountView('conversations')">
+<section data-ng-if="currentAccountView('conversations')">
     <div class="Conversations">
         <h3>Conversations</h3>
         <ul>
@@ -28,7 +28,7 @@
     </div>
 </section>
 
-<section data-ng-show="currentAccountView('notifications')">
+<section data-ng-if="currentAccountView('notifications')">
     <div class="notifications">
         <h3>Notifications</h3>
         <ul>

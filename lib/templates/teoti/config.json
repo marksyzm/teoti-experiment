@@ -17,25 +17,25 @@
     "from": "info@teoti.com"
   },
   "limit": {
+    "default": 40,
     "navigation": 10,
-    "main": 40,
     "max": 999
   },
   "image": {
     "thumbnail": {
-      "error": "public/img/error.png",
+      "error": "img/error.png",
       "width": 128,
       "height": 96,
       "crop": true
     },
     "thread": {
-      "error": "public/img/error.png",
+      "error": "img/error.png",
       "width": 1160,
       "height": 1160,
       "crop": false
     },
     "icon": {
-      "error": "public/img/error.png",
+      "error": "img/error.png",
       "width": 48,
       "height": 48,
       "crop": true

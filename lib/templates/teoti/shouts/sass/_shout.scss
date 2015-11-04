@@ -1,7 +1,8 @@
 [shout] {
   display: block;
   border: none;
-  a {
+  word-wrap:break-word;
+  > a {
     display: block;
     min-height: 29px;
     @include clearfix();

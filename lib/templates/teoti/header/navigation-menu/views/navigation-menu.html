@@ -1,6 +1,8 @@
 <nav>
     <ul class="forums">
-        <li data-ng-show="forums[0].parent"><a href data-ng-click="getChildren($event, forums[0].parent.parent)">Back</a></li>
+        <li data-ng-show="forums[0].parent > 0">
+            <a href data-ng-click="getChildren($event, -1)">Back</a>
+        </li>
         <li data-ng-repeat="forum in forums">
             <a ui-sref="forumChildren({ forumSlug: forum.slug })">{{forum.title}}</a>
             <a href

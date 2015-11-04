@@ -1,0 +1,14 @@
+<section data-ng-show="!error">
+    <h2>{{title || forum.title}}</h2>
+
+    <ul class="threads">
+        <li data-thread="thread" data-view="compact" data-ng-repeat="thread in threads.items track by thread._id"></li>
+    </ul>
+
+    <nav data-paginate data-page="page"
+         data-ng-show="showPaginate"
+         data-show-next="threads.pagination.hasNextPage"
+         data-show-prev="threads.pagination.hasPrevPage"></nav>
+
+</section>
+<section data-ng-show="error" data-ng-include="include('../../scaffolding/views/error.html')"></section>

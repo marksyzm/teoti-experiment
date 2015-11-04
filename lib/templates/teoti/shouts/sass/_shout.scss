@@ -1,0 +1,22 @@
+[shout] {
+  display: block;
+  border: none;
+  word-wrap:break-word;
+  > a {
+    display: block;
+    min-height: 29px;
+    @include clearfix();
+    img {
+      float: left;
+      width: 24px;
+      display: block;
+    }
+    span {
+      display: block;
+      margin-left: 34px;
+    }
+  }
+  &[shout-temp] {
+    opacity: 0.5;
+  }
+}

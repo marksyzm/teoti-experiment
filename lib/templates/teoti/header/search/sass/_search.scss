@@ -1,0 +1,33 @@
+.search {
+  input[type=text] {
+    border: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    border-bottom: 1px solid $blue-fill-light;
+    width: 0;
+    outline: none;
+    padding: 5px 0;
+    @include transition(width 0.25s);
+    &.searchActive {
+      width: 125px;
+    }
+  }
+  button {
+    font-size: 0;
+    color: transparent;
+    border: none;
+    background: transparent;
+    outline: none;
+    padding: 10px;
+    path,
+    rect {
+      @include transition(fill 0.25s);
+    }
+    &.searchActive {
+      path,
+      rect {
+        fill: $blue-fill;
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+<nav>
+    <ul class="forums">
+        <li data-ng-show="forums[0].parent"><a href data-ng-click="getChildren($event, forums[0].parent.parent)">Back</a></li>
+        <li data-ng-repeat="forum in forums">
+            <a ui-sref="forumChildren({ forumSlug: forum.slug })">{{forum.title}}</a>
+            <a href
+               data-ng-show="forum.children.length > 2"
+               data-ng-click="getChildren($event, forum._id)">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24">
+                    <g>
+                        <path fill="#666666" d="M10.577,14.991L4,8.414L5.414,7l6.577,6.577L10.577,14.991z M18.588,7l-8.01,7.989l1.412,1.416L20,8.415L18.588,7z"/>
+                    </g>
+                </svg>
+            </a>
+        </li>
+    </ul>
+
+    <div class="viewButtons">
+        <div class="btn-group">
+            <button type="button" class="btn" aria-label="Simple"
+                    data-ng-click="setView($event, 'simple')"
+                    data-ng-class="{ 'active': !account.settings || account.settings.view === 'simple' }"
+                    data-ng-include="include('view-simple', 'svg')"></button>
+            <button type="button" class="btn" aria-label="Stream"
+                    data-ng-click="setView($event, 'stream')"
+                    data-ng-class="{ 'active': account.settings.view === 'stream' }"
+                    data-ng-include="include('view-stream', 'svg')"></button>
+            <button type="button" class="btn" aria-label="Compact"
+                    data-ng-click="setView($event, 'compact')"
+                    data-ng-class="{ 'active': account.settings.view === 'compact' }"
+                    data-ng-include="include('view-compact', 'svg')"></button>
+        </div>
+    </div>
+
+    <div class="specialButtons">
+        <div class="btn-group">
+            <div class="btn-group" dropdown data-is-open="menu.isOpen">
+                <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+                    {{ current(account.settings.special, specials) || specials[0].name }} <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" data-ng-repeat="special in specials">
+                        <a href data-ng-click="setSpecial($event, special.value)">{{special.name}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="btn-group" dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.settings.special === 'hot'">
+                <button type="button" class="btn" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+                    {{ current(currentDateLimit, dateLimits) }} <span class="caret"></span>
+                </button>
+
+                <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
+                    <li role="menuitem" data-ng-repeat="dateLimit in dateLimits">
+                        <a href data-ng-click="setDateLimit($event, dateLimit.value)">{{dateLimit.name}}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button type="button" class="btn" dropdown-toggle data-ng-click="refresh($event)">
+                Refresh
+            </button>
+        </div>
+    </div>
+
+    <div class="specials" data-ng-include="getItemsTemplate()"></div>
+
+</nav>

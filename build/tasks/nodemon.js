@@ -7,9 +7,10 @@ gulp.task('nodemon', function () {
     return nodemon({
         ignore: [
             'lib/browser/**',
+            'lib/templates/**',
             'node_modules/**',
-            'public/js/**',
-            'tasks/**'
+            'public/**',
+            'build/**'
         ],
         script: 'nodemon-combined.js',
         ext: 'js',

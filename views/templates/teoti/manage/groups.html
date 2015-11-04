@@ -1,8 +1,0 @@
-<h1>Groups</h1>
-<a data-ng-href="/manage/group">Create group</a>
-<ul data-ng-init="fetchGroups()">
-    <li data-ng-repeat="group in groups">
-        <button type="button" data-ng-click="delete(group)">Delete?</button>
-        <a href="/manage/group/{{group._id}}">{{group.name}}</a>
-    </li>
-</ul>

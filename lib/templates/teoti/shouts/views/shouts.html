@@ -1,0 +1,16 @@
+<h3>Shouts</h3>
+<div class="shout-list">
+    <ul class="list-group" scroll-glue>
+        <li ng-repeat="shout in shouts" class="list-group-item" shout="shout"></li>
+        <li class="list-group-item" ng-show="shout && submitting" shout="shout" shout-temp="true"></li>
+    </ul>
+</div>
+<div class="shout-submit">
+    <form name="formShout" novalidate data-ng-submit="submit(formShout)">
+        <textarea placeholder="Shout..." class="form-control" required
+                  ng-model="shout.message"
+                  ng-keydown="onKeyDown($event)"
+                  ng-disabled="submitting"></textarea>
+        <button type="submit" class="btn btn-default hide" ng-disabled="formShout.$invalid || submitting">Submit</button>
+    </form>
+</div>

@@ -1,0 +1,144 @@
+header[role=banner] {
+  > div {
+    background: $white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 30;
+    overflow: hidden;
+    height: $header-height;
+    @include box-shadow;
+    @include clearfix;
+    @include transition(height 0.25s);
+    &.show-secondary {
+      height: $header-height + 42;
+    }
+    @include media-query($screen-sm-min) {
+      &,
+      &.show-secondary {
+        height: $header-height;
+      }
+    }
+  }
+  path,
+  rect,
+  polygon,
+  polyline {
+    fill: $blue-fill-light;
+    @include transition(fill 0.25s);
+  }
+  .navigation,
+  .account {
+    a {
+      display: block;
+      outline: none;
+    }
+  }
+  .navigation {
+    float: left;
+    @include clearfix;
+    > ul {
+      display: block;
+      margin: 0;
+      padding: 0;
+      @include clearfix;
+      > li {
+        display: block;
+        @include media-query($screen-sm-min) {
+          float: left;
+        }
+      }
+    }
+    .home {
+      [rel=home] {
+        text-decoration: none;
+        font-weight: normal;
+        svg {
+          margin: 10px;
+        }
+        path {
+          fill: $blue-fill;
+        }
+        &:hover path {
+          fill: $blue-fill-light;
+        }
+      }
+    }
+    .menuButton {
+      > a {
+        position: relative;
+        margin: 15px 10px;
+        padding-left: 29px;
+        svg {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          @include translate(0, -50%);
+          path {
+            @include transition(transform 0.5s);
+            @include transform-origin(center center);
+          }
+        }
+        &.showNavigation svg path {
+          @include rotate(90deg);
+        }
+      }
+    }
+  }
+  .account {
+    float:right;
+    @include clearfix;
+    .accountMenu {
+      @include media-query($screen-sm-min) {
+        float: right;
+        display: block;
+        margin: 0;
+      }
+      display: block;
+      margin: 0 0 0 auto;
+      padding: 0;
+      @include clearfix;
+      form {
+        margin: 0;
+      }
+      > li {
+        float: right;
+        display: block;
+        > a {
+          display: block;
+          padding: 10px;
+          position: relative;
+          > span {
+            display: none;
+          }
+          &.active,
+          &:hover {
+            path,
+            rect,
+            polygon,
+            polyline {
+              fill: $blue-fill;
+            }
+          }
+          small {
+            bottom: 0;
+            left: 0;
+            font-weight: normal;
+            color: $text-light;
+            width: 100%;
+            position: absolute;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .user {
+      img {
+        width: 24px;
+        height: auto;
+        display: block;
+      }
+    }
+  }
+}

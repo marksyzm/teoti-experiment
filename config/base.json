@@ -16,7 +16,7 @@
   },
   "html": {
     "docroot": "public",
-    "templates": "views/templates",
+    "templates": "lib/templates",
     "partials": "partials",
     "layout": "layouts/default.html"
   },

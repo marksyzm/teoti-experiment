@@ -1,0 +1,19 @@
+[data-ui-view] {
+  margin-top: $header-height + $header-secondary-height;
+  transition: all 0.5s;
+  @include media-query($screen-md-min) {
+    .showAccount & {
+      padding-right: $nav-width;
+    }
+    .showNavigation & {
+      padding-left: 300px;
+    }
+  }
+  @include media-query($screen-sm-min) {
+    margin-top: $header-height;
+  }
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+  display: none !important;
+}

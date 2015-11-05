@@ -1,8 +1,8 @@
 <div>
     <h3>
         <a href="{{thread.url}}">
-            <img class="thumb" src="/sickle/thumbnail?url={{thread.thumbnail}}" alt="{{thread.title}}" data-ng-if="thread.thumbnail" />
-            <img class="thumb" src="/sickle/thumbnail?url=http://localhost:8080/img/avatar/{{thread.firstPostUser.avatar}}"
+            <img class="thumb" ng-src="/sickle/thumbnail?url={{thread.thumbnail}}" alt="{{thread.title}}" data-ng-if="thread.thumbnail" />
+            <img class="thumb" ng-src="/sickle/thumbnail?url={{thread.firstPostUser.avatarUrl}}"
                  alt="{{thread.firstPostUser.username}}" data-ng-if="!thread.thumbnail" />
             {{thread.title}}
         </a>
@@ -10,7 +10,7 @@
     <p class="description">{{thread.description}}</p>
     <p class="details">
         <a href="{{thread.forum.url}}">
-            <img class="icon iconForum" src="{{thread.forum.iconUrl}}" alt="{{thread.forum.title}}" />
+            <img class="icon iconForum" ng-src="{{thread.forum.iconUrl}}" alt="{{thread.forum.title}}" />
         </a>
         <span>
             By <a href="{{thread.firstPostUser.url}}" class="user">{{thread.firstPostUser.username}}</a>

@@ -30,19 +30,6 @@
     "url": "mongodb://localhost/teoti"
   },
   "template": "teoti",
-  "express": {
-    "name": "TEOTI",
-    "host": "localhost",
-    "port": 8080,
-    "session": {
-      "secret": "ihaveadream",
-      "resave": true,
-      "saveUninitialized": true,
-      "cookie": {
-        "maxAge": 864000000
-      }
-    }
-  },
   "mongoStore": {
     "autoRemove": "interval",
     "autoRemoveInterval": 14400

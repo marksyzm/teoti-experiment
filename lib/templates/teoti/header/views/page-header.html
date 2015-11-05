@@ -26,8 +26,7 @@
                        data-ng-href="'/members/'+this.props.account.usernameUrl"
                        data-ng-click="toggleAccount($event, 'settings')"
                        data-ng-class="{ active: toggleActive(null,'settings') }">
-                        <img alt="{{account.username}}"
-                             src="/sickle/icon?url={{'http://localhost:8080/img/avatar/'+account.avatar}}" />
+                        <img alt="{{account.username}}" ng-src="/sickle/icon?url={{account.avatarUrl}}" />
                     </a>
                 </li>
                 <li><a href class="notifications"

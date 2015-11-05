@@ -9,6 +9,7 @@
   "scripts": {
     "start": "pm2 start api.js && pm2 start client.js",
     "stop": "pm2 stop api.js && pm2 stop client.js",
+    "restart": "pm2 restart api.js && pm2 restart client.js",
     "build": "gulp build",
     "build-ci": "gulp",
     "test-mocha": "mocha",

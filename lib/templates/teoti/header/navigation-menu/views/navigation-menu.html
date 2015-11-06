@@ -21,15 +21,15 @@
         <div class="btn-group">
             <button type="button" class="btn" aria-label="Simple"
                     data-ng-click="setView($event, 'simple')"
-                    data-ng-class="{ 'active': !account.settings || account.settings.view === 'simple' }"
+                    data-ng-class="{ 'active': !account.view || account.view === 'simple' }"
                     data-ng-include="include('view-simple', 'svg')"></button>
             <button type="button" class="btn" aria-label="Stream"
                     data-ng-click="setView($event, 'stream')"
-                    data-ng-class="{ 'active': account.settings.view === 'stream' }"
+                    data-ng-class="{ 'active': account.view === 'stream' }"
                     data-ng-include="include('view-stream', 'svg')"></button>
             <button type="button" class="btn" aria-label="Compact"
                     data-ng-click="setView($event, 'compact')"
-                    data-ng-class="{ 'active': account.settings.view === 'compact' }"
+                    data-ng-class="{ 'active': account.view === 'compact' }"
                     data-ng-include="include('view-compact', 'svg')"></button>
         </div>
     </div>
@@ -38,7 +38,7 @@
         <div class="btn-group">
             <div class="btn-group" dropdown data-is-open="menu.isOpen">
                 <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
-                    {{ current(account.settings.special, specials) || specials[0].name }} <span class="caret"></span>
+                    {{ current(account.special, specials) || specials[0].name }} <span class="caret"></span>
                 </button>
 
                 <ul class="dropdown-menu" role="menu" aria-labelledby="single-button">
@@ -48,7 +48,7 @@
                 </ul>
             </div>
 
-            <div class="btn-group" dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.settings.special === 'hot'">
+            <div class="btn-group" dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.special === 'hot'">
                 <button type="button" class="btn" dropdown-toggle data-ng-click="keepMenuOpen($event)">
                     {{ current(currentDateLimit, dateLimits) }} <span class="caret"></span>
                 </button>

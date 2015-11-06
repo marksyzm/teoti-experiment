@@ -17,7 +17,7 @@
       "path": "/user",
       "permissions": {
         "create"  : { "own": [], "all": ["user"] },
-        "read"    : { "own": [], "all": ["user"] },
+        "read"    : { "own": [], "all": [], "public": true },
         "update"  : { "own": [], "all": [] },
         "delete"  : { "own": [], "all": [] }
       }
@@ -26,7 +26,7 @@
       "path": "/user/{id}",
       "permissions": {
         "create"  : { "own": [], "all": [] },
-        "read"    : { "own": [], "all": ["user"] },
+        "read"    : { "own": [], "all": [], "public": true },
         "update"  : { "own": [], "all": ["user"] },
         "delete"  : { "own": [], "all": ["user"] }
       }

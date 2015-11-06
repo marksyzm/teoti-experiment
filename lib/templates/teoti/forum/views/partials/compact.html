@@ -24,6 +24,7 @@
                     data-view="compact"
                     data-sticky="true"
                     data-title="'Sticky'"
+                    data-forum-slug="$parent.forumSlug"
                     data-limit="'navigation'"></div>
           </div>
 
@@ -32,6 +33,7 @@
                     data-view="compact"
                     data-sort="'updated'"
                     data-title="'Updated'"
+                    data-forum-slug="$parent.forumSlug"
                     data-limit="'navigation'"></div>
           </div>
 
@@ -52,12 +54,14 @@
                     data-title="'Hot'"
                     data-limit="'navigation'"
                     data-date-limit="currentDateLimit"
+                    data-forum-slug="$parent.forumSlug"
                     data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'hot' }"></div>
 
                <div data-threads
                     data-view="compact"
                     data-limit="'navigation'"
                     data-forum-slug="33"
+                    data-forum-slug="$parent.forumSlug"
                     data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'news' }"></div>
 
                <div data-threads
@@ -75,6 +79,7 @@
                     data-limit="'default'"
                     data-title="'Latest'"
                     data-page="$parent.page"
+                    data-forum-slug="$parent.forumSlug"
                     data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'latest' }"></div>
           </div>
      </div>

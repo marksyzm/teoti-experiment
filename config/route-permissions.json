@@ -79,25 +79,25 @@
       }
     },
     {
-      "path": "/forum/{id}/thread/{id}",
+      "path": "/forum/{id}/thread/{threadId}",
       "permissions": {
-        "read"    : { "own": ["thread"], "all": ["thread"] },
-        "update"  : { "own": ["thread"], "all": ["thread"] },
-        "delete"  : { "own": ["thread"], "all": ["thread"] }
+        "read"    : { "own": ["forum","thread"], "all": ["forum","thread"] },
+        "update"  : { "own": ["forum","thread"], "all": ["forum","thread"] },
+        "delete"  : { "own": ["forum","thread"], "all": ["forum","thread"] }
       }
     },
     {
-      "path": "/forum/{id}/thread/{id}/post",
+      "path": "/forum/{id}/thread/{threadId}/post",
       "permissions": {
-        "create"  : { "own": ["post"], "all": ["post"] }
+        "create"  : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] }
       }
     },
     {
-      "path": "/forum/{id}/thread/{id}/post/{id}",
+      "path": "/forum/{id}/thread/{threadId}/post/{id}",
       "permissions": {
-        "read"    : { "own": ["post"], "all": ["post"] },
-        "update"  : { "own": ["post"], "all": ["post"] },
-        "delete"  : { "own": ["post"], "all": ["post"] }
+        "read"    : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] },
+        "update"  : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] },
+        "delete"  : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] }
       }
     },
     {

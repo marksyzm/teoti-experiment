@@ -1,1 +1,30 @@
-<h1>{{thread.title}}</h1>
+<article class="panel">
+    <header class="panel-heading" ng-if="thread">
+        <a class="panel-heading-img" href="{{thread.firstPostUser.url}}" ng-if="thread.firstPostUser.avatar">
+            <img class="pull-right" src="{{thread.firstPostUser.avatarUrl}}" alt="{{thread.firstPostUser.username}}">
+        </a>
+        <h1>{{thread.title}}</h1>
+        <p>
+            Posted in
+            <a href="{{thread.forum.url}}">
+                <img class="icon iconForum" ng-src="{{thread.forum.iconUrl}}" alt="{{thread.forum.title}}" />
+                {{thread.forum.title}}
+            </a>
+            by <a href="{{thread.firstPostUser.url}}">{{thread.firstPostUser.username}}</a>
+            on  <span>{{thread.created | date : 'HH:mm dd/MM/yy'}}</span>,
+            {{thread.replyCount}} comment{{thread.replyCount === 1 ? '' : 's'}},
+            {{thread.viewCount}} view{{thread.viewCount === 1 ? '' : 's'}}
+        </p>
+    </header>
+    <div class="panel-body">
+        <pre>{{thread | json}}</pre>
+        <div class="thread-buttons">
+            <div class="btn-group pull-right">
+                <a href class="btn btn-default" aria-label="Report" tooltip="Report">!</a>
+                <a href class="btn btn-default">Quote</a>
+                <a href class="btn btn-default">Edit</a>
+                <a href class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+    </div>
+</article>

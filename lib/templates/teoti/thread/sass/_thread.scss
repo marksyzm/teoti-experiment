@@ -116,4 +116,19 @@
       }
     }
   }
+  &[data-view=single] {
+    .panel-heading {
+      position: relative;
+      @include clearfix;
+      h1 {
+        margin-top: 0;
+      }
+      .panel-heading-img {
+        float: right;
+        margin-left: 10px;
+        display: block;
+      }
+
+    }
+  }
 }

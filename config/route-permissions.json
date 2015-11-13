@@ -81,7 +81,7 @@
     {
       "path": "/forum/{id}/thread/{threadId}",
       "permissions": {
-        "read"    : { "own": ["forum","thread"], "all": ["forum","thread"] },
+        "read"    : { "own": [], "all": [], "public": true },
         "update"  : { "own": ["forum","thread"], "all": ["forum","thread"] },
         "delete"  : { "own": ["forum","thread"], "all": ["forum","thread"] }
       }

@@ -38,7 +38,7 @@
     "angular-ui-router": "^0.2.15",
     "angularjs-scroll-glue": "^2.0.4",
     "async": "^1.2.0",
-    "bbcode-parser": "^1.0.6",
+    "bbcode-parser": "^1.0.10",
     "body-parser": "^1.14.1",
     "boom": "^2.6.1",
     "bootstrap": "^3.3.5",

@@ -5,19 +5,20 @@
         </a>
         <h1>{{thread.title}}</h1>
         <p>
-            Posted in
-            <a href="{{thread.forum.url}}">
-                <img class="icon iconForum" ng-src="{{thread.forum.iconUrl}}" alt="{{thread.forum.title}}" />
-                {{thread.forum.title}}
-            </a>
-            by <a href="{{thread.firstPostUser.url}}">{{thread.firstPostUser.username}}</a>
-            on  <span>{{thread.created | date : 'HH:mm dd/MM/yy'}}</span>,
-            {{thread.replyCount}} comment{{thread.replyCount === 1 ? '' : 's'}},
-            {{thread.viewCount}} view{{thread.viewCount === 1 ? '' : 's'}}
+            <span>
+                <a href="{{thread.forum.url}}">
+                    <img class="icon iconForum" ng-src="{{thread.forum.iconUrl}}" alt="{{thread.forum.title}}" />
+                    {{thread.forum.title}}
+                </a>
+            </span>
+            <span>By <a href="{{thread.firstPostUser.url}}">{{thread.firstPostUser.username}}</a></span>
+            <span><span>{{thread.created | date : 'HH:mm dd/MM/yy'}}</span></span>
+            <span>{{thread.replyCount}} comment{{thread.replyCount === 1 ? '' : 's'}}</span>
+            <span>{{thread.viewCount}} view{{thread.viewCount === 1 ? '' : 's'}}</span>
         </p>
     </header>
     <div class="panel-body">
-        <pre>{{thread | json}}</pre>
+        <div class="thread-content" ng-bind-html="thread.firstPost.content | bbcode"></div>
         <div class="thread-buttons">
             <div class="btn-group pull-right">
                 <a href class="btn btn-default" aria-label="Report" tooltip="Report">!</a>

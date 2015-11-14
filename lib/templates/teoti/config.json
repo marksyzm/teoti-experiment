@@ -9,7 +9,7 @@
   "defaultForum": 15,
   "permissions": {
     "types": [
-      "user", "group", "forum", "thread", "post", "conversation", "message", "bbcode", "shout",
+      "user", "group", "forum", "thread", "post", "conversation", "message", "shout",
       "sitelog", "like", "score", "star", "style", "tweet"
     ]
   },

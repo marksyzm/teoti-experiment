@@ -18,7 +18,9 @@
         </p>
     </header>
     <div class="panel-body">
-        <div class="thread-content" ng-bind-html="thread.firstPost.content | bbcode"></div>
+        <div class="thread-content"
+             ng-if="thread.firstPost.content"
+             bind-html-compile="thread.firstPost.content | nl2br | bbcode"></div>
         <div class="thread-buttons">
             <div class="btn-group pull-right">
                 <a href class="btn btn-default" aria-label="Report" tooltip="Report">!</a>

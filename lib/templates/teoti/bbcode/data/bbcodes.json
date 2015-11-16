@@ -1,3 +1,8 @@
 [
-  "u", "b", "i", { "name":"lt", "alias": "strike" }, "strike", "url"
+  "u",
+  { "name": "b", "alias": "strong" },
+  { "name": "i", "alias": "em" },
+  { "name": "lt", "alias": "strike" },
+  "strike",
+  "url"
 ]

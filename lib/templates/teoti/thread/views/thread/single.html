@@ -22,6 +22,9 @@
              ng-if="thread.firstPost.content"
              bind-html-compile="thread.firstPost.content | nl2br | bbcode"></div>
         <div class="thread-buttons">
+            <div class="btn-group" ng-show="thread.related">
+                <a href="{{thread.related}}" target="_blank" class="btn btn-info">Related</a>
+            </div>
             <div class="btn-group pull-right">
                 <a href class="btn btn-default" aria-label="Report" tooltip="Report">!</a>
                 <a href class="btn btn-default">Quote</a>

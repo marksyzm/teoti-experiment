@@ -1,8 +1,24 @@
 [
+  "url",
+  "img",
   "u",
   { "name": "b", "alias": "strong" },
   { "name": "i", "alias": "em" },
   { "name": "lt", "alias": "strike" },
   "strike",
-  "url"
+  "sup",
+  "sub",
+  "left",
+  "right",
+  "center",
+  "justify",
+  "code",
+  "quote",
+  "font",
+  "color",
+  { "name": "colour", "alias": "color" },
+  { "name": "center", "alias": "centre" },
+  { "name": "ulist", "alias": "ul" },
+  { "name": "olist", "alias": "ol" },
+  { "name": "*", "alias": "li" }
 ]

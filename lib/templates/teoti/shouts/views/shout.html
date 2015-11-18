@@ -2,4 +2,4 @@
     <img ng-src="/sickle/icon?url={{shout.user.avatarUrl}}" alt="{{shout.user.username}}">
     <span>{{shout.user.username}}</span>
 </a>
-<div ng-bind-html="shout.message | nl2br : 2 | toTrusted" linkify></div>
+<div ng-bind-html="shout.message | plainMessage" linkify></div>

@@ -1,7 +1,7 @@
 <article class="panel">
     <header class="panel-heading" ng-if="thread">
-        <a class="panel-heading-img" href="{{thread.firstPostUser.url}}" ng-if="thread.firstPostUser.avatar">
-            <img class="pull-right" src="{{thread.firstPostUser.avatarUrl}}" alt="{{thread.firstPostUser.username}}">
+        <a class="panel-heading-img hidden-sm hidden-xs pull-right" href="{{thread.firstPostUser.url}}" ng-if="thread.firstPostUser.avatar" tooltip="{{thread.firstPostUser.username}}">
+            <img ng-src="{{thread.firstPostUser.avatarUrl}}" alt="{{thread.firstPostUser.username}}">
         </a>
         <h1>{{thread.title}}</h1>
         <p>
@@ -11,8 +11,13 @@
                     {{thread.forum.title}}
                 </a>
             </span>
-            <span>By <a href="{{thread.firstPostUser.url}}">{{thread.firstPostUser.username}}</a></span>
-            <span><span>{{thread.created | date : 'HH:mm dd/MM/yy'}}</span></span>
+            <span>
+                <a href="{{thread.firstPostUser.url}}">
+                    <img class="icon visible-sm-inline-block visible-xs-inline-block" ng-src="/sickle/icon?url={{thread.firstPostUser.avatarUrl}}" alt="{{thread.firstPostUser.username}}">
+                    {{thread.firstPostUser.username}}
+                </a>
+            </span>
+            <span am-time-ago="thread.created" tooltip="{{thread.created | amDateFormat:'Do MMM YYYY, h:mm:ss a'}}"></span>
             <span>{{thread.replyCount}} comment{{thread.replyCount === 1 ? '' : 's'}}</span>
             <span>{{thread.viewCount}} view{{thread.viewCount === 1 ? '' : 's'}}</span>
         </p>

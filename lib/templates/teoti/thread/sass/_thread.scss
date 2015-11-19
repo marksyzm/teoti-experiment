@@ -134,6 +134,11 @@
         }
       }
     }
+    .panel-body {
+      img {
+        max-width: 100%;
+      }
+    }
     .thread-buttons {
       margin-top: 20px;
     }

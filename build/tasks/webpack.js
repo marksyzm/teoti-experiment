@@ -1,7 +1,8 @@
 'use strict';
 
 var gulp = require("gulp");
-var webpack = require("webpack-stream");
+var webpackStream = require("webpack-stream");
+var webpack = require("webpack");
 var _ = require("lodash");
 var config = require("../../lib/shared/config");
 var webpackConfig = require("../../lib/templates/"+config.get("template")+"/webpack.config");
@@ -22,7 +23,7 @@ gulp.task("webpack:build", function () {
         new webpack.optimize.UglifyJsPlugin()
     );
     return gulp.src("lib/templates/"+config.get("template")+"/index.js")
-        .pipe(webpack(webpackBuildConfig))
+        .pipe(webpackStream(webpackBuildConfig))
         .pipe(gulp.dest("public/bundle"));
 });
 
@@ -35,6 +36,6 @@ gulp.task("webpack:build-dev", function () {
     webpackBuildDevConfig.watch = true;
 
     return gulp.src("lib/templates/"+config.get("template")+"/index.js")
-        .pipe(webpack(webpackBuildDevConfig))
+        .pipe(webpackStream(webpackBuildDevConfig))
         .pipe(gulp.dest("public/bundle"));
 });

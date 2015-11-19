@@ -1,6 +1,7 @@
 [data-ui-view] {
   margin-top: $header-height + $header-secondary-height;
   transition: all 0.5s;
+  padding: 20px 0;
   @include media-query($screen-md-min) {
     .showAccount & {
       padding-right: $nav-width;
@@ -16,4 +17,14 @@
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
   display: none !important;
+}
+
+.panel {
+  border-radius: 0;
+  box-shadow: $default-shadow;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
 }

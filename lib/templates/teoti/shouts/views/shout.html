@@ -1,5 +1,5 @@
-<a href="/members/{{shout.user.username}}.html" tooltip="{{shout.created | date : 'HH:mm dd/MM/yy'}}">
+<a href="/members/{{shout.user.username}}.html" tooltip="{{shout.created | amDateFormat : 'Do MMM YYYY, h:mm:ss a'}}">
     <img ng-src="/sickle/icon?url={{shout.user.avatarUrl}}" alt="{{shout.user.username}}">
     <span>{{shout.user.username}}</span>
 </a>
-<div ng-bind-html="shout.message | nl2br | toTrusted" linkify></div>
+<div ng-bind-html="shout.message | plainMessage" linkify></div>

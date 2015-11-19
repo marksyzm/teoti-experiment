@@ -1,13 +1,15 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 @import "variables";
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 @import "mixins";
 
 @import "base";
-@import "components";
 @import "layout";
 
 @import "../../header/sass/index";
 @import "../../forum/sass/index";
 @import "../../shouts/sass/index";
+@import "../../threads/sass/index";
+@import "../../thread/sass/index";
+@import "../../like-dislike/sass/index";

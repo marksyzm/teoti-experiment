@@ -7,7 +7,7 @@
 
 <p class="description">{{thread.description}}</p>
 
-<div data-media data-url="thread.media" data-ng-if="thread.media"></div>
+<div data-media data-href="{{thread.media}}" data-ng-if="thread.media"></div>
 
 <a href="{{thread.url}}" class="preview" data-ng-if="!thread.media && thread.thumbnail">
     <img ng-src="/sickle/thread?url={{thread.thumbnail}}" alt="{{thread.title}}" />

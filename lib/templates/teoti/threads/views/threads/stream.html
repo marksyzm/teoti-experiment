@@ -1,9 +1,8 @@
 <section data-ng-show="!error">
     <h1>{{title || forum.title}}</h1>
 
-    <ul class="threads row">
-        <li class="col-xs-12"
-            data-ng-repeat="thread in threads.items track by thread._id"
+    <ul class="threads">
+        <li data-ng-repeat="thread in threads.items track by thread._id"
             data-thread="thread"
             data-view="stream"></li>
     </ul>

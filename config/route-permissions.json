@@ -89,11 +89,12 @@
     {
       "path": "/forum/{id}/thread/{threadId}/post",
       "permissions": {
-        "create"  : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] }
+        "create"  : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] },
+        "read"    : { "own": [], "all": [], "public": true }
       }
     },
     {
-      "path": "/forum/{id}/thread/{threadId}/post/{id}",
+      "path": "/forum/{id}/thread/{threadId}/post/{postId}",
       "permissions": {
         "read"    : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] },
         "update"  : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] },

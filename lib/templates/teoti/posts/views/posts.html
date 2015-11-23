@@ -1,0 +1,14 @@
+<section data-ng-show="!error">
+    <h1>Posts</h1>
+
+    <ul class="threads">
+        <li data-ng-repeat="post in posts.items track by thread._id" post="post"></li>
+    </ul>
+
+    <nav data-paginate
+         data-page="page"
+         data-ng-show="showPaginate"
+         data-show-next="posts.pagination.hasNextPage"
+         data-show-prev="posts.pagination.hasPrevPage"></nav>
+</section>
+<section data-ng-show="error" data-ng-include="include('../../scaffolding/views/error.html')"></section>

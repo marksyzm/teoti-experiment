@@ -21,6 +21,11 @@
     "navigation": 10,
     "max": 999
   },
+  "sort": {
+    "post": [ "created", "chain" ],
+    "thread": [ "-created", "-updated", "-score", "random" ],
+    "user": [ "username", "-score", "-totalScore"]
+  },
   "image": {
     "thumbnail": {
       "error": "img/error.png",

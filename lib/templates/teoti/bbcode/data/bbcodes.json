@@ -16,6 +16,7 @@
   "quote",
   "font",
   "color",
+  "size",
   { "name": "colour", "alias": "color" },
   { "name": "center", "alias": "centre" },
   { "name": "ulist", "alias": "ul" },

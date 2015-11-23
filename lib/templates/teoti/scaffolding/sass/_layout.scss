@@ -2,12 +2,24 @@
   margin-top: $header-height + $header-secondary-height;
   transition: all 0.5s;
   padding: 20px 0;
+  box-sizing: border-box;
   @include media-query($screen-md-min) {
     .showAccount & {
       padding-right: $nav-width;
     }
     .showNavigation & {
       padding-left: 300px;
+    }
+  }
+  .showAccount &,
+  .showNavigation & {
+    .container {
+      @include media-query($screen-md-min) {
+        width: $screen-md-min - $nav-width;
+      }
+      @include media-query($screen-lg-min) {
+        width: $screen-lg-min - $nav-width;
+      }
     }
   }
   @include media-query($screen-sm-min) {

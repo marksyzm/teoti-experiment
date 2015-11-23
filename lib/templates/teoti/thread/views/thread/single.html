@@ -13,7 +13,7 @@
             </span>
             <span>
                 <a href="{{thread.firstPostUser.url}}">
-                    <img class="icon visible-sm-inline-block visible-xs-inline-block" ng-src="/sickle/icon?url={{thread.firstPostUser.avatarUrl}}" alt="{{thread.firstPostUser.username}}">
+                    <img class="icon visible-sm-inline-block visible-xs-inline-block" ng-if="thread.firstPostUser.avatar" ng-src="/sickle/icon?url={{thread.firstPostUser.avatarUrl}}" alt="{{thread.firstPostUser.username}}">
                     {{thread.firstPostUser.username}}
                 </a>
             </span>

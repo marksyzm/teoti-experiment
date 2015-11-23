@@ -1,15 +1,5 @@
 .forum {
   .forum-view {
-    .showAccount &,
-    .showNavigation & {
-      @include media-query($screen-md-min) {
-        width: $screen-md-min - $nav-width;
-      }
-      @include media-query($screen-lg-min) {
-        width: $screen-lg-min - $nav-width;
-      }
-    }
-
     &.forum-view-compact {
       [data-threads],
       [data-users] {

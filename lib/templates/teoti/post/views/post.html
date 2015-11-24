@@ -1,0 +1,25 @@
+<article class="panel">
+
+    <header class="panel-heading" ng-if="post">
+        <a class="panel-heading-img hidden-sm hidden-xs pull-left" href="{{post.user.url}}" ng-if="post.user.avatar" tooltip="{{post.user.username}}">
+            <img ng-src="/sickle/thumbnail?url={{post.user.avatarUrl}}" alt="{{post.user.username}}">
+        </a>
+        <h2><a href="{{post.user.url}}">{{post.user.username}}</a> <small am-time-ago="post.created" tooltip="{{post.created | amDateFormat:'Do MMM YYYY, h:mm:ss a'}}"></small></h2>
+    </header>
+
+    <div class="panel-body">
+        <div class="post-content"
+             ng-if="post.content"
+             bind-html-compile="post.content | bbcode"></div>
+
+        <div class="post-buttons">
+            <div class="btn-group pull-right">
+                <a href class="btn btn-default" aria-label="Report" tooltip="Report">!</a>
+                <a href class="btn btn-default">Quote</a>
+                <a href class="btn btn-default">Edit</a>
+                <a href class="btn btn-danger">Delete</a>
+            </div>
+        </div>
+
+    </div>
+</article>

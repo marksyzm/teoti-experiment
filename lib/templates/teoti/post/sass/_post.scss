@@ -1,0 +1,37 @@
+[post] {
+  .post {
+    &.panel {
+      .panel-heading {
+        position: relative;
+        @extend .clearfix;
+        h3 {
+          margin: 0;
+          float: left;
+          @extend .clearfix;
+          img {
+            float: left;
+            height: auto;
+            display: block;
+            margin-right: 5px;
+          }
+        }
+        .post-buttons {
+          float: right;
+          @extend .clearfix;
+          .post-buttons-menu {
+            margin-left: 5px;
+          }
+        }
+        [like-dislike] {
+          float: left;
+          margin-right: 5px;
+        }
+      }
+      .panel-body {
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}

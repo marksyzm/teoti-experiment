@@ -36,8 +36,8 @@
 
     <div class="specialButtons">
         <div class="btn-group">
-            <div class="btn-group" dropdown data-is-open="menu.isOpen">
-                <button type="button" class="btn btn-primary" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+            <div class="btn-group" uib-dropdown data-is-open="menu.isOpen">
+                <button type="button" class="btn btn-primary" uib-dropdown-toggle data-ng-click="keepMenuOpen($event)">
                     {{ current(account.special, specials) || specials[0].name }} <span class="caret"></span>
                 </button>
 
@@ -48,8 +48,8 @@
                 </ul>
             </div>
 
-            <div class="btn-group" dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.special === 'hot'">
-                <button type="button" class="btn" dropdown-toggle data-ng-click="keepMenuOpen($event)">
+            <div class="btn-group" uib-dropdown data-is-open="menu.isOpenSecondary" data-ng-if="account.special === 'hot'">
+                <button type="button" class="btn" uib-dropdown-toggle data-ng-click="keepMenuOpen($event)">
                     {{ current(currentDateLimit, dateLimits) }} <span class="caret"></span>
                 </button>
 
@@ -60,9 +60,7 @@
                 </ul>
             </div>
 
-            <button type="button" class="btn" dropdown-toggle data-ng-click="refresh($event)">
-                Refresh
-            </button>
+            <button type="button" class="btn" data-ng-click="refresh($event)">Refresh</button>
         </div>
     </div>
 

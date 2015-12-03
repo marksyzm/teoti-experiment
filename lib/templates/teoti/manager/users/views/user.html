@@ -2,8 +2,8 @@
     <div class="row">
         <p class="form-group col-sm-12">
             <input type="text" placeholder="Find user..." class="form-control"
-                   data-typeahead="userItem as userItem.username for userItem in getUsers($viewValue)"
-                   data-ng-model="user">
+                   uib-typeahead="userItem as userItem.username for userItem in getUsers($viewValue)"
+                   ng-model="user">
         </p>
     </div>
 

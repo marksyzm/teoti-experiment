@@ -26,7 +26,7 @@
     img {
       font-size: 0;
     }
-    [data-like-dislike] {
+    [like-dislike] {
       float: left;
       margin-top: 5px;
       margin-right: 10px;
@@ -117,30 +117,32 @@
     }
   }
   &[data-view=single] {
-    .panel-heading {
-      position: relative;
-      @include clearfix;
-      h1 {
-        margin-top: 0;
-      }
-      .panel-heading-img {
-        float: right;
-        margin-left: 10px;
-        display: block;
-      }
-      p {
-        span {
-          margin-right: 5px;
+    .thread {
+      .panel-heading {
+        position: relative;
+        @extend .clearfix;
+        h1 {
+          margin-top: 0;
+        }
+        .panel-heading-img {
+          float: right;
+          margin-left: 10px;
+          display: block;
+        }
+        p {
+          span {
+            margin-right: 5px;
+          }
         }
       }
-    }
-    .panel-body {
-      img {
-        max-width: 100%;
+      .panel-body {
+        img {
+          max-width: 100%;
+        }
       }
-    }
-    .thread-buttons {
-      margin-top: 20px;
+      .thread-buttons {
+        margin-top: 20px;
+      }
     }
   }
 }

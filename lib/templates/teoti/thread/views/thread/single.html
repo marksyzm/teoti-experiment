@@ -1,6 +1,8 @@
-<article class="panel">
+<article class="thread panel">
     <header class="panel-heading" ng-if="thread">
-        <a class="panel-heading-img hidden-sm hidden-xs pull-right" href="{{thread.firstPostUser.url}}" ng-if="thread.firstPostUser.avatar" tooltip="{{thread.firstPostUser.username}}">
+        <a class="panel-heading-img hidden-sm hidden-xs pull-right" href="{{thread.firstPostUser.url}}"
+           ng-if="thread.firstPostUser.avatar"
+           uib-tooltip="{{thread.firstPostUser.username}}">
             <img ng-src="{{thread.firstPostUser.avatarUrl}}" alt="{{thread.firstPostUser.username}}">
         </a>
         <h1>{{thread.title}}</h1>
@@ -17,7 +19,7 @@
                     {{thread.firstPostUser.username}}
                 </a>
             </span>
-            <span am-time-ago="thread.created" tooltip="{{thread.created | amDateFormat:'Do MMM YYYY, h:mm:ss a'}}"></span>
+            <span am-time-ago="thread.created" uib-tooltip="{{thread.created | amDateFormat:'Do MMM YYYY, h:mm:ss a'}}"></span>
             <span>{{thread.replyCount}} comment{{thread.replyCount === 1 ? '' : 's'}}</span>
             <span>{{thread.viewCount}} view{{thread.viewCount === 1 ? '' : 's'}}</span>
         </p>
@@ -31,7 +33,7 @@
                 <a href="{{thread.related}}" target="_blank" class="btn btn-info">Related</a>
             </div>
             <div class="btn-group pull-right">
-                <a href class="btn btn-default" aria-label="Report" tooltip="Report">!</a>
+                <a href class="btn btn-default" aria-label="Report" uib-tooltip="Report">!</a>
                 <a href class="btn btn-default">Quote</a>
                 <a href class="btn btn-default">Edit</a>
                 <a href class="btn btn-danger">Delete</a>

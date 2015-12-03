@@ -37,6 +37,11 @@
 }
 
 .icon {
-  width: 24px;
-  height: 24px;
+  width: $image-icon-width;
+  height: $image-icon-height;
+}
+
+.thumb {
+  max-width: $image-thumbnail-width;
+  height: auto;
 }

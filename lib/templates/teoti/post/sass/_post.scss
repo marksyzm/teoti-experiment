@@ -1,33 +1,54 @@
 [post] {
   .post {
-    &.panel {
-      .panel-heading {
-        position: relative;
-        @extend .clearfix;
-        h3 {
-          margin: 0;
-          float: left;
+    @extend .panel;
+    .post-heading {
+      position: relative;
+      @extend .panel-heading, .clearfix;
+
+      .post-user-avatar {
+        float: left;
+        display: block;
+      }
+
+      .post-heading-actions {
+        margin-left: $image-icon-width + $panel-body-padding;
+        @include media-query($screen-md) {
+          margin-left: $image-thumbnail-width + $panel-body-padding;
+        }
+
+        .post-heading-actions-primary {
+          margin-top: 0;
+        }
+        .post-heading-actions-secondary {
           @extend .clearfix;
-          img {
+          > * {
             float: left;
-            height: auto;
-            display: block;
-            margin-right: 5px;
           }
-        }
-        .post-buttons {
-          float: right;
-          @extend .clearfix;
-          .post-buttons-menu {
-            margin-left: 5px;
+          [like-dislike] {
+            margin-right: 10px;
           }
-        }
-        [like-dislike] {
-          float: left;
-          margin-right: 5px;
         }
       }
-      .panel-body {
+
+      .post-heading-buttons {
+        float: right;
+        @extend .clearfix;
+
+        .post-heading-buttons-menu {
+          margin-left: 5px;
+        }
+      }
+    }
+    .post-heading .post-heading-actions,
+    .post-body .post-body-content {
+      margin-left: $image-icon-width + $panel-body-padding;
+      @include media-query($screen-md) {
+        margin-left: $image-thumbnail-width + $panel-body-padding;
+      }
+    }
+    .post-body {
+      @extend .panel-body;
+      .post-body-content {
         img {
           max-width: 100%;
         }

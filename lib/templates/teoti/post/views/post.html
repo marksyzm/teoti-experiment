@@ -1,39 +1,57 @@
 <article class="post panel">
 
-    <header class="panel-heading" ng-if="post">
-        <div like-dislike data-ld-post="post"></div>
-        <h3>
-            <a href="{{post.user.url}}">
-                <img ng-src="/sickle/icon?url={{post.user.avatarUrl}}" alt="{{post.user.username}}" class="icon">
-                <span>{{post.user.username}}</span>
-            </a>
-            <small am-time-ago="post.created" uib-tooltip="{{post.created | amDateFormat:'Do MMM YYYY, h:mm:ss a'}}"></small>
-        </h3>
-        <div class="post-buttons">
+    <header class="post-heading panel-heading" ng-if="post">
+        <a href="{{post.user.url}}" class="post-user-avatar">
+            <img ng-src="/sickle/icon?url={{post.user.avatarUrl}}" alt="{{post.user.username}}" class="icon visible-xs-inline-block visible-sm-inline-block">
+            <img ng-src="/sickle/thumbnail?url={{post.user.avatarUrl}}" alt="{{post.user.username}}" class="thumb hidden-xs hidden-sm">
+        </a>
+
+        <div class="post-heading-buttons">
             <div class="btn-group pull-left hidden-xs hidden-sm">
-                <a href class="btn btn-default" aria-label="Report" uib-tooltip="Report">!</a>
-                <a href class="btn btn-default">Quote</a>
+                <a href class="btn btn-default" ng-click="reply(post)">Reply</a>
                 <a href class="btn btn-default">Edit</a>
+                <a href="/conversations?report={{post._id}}" class="btn btn-default" aria-label="Report" uib-tooltip="Report">!</a>
                 <a href class="btn btn-danger">Delete</a>
             </div>
-            <div class="post-buttons-menu btn-group pull-left visible-xs-block visible-sm-block" uib-dropdown>
+            <div class="post-heading-buttons-menu btn-group pull-left visible-xs-block visible-sm-block" uib-dropdown>
                 <button class="btn btn-default" id="single-button-{{post._id}}" type="button"
                         uib-dropdown-toggle>
                     <span class="sr-only">Menu</span>
                     <span class="caret"></span>
                 </button>
                 <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="single-button-{{post._id}}">
-                    <li><a href role="menuitem">Report</a></li>
-                    <li><a href role="menuitem">Quote</a></li>
+                    <li><a href="/conversations?report={{post._id}}" role="menuitem">Report</a></li>
+                    <li><a href ng-click="reply(post)" role="menuitem">Reply</a></li>
                     <li><a href role="menuitem">Edit</a></li>
                     <li><a href role="menuitem">Delete</a></li>
                 </ul>
             </div>
         </div>
+
+        <div class="post-heading-actions">
+            <h3 class="post-heading-actions-primary">
+                <a href="{{post.user.url}}">{{post.user.username}}</a>
+
+                <span ng-if="post.parent">
+                    <span class="text-muted">&gt;</span>
+                    <a href="{{post.parent.user.url}}">{{post.parent.user.username}}</a>
+                    <button type="button" ng-click="showChain(post._id)"></button>
+                </span>
+            </h3>
+
+            <div class="post-heading-actions-secondary">
+                <div like-dislike data-ld-post="post"></div>
+
+                <time class="text-muted" datetime="{{post.created}}"
+                      am-time-ago="post.created"
+                      uib-tooltip="{{post.created | amDateFormat:'Do MMM YYYY, h:mm:ss a'}}"></time>
+            </div>
+        </div>
+
     </header>
 
-    <div class="panel-body">
-        <div class="post-content"
+    <div class="post-body">
+        <div class="post-body-content"
              ng-if="post.content"
              bind-html-compile="post.content | bbcode"></div>
     </div>

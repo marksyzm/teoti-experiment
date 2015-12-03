@@ -1,4 +1,4 @@
-[data-ui-view] {
+[ui-view] {
   margin-top: $header-height + $header-secondary-height;
   transition: all 0.5s;
   padding: 20px 0;
@@ -27,7 +27,7 @@
   }
 }
 
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+[ng\:cloak], [ng-cloak], [ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
   display: none !important;
 }
 

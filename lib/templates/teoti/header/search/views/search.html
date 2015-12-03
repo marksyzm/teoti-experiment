@@ -1,10 +1,10 @@
-<form name="formSearch" novalidate data-ng-submit="submit()">
+<form name="formSearch" novalidate ng-submit="submit()">
     <input type="text" placeholder="Search"
-           data-ng-model="search"
-           data-ng-init="setForm(formSearch)"
-           data-focus-element="searchActive"
-           data-ng-class="{ searchActive: searchActive }">
-    <button data-ng-class="{ searchActive: searchActive }">
+           ng-model="search"
+           ng-init="setForm(formSearch)"
+           focus-element="searchActive"
+           ng-class="{ searchActive: searchActive }">
+    <button ng-class="{ searchActive: searchActive }">
         <div class="icon">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24">
                 <g>

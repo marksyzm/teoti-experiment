@@ -1,4 +1,4 @@
-[data-ng-controller=NavigationMenu] {
+[ng-controller=NavigationMenu] {
   position: fixed;
   left: -$nav-width;
   top: 0;
@@ -29,6 +29,7 @@
     @include box-sizing;
   }
   ul {
+    // TODO: remove hard coded colour
     border-top: 1px solid #CCC;
     padding: 5px 0;
     &:first-child {

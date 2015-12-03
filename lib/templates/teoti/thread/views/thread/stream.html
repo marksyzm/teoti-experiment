@@ -1,9 +1,9 @@
 <div>
     <h3>
         <a href="{{thread.url}}">
-            <img class="thumb" ng-src="/sickle/thumbnail?url={{thread.thumbnail}}" alt="{{thread.title}}" data-ng-if="thread.thumbnail" />
+            <img class="thumb" ng-src="/sickle/thumbnail?url={{thread.thumbnail}}" alt="{{thread.title}}" ng-if="thread.thumbnail" />
             <img class="thumb" ng-src="/sickle/thumbnail?url={{thread.firstPostUser.avatarUrl}}"
-                 alt="{{thread.firstPostUser.username}}" data-ng-if="!thread.thumbnail" />
+                 alt="{{thread.firstPostUser.username}}" ng-if="!thread.thumbnail" />
             {{thread.title}}
         </a>
     </h3>

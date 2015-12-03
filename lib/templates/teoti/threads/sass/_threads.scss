@@ -1,5 +1,5 @@
 .threads {
-  &[data-deckgrid] {
+  &[deckgrid] {
     @include clearfix;
 
     &::before {

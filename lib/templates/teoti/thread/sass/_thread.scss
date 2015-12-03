@@ -1,4 +1,4 @@
-[data-thread] {
+[thread] {
   h3 {
     font-size: 1.2em;
   }
@@ -7,22 +7,22 @@
     margin-top: 0;
   }
 
-  &[data-view=simple],
-  &[data-view=stream] {
+  &[view=simple],
+  &[view=stream] {
     background: $white;
     padding: 10px;
     @include box-shadow;
     @include clearfix;
   }
 
-  &[data-view=stream] {
+  &[view=stream] {
     margin-top: 20px;
     &:first-child {
       margin-top: 0;
     }
   }
 
-  &[data-view=simple] {
+  &[view=simple] {
     img {
       font-size: 0;
     }
@@ -88,7 +88,7 @@
       }
     }
   }
-  &[data-view=stream] {
+  &[view=stream] {
     min-height: 48px;
     h3 {
       margin-top: 0;
@@ -114,7 +114,7 @@
       }
     }
   }
-  &[data-view=single] {
+  &[view=single] {
     .thread {
       .panel-heading {
         position: relative;

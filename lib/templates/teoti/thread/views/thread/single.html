@@ -41,5 +41,9 @@
         </div>
     </div>
 </article>
-
-<section posts first-post-id="thread.firstPost._id" ng-if="thread.firstPost._id"></section>
+<section posts
+         first-post-id="thread.firstPost._id"
+         thread-id="threadId"
+         forum-slug="forumSlug"
+         page="page"
+         ng-show="thread.firstPost._id"></section>

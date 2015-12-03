@@ -6,7 +6,7 @@
     </ul>
 </div>
 <div class="shout-submit">
-    <form name="formShout" novalidate data-ng-submit="submit(formShout)">
+    <form name="formShout" novalidate ng-submit="submit(formShout)">
         <textarea placeholder="Shout..." class="form-control" required
                   ng-model="shout.message"
                   ng-keydown="onKeyDown($event)"

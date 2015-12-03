@@ -1,6 +1,6 @@
 <div class="forum-view forum-view-compact container">
      <div class="forum-toggle-buttons">
-          <div class="btn-group hidden-md hidden-lg list-inline" data-ng-init="forumButtons = [
+          <div class="btn-group hidden-md hidden-lg list-inline" ng-init="forumButtons = [
                     { name: 'Latest', value: 'latest' },
                     { name: 'Updated', value: 'updated' },
                     { name: 'Sticky', value: 'sticky' },
@@ -10,77 +10,77 @@
                     { name: 'Random', value: 'random' }
                ]">
                <button type="button" class="btn"
-                       data-ng-repeat="forumButton in forumButtons"
-                       data-ng-click="setActiveThreads(forumButton.value)"
-                       data-ng-class="{ 'active': $parent.activeThreads === forumButton.value }">{{forumButton.name}}</button>
+                       ng-repeat="forumButton in forumButtons"
+                       ng-click="setActiveThreads(forumButton.value)"
+                       ng-class="{ 'active': $parent.activeThreads === forumButton.value }">{{forumButton.name}}</button>
           </div>
      </div>
 
 
      <div class="row">
 
-          <div class="col-md-4" data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'sticky' }">
-               <div data-threads
-                    data-view="compact"
-                    data-sticky="true"
-                    data-title="'Sticky'"
-                    data-forum-slug="$parent.forumSlug"
-                    data-limit="'navigation'"></div>
+          <div class="col-md-4" ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'sticky' }">
+               <div threads
+                    view="compact"
+                    sticky="true"
+                    title="'Sticky'"
+                    forum-slug="$parent.forumSlug"
+                    limit="'navigation'"></div>
           </div>
 
-          <div class="col-md-4" data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'updated' }">
-               <div data-threads
-                    data-view="compact"
-                    data-sort="'-updated'"
-                    data-title="'Updated'"
-                    data-forum-slug="$parent.forumSlug"
-                    data-limit="'navigation'"></div>
+          <div class="col-md-4" ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'updated' }">
+               <div threads
+                    view="compact"
+                    sort="'-updated'"
+                    title="'Updated'"
+                    forum-slug="$parent.forumSlug"
+                    limit="'navigation'"></div>
           </div>
 
-          <div class="col-md-4" data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'scores' }">
-               <div data-users
-                    data-view="scores"
-                    data-sort="'-score'"
-                    data-limit="'navigation'"></div>
+          <div class="col-md-4" ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'scores' }">
+               <div users
+                    view="scores"
+                    sort="'-score'"
+                    limit="'navigation'"></div>
           </div>
 
      </div>
      <div class="row">
 
           <div class="col-md-6">
-               <div data-threads
-                    data-view="compact"
-                    data-sort="'-score'"
-                    data-title="'Hot'"
-                    data-limit="'navigation'"
-                    data-date-limit="currentDateLimit"
-                    data-forum-slug="$parent.forumSlug"
-                    data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'hot' }"></div>
+               <div threads
+                    view="compact"
+                    sort="'-score'"
+                    title="'Hot'"
+                    limit="'navigation'"
+                    date-limit="currentDateLimit"
+                    forum-slug="$parent.forumSlug"
+                    ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'hot' }"></div>
 
-               <div data-threads
-                    data-view="compact"
-                    data-limit="'navigation'"
-                    data-forum-slug="33"
-                    data-forum-slug="$parent.forumSlug"
-                    data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'news' }"></div>
+               <div threads
+                    view="compact"
+                    limit="'navigation'"
+                    forum-slug="33"
+                    forum-slug="$parent.forumSlug"
+                    ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'news' }"></div>
 
-               <div data-threads
-                    data-view="compact"
-                    data-limit="'navigation'"
-                    data-sort="'random'"
-                    data-title="'Random'"
-                    data-show-paginate="false"
-                    data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'random' }"></div>
+               <div threads
+                    view="compact"
+                    limit="'navigation'"
+                    sort="'random'"
+                    title="'Random'"
+                    show-paginate="false"
+                    ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'random' }"></div>
           </div>
 
           <div class="col-md-6">
-               <div data-threads
-                    data-view="compact"
-                    data-limit="'default'"
-                    data-title="'Latest'"
-                    data-page="$parent.page"
-                    data-forum-slug="$parent.forumSlug"
-                    data-ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'latest' }"></div>
+               <div threads
+                    view="compact"
+                    limit="'default'"
+                    title="'Latest'"
+                    page="$parent.page"
+                    forum-slug="$parent.forumSlug"
+                    ng-class="{ 'hidden-xs hidden-sm': $parent.activeThreads !== 'latest' }"></div>
           </div>
      </div>
 </div>

@@ -1,8 +1,8 @@
 .forum {
   .forum-view {
     &.forum-view-compact {
-      [data-threads],
-      [data-users] {
+      [threads],
+      [users] {
         background: $white;
         padding: 10px;
         margin-bottom: 20px;
@@ -18,7 +18,7 @@
   h1 {
     display: none;
   }
-  [data-paginate] {
+  [t-paginate] {
     .pager {
       margin: 0;
     }
@@ -42,15 +42,15 @@
   }
 }
 
-[data-threads],
-[data-users] {
+[threads],
+[users] {
   .threads,
   .users {
     margin-bottom: 20px;
     padding-left: 0;
   }
-  &[data-view=compact],
-  &[data-view=scores] {
+  &[view=compact],
+  &[view=scores] {
     ul {
       border-top: none;
       li {
@@ -66,7 +66,7 @@
             margin-left: 34px;
           }
         }
-        &[data-view=score] {
+        &[view=score] {
           img:first-child + span {
             float: right;
             margin: 0;
@@ -78,8 +78,8 @@
       }
     }
   }
-  [data-thread],
-  [data-user] {
+  [thread],
+  [user] {
     display: block;
     list-style-type: none;
     margin-top: 5px;

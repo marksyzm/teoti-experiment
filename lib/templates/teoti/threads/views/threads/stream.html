@@ -1,16 +1,16 @@
-<section data-ng-show="!error">
+<section ng-show="!error">
     <h1>{{title || forum.title}}</h1>
 
     <ul class="threads">
-        <li data-ng-repeat="thread in threads.items track by thread._id"
-            data-thread="thread"
-            data-view="stream"></li>
+        <li ng-repeat="thread in threads.items track by thread._id"
+            thread="thread"
+            view="stream"></li>
     </ul>
 
-    <nav data-paginate
-         data-page="page"
-         data-ng-show="showPaginate"
-         data-show-next="threads.pagination.hasNextPage"
-         data-show-prev="threads.pagination.hasPrevPage"></nav>
+    <nav t-paginate
+         t-paginate-page="page"
+         t-paginate-show-next="threads.pagination.hasNextPage"
+         t-paginate-show-prev="threads.pagination.hasPrevPage"
+         ng-show="showPaginate"></nav>
 </section>
-<section data-ng-show="error" data-ng-include="include('../../scaffolding/views/error.html')"></section>
+<section ng-show="error" ng-include="include('../../scaffolding/views/error.html')"></section>

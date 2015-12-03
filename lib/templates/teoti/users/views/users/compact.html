@@ -1,16 +1,18 @@
-<section data-ng-show="!error">
-    <nav data-paginate data-page="page"
-         data-ng-show="showPaginate"
-         data-show-next="threads.pagination.hasNextPage"
-         data-show-prev="threads.pagination.hasPrevPage"></nav>
+<section ng-show="!error">
+    <nav t-paginate
+         t-paginate-page="page"
+         t-paginate-show-next="threads.pagination.hasNextPage"
+         t-paginate-show-prev="threads.pagination.hasPrevPage"
+         ng-show="showPaginate"></nav>
 
     <ul class="users">
-        <li data-user="user" data-view="compact" data-ng-repeat="user in users.items track by user._id"></li>
+        <li user="user" view="compact" ng-repeat="user in users.items track by user._id"></li>
     </ul>
 
-    <nav data-paginate data-page="page"
-         data-ng-show="showPaginate"
-         data-show-next="threads.pagination.hasNextPage"
-         data-show-prev="threads.pagination.hasPrevPage"></nav>
+    <nav t-paginate
+         t-paginate-page="page"
+         t-paginate-show-next="threads.pagination.hasNextPage"
+         t-paginate-show-prev="threads.pagination.hasPrevPage"
+         ng-show="showPaginate"></nav>
 </section>
-<section data-ng-show="error" data-ng-include="include('../../scaffolding/views/error.html')"></section>
+<section ng-show="error" ng-include="include('../../scaffolding/views/error.html')"></section>

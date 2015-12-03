@@ -7,13 +7,13 @@
 
 <p class="description">{{thread.description}}</p>
 
-<div data-media data-href="{{thread.media}}" data-ng-if="thread.media"></div>
+<div media href="{{thread.media}}" ng-if="thread.media"></div>
 
-<a href="{{thread.url}}" class="preview" data-ng-if="!thread.media && thread.thumbnail">
+<a href="{{thread.url}}" class="preview" ng-if="!thread.media && thread.thumbnail">
     <img ng-src="/sickle/thread?url={{thread.thumbnail}}" alt="{{thread.title}}" />
 </a>
 
-<div like-dislike data-ld-post="thread.firstPost"></div>
+<div like-dislike ld-post="thread.firstPost"></div>
 
 <div class="details">
     <a href="{{thread.forum.url}}" class="icon iconForum">

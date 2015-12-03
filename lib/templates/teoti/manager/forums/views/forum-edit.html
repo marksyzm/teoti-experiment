@@ -1,69 +1,69 @@
 <div class="container">
-    <form name="forumEdit" data-ng-submit="submit()">
+    <form name="forumEdit" ng-submit="submit()">
         <h1>{{ edit ? 'Edit Forum: '+forum.title: 'Add forum' }}</h1>
         <div class="form-group">
             <label for="forumEditTitle">Title</label>
-            <input type="text" data-ng-model="forum.title" id="forumEditTitle" name="title" class="form-control" required>
-            <p data-ng-show="forumEdit.title.$error.required">Supply a forum title, please!</p>
+            <input type="text" ng-model="forum.title" id="forumEditTitle" name="title" class="form-control" required>
+            <p ng-show="forumEdit.title.$error.required">Supply a forum title, please!</p>
         </div>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="forumEditParent">Parent</label>
-                <input type="number" data-ng-model="forum.parent" id="forumEditParent" name="parent" data-ng-pattern="/^[-]?\d+$/" class="form-control">
-                <p data-ng-show="forumEdit.parent.$error.pattern">Must be an integer!</p>
+                <input type="number" ng-model="forum.parent" id="forumEditParent" name="parent" ng-pattern="/^[-]?\d+$/" class="form-control">
+                <p ng-show="forumEdit.parent.$error.pattern">Must be an integer!</p>
             </div>
             <div class="form-group col-sm-6">
                 <label for="forumEditStyle">Style</label>
-                <input type="number" data-ng-model="forum.style" id="forumEditStyle" name="style" data-ng-pattern="/^[-]?\d+$/" class="form-control">
-                <p data-ng-show="forumEdit.style.$error.pattern">Must be an integer!</p>
+                <input type="number" ng-model="forum.style" id="forumEditStyle" name="style" ng-pattern="/^[-]?\d+$/" class="form-control">
+                <p ng-show="forumEdit.style.$error.pattern">Must be an integer!</p>
             </div>
         </div>
         <div class="form-group">
             <label for="forumEditDescription">Description</label>
-            <textarea data-ng-model="forum.description" id="forumEditDescription" name="description" class="form-control"></textarea>
+            <textarea ng-model="forum.description" id="forumEditDescription" name="description" class="form-control"></textarea>
         </div>
         <div class="form-group">
             <label for="editForumIcon">Icon</label>
-            <img data-ng-src="{{user.icon}}" alt="{{forum.title}}">
+            <img ng-src="{{user.icon}}" alt="{{forum.title}}">
             <input type="file" id="editForumIcon" class="form-control">
         </div>
         <div class="form-group">
             <label for="forumEditHashTags">Hash tags</label>
-            <input type="text" data-ng-model="forum.hashTags" id="forumEditHashTags" name="hashTags" class="form-control">
+            <input type="text" ng-model="forum.hashTags" id="forumEditHashTags" name="hashTags" class="form-control">
         </div>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="forumEditGroups">Groups</label>
                 <select multiple id="forumEditGroups" class="form-control"
-                        data-ng-model="forum.groups"
-                        data-ng-options="group._id as group.name for group in groups"
-                        data-ng-readonly="!forum.override"></select>
+                        ng-model="forum.groups"
+                        ng-options="group._id as group.name for group in groups"
+                        ng-readonly="!forum.override"></select>
             </div>
             <div class="form-group col-sm-6">
                 <label for="forumEditAutoSubscribe">Auto subscribe group users to new threads</label>
                 <select multiple id="forumEditAutoSubscribe" class="form-control"
-                        data-ng-model="forum.autoSubscribe"
-                        data-ng-options="group._id as group.name for group in groups"></select>
+                        ng-model="forum.autoSubscribe"
+                        ng-options="group._id as group.name for group in groups"></select>
             </div>
         </div>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="forumEditPublic">Public</label>
-                <input type="checkbox" id="forumEditPublic" data-ng-model="forum.public" class="form-control">
+                <input type="checkbox" id="forumEditPublic" ng-model="forum.public" class="form-control">
             </div>
             <div class="form-group col-sm-6">
                 <label for="forumEditOverride">Override inherited settings</label>
-                <input type="checkbox" id="forumEditOverride" data-ng-model="forum.override" class="form-control">
+                <input type="checkbox" id="forumEditOverride" ng-model="forum.override" class="form-control">
             </div>
         </div>
         <div class="row">
             <div class="form-group col-sm-6">
                 <label for="forumEditCreateThread">Allow creation of threads</label>
-                <input type="checkbox" id="forumEditCreateThread" data-ng-model="forum.createThread" class="form-control">
+                <input type="checkbox" id="forumEditCreateThread" ng-model="forum.createThread" class="form-control">
             </div>
             <div class="form-group col-sm-6">
                 <label for="forumEditNsfw">All content is NSFW?</label>
-                <input type="checkbox" id="forumEditNsfw" data-ng-model="forum.nsfw" class="form-control">
+                <input type="checkbox" id="forumEditNsfw" ng-model="forum.nsfw" class="form-control">
             </div>
         </div>
         <div class="btn-group">

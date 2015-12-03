@@ -40,7 +40,7 @@
       "crop": false
     },
     "icon": {
-      "error": "img/error.png",
+      "error": "img/error-square.png",
       "width": 48,
       "height": 48,
       "crop": true

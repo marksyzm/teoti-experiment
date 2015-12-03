@@ -1,13 +1,14 @@
-<section data-ng-show="!error">
+<section ng-show="!error">
     <h2>Scores</h2>
 
     <ul class="users">
-        <li data-user="user" data-view="score" data-ng-repeat="user in users.items track by user._id"></li>
+        <li user="user" view="score" ng-repeat="user in users.items track by user._id"></li>
     </ul>
 
-    <nav data-paginate data-page="page"
-         data-ng-show="showPaginate"
-         data-show-next="users.pagination.hasNextPage"
-         data-show-prev="users.pagination.hasPrevPage"></nav>
+    <nav t-paginate
+         t-paginate-page="page"
+         t-paginate-show-next="users.pagination.hasNextPage"
+         t-paginate-show-prev="users.pagination.hasPrevPage"
+         ng-show="showPaginate"></nav>
 </section>
-<section data-ng-show="error" data-ng-include="include('../../scaffolding/views/error.html')"></section>
+<section ng-show="error" ng-include="include('../../scaffolding/views/error.html')"></section>

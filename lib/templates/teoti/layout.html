@@ -1,14 +1,14 @@
-<html id="ng-app" data-ng-app="teoti" data-html>
+<html id="ng-app" ng-app="teoti" html>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <base href="/">
-    <title data-ng-bind="(pageTitle ? pageTitle+' | ' : '') + 'TEOTI - The End Of The Internet'"></title>
+    <title ng-bind="(pageTitle ? pageTitle+' | ' : '') + 'TEOTI - The End Of The Internet'"></title>
     <link type="text/css" href="bundle/style.css" rel="stylesheet">
 </head>
-<body data-ng-class="{ showNavigation: showNavigation, showAccount: showAccount }">
-    <header role="banner" data-ng-include="include('page-header')" data-ng-controller="Header"></header>
-    <main data-ui-view class="ng-cloak"></main>
+<body ng-class="{ showNavigation: showNavigation, showAccount: showAccount }">
+    <header role="banner" ng-include="include('page-header')" ng-controller="Header"></header>
+    <main ui-view class="ng-cloak"></main>
     <script src="bundle/app.js"></script>
 </body>
 </html>

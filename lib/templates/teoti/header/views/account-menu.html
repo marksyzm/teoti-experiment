@@ -3,7 +3,7 @@
     <div><a href>{{account.score}}</a> / {{account.limitPoints}}</div>
 </header>
 
-<nav data-ng-show="currentAccountView('settings')">
+<nav ng-show="currentAccountView('settings')">
     <div class="user">
         <h3>Settings</h3>
         <ul>
@@ -15,11 +15,11 @@
     </div>
 </nav>
 
-<section data-ng-if="currentAccountView('shouts')">
+<section ng-if="currentAccountView('shouts')">
     <div shouts></div>
 </section>
 
-<section data-ng-if="currentAccountView('conversations')">
+<section ng-if="currentAccountView('conversations')">
     <div class="Conversations">
         <h3>Conversations</h3>
         <ul>
@@ -28,7 +28,7 @@
     </div>
 </section>
 
-<section data-ng-if="currentAccountView('notifications')">
+<section ng-if="currentAccountView('notifications')">
     <div class="notifications">
         <h3>Notifications</h3>
         <ul>

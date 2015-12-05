@@ -1,19 +1,26 @@
 <section ng-show="!error">
-    <pre>{{page | json}}</pre>
     <h2>Comments</h2>
 
-    <nav t-paginate
-         t-paginate-page="page"
-         t-paginate-show-next="posts.pagination.hasNextPage"
-         t-paginate-show-prev="posts.pagination.hasPrevPage"></nav>
+    <div ng-show="posts">
+        <nav t-paginate
+             t-paginate-page="page"
+             t-paginate-show-next="posts.pagination.hasNextPage"
+             t-paginate-show-prev="posts.pagination.hasPrevPage"
+             t-paginate-count="posts.pagination.count"
+             t-paginate-loading="loading"
+             ng-class="{ loading: loading }"></nav>
 
-    <ul class="posts">
-        <li ng-repeat="post in posts.items track by post._id" post="post"></li>
-    </ul>
+        <ul class="posts">
+            <li ng-repeat="post in posts.items track by post._id" post="post"></li>
+        </ul>
 
-    <nav t-paginate
-         t-paginate-page="page"
-         t-paginate-show-next="posts.pagination.hasNextPage"
-         t-paginate-show-prev="posts.pagination.hasPrevPage"></nav>
+        <nav t-paginate
+             t-paginate-page="page"
+             t-paginate-show-next="posts.pagination.hasNextPage"
+             t-paginate-show-prev="posts.pagination.hasPrevPage"
+             t-paginate-count="posts.pagination.count"
+             t-paginate-loading="loading"
+             ng-class="{ loading: loading }"></nav>
+    </div>
 </section>
 <section ng-show="error" ng-include="include('../../scaffolding/views/error.html')"></section>

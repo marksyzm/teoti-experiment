@@ -45,3 +45,9 @@
   max-width: $image-thumbnail-width;
   height: auto;
 }
+
+[t-paginate] {
+  &.loading {
+    opacity: 0.6;
+  }
+}

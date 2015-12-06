@@ -1,4 +1,4 @@
-<ul class="pager" ng-if="!count">
+<ul class="pager" ng-show="!count">
     <li class="previous" ng-class="{ disabled: !showPrev }">
         <a href="{{prevUrl}}" ng-click="changePage($event, page-1, showPrev)">Previous</a>
     </li>
@@ -7,27 +7,32 @@
     </li>
 </ul>
 
-<ul class="pagination" ng-if="count">
+<ul class="pagination" ng-show="count">
     <li ng-class="{ disabled: page === 1 }">
-        <a href ng-click="changePage($event, 1, page !== 1)" aria-label="First" uib-tooltip="First">
+        <a href aria-label="First" uib-tooltip="First"
+           ng-click="changePage($event, 1, (page && page !== 1) || (!page && defaultPageNumber !== 1))">
             <span aria-hidden="true">&laquo;</span>
         </a>
     </li>
     <li ng-class="{ disabled: !showPrev }">
-        <a href ng-click="changePage($event, page-1, showPrev)" aria-label="Previous" uib-tooltip="Previous">
+        <a href aria-label="Previous" uib-tooltip="Previous"
+           ng-click="changePage($event, (page || defaultPageNumber)-1, showPrev)">
             <span aria-hidden="true">&lsaquo;</span>
         </a>
     </li>
-    <li ng-repeat="pageNumber in pageRange(count, page, buttonCount)" ng-class="{ active: pageNumber === page }">
+    <li ng-repeat="pageNumber in pageRange(count, page || defaultPageNumber, buttonCount)"
+        ng-class="{ active: (page && pageNumber === page) || (!page && defaultPageNumber === pageNumber) }">
         <a href ng-click="changePage($event, pageNumber, true)">{{pageNumber}}</a>
     </li>
     <li ng-class="{ disabled: !showNext }">
-        <a href="#" ng-click="changePage($event, page+1, showNext)" aria-label="Next" uib-tooltip="Next">
+        <a href aria-label="Next" uib-tooltip="Next"
+           ng-click="changePage($event, page+1, showNext)">
             <span aria-hidden="true">&rsaquo;</span>
         </a>
     </li>
-    <li ng-class="{ disabled: page === count }">
-        <a href ng-click="changePage($event, count, page !== count)" aria-label="Last" uib-tooltip="Last">
+    <li ng-class="{ disabled: (page || defaultPageNumber) === count }">
+        <a href aria-label="Last" uib-tooltip="Last"
+           ng-click="changePage($event, count, (page && page !== count) || (!page && defaultPageNumber !== count))">
             <span aria-hidden="true">&raquo;</span>
         </a>
     </li>

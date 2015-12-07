@@ -8,11 +8,11 @@
 </ul>
 
 <div class="paginate paginate-multi btn-group" ng-show="count" role="group">
-    <button type="button" class="btn btn-default" ng-disabled="page === 1" aria-label="First" uib-tooltip="First"
+    <button type="button" class="btn btn-default" ng-disabled="page === 1" aria-label="First"
             ng-click="changePage($event, 1, (page && page !== 1) || (!page && defaultPageNumber !== 1))">
         <span aria-hidden="true">&laquo;</span>
     </button>
-    <button type="button" class="btn btn-default" ng-disabled="!showPrev" aria-label="Previous" uib-tooltip="Previous"
+    <button type="button" class="btn btn-default" ng-disabled="!showPrev" aria-label="Previous"
             ng-click="changePage($event, (page || defaultPageNumber)-1, showPrev)">
         <span aria-hidden="true">&lsaquo;</span>
     </button>
@@ -37,12 +37,11 @@
             </li>
         </ul>
     </div>
-    <button type="button" class="btn btn-default" ng-disabled="!showNext" aria-label="Next" uib-tooltip="Next"
+    <button type="button" class="btn btn-default" ng-disabled="!showNext" aria-label="Next"
             ng-click="changePage($event, page+1, showNext)">
         <span aria-hidden="true">&rsaquo;</span>
     </button>
     <button type="button" class="btn btn-default" ng-disabled="(page || defaultPageNumber) === count" aria-label="Last"
-            uib-tooltip="Last"
             ng-click="changePage($event, count, (page && page !== count) || (!page && defaultPageNumber !== count))">
         <span aria-hidden="true">&raquo;</span>
     </button>

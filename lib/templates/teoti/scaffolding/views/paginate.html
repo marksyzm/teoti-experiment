@@ -19,11 +19,20 @@
     <div class="btn-group" uib-dropdown role="group" ng-class="{  dropup: dropUp, dropdown: !dropUp }">
         <button class="btn btn-default" type="button"
                 uib-dropdown-toggle>
-            Page {{page}}
+            Page {{page || defaultPageNumber}}
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" role="menu">
-            <li ng-repeat="pageNumber in pageRange(count, page || defaultPageNumber, buttonCount)">
+            <li>
+                <form class="form-inline" name="pageForm" ng-submit="changePage($event, pageInput, true)">
+                    <div class="form-group">
+                        <input type="number" placeholder="Page #" ng-model="pageInput" min="1" required class="form-control" ng-click="noPropagation($event)">
+                    </div>
+                    <button type="submit" class="form-control" ng-disabled="pageForm.$invalid">&gt;</button>
+                </form>
+            </li>
+            <li ng-repeat="pageNumber in pageRange(count, page || defaultPageNumber, buttonCount)"
+                ng-class="{ active: pageNumber === (page || defaultPageNumber) }">
                 <a href ng-click="changePage($event, pageNumber, true)" role="menuitem">{{pageNumber}}</a>
             </li>
         </ul>

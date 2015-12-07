@@ -50,4 +50,12 @@
   &.loading {
     opacity: 0.6;
   }
+  .form-inline {
+    padding: 3px 20px;
+    input.form-control {
+      width: 80px;
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
 }

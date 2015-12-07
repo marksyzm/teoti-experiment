@@ -1,8 +1,12 @@
 [posts] {
-  ul {
+  .posts {
     padding: 0;
-    li {
+    [post] {
       list-style-type: none;
     }
+  }
+  [t-paginate] {
+    text-align: center;
+    margin: 10px 0;
   }
 }

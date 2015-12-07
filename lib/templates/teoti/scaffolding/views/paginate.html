@@ -7,33 +7,34 @@
     </li>
 </ul>
 
-<ul class="pagination" ng-show="count">
-    <li ng-class="{ disabled: page === 1 }">
-        <a href aria-label="First" uib-tooltip="First"
-           ng-click="changePage($event, 1, (page && page !== 1) || (!page && defaultPageNumber !== 1))">
-            <span aria-hidden="true">&laquo;</span>
-        </a>
-    </li>
-    <li ng-class="{ disabled: !showPrev }">
-        <a href aria-label="Previous" uib-tooltip="Previous"
-           ng-click="changePage($event, (page || defaultPageNumber)-1, showPrev)">
-            <span aria-hidden="true">&lsaquo;</span>
-        </a>
-    </li>
-    <li ng-repeat="pageNumber in pageRange(count, page || defaultPageNumber, buttonCount)"
-        ng-class="{ active: (page && pageNumber === page) || (!page && defaultPageNumber === pageNumber) }">
-        <a href ng-click="changePage($event, pageNumber, true)">{{pageNumber}}</a>
-    </li>
-    <li ng-class="{ disabled: !showNext }">
-        <a href aria-label="Next" uib-tooltip="Next"
-           ng-click="changePage($event, page+1, showNext)">
-            <span aria-hidden="true">&rsaquo;</span>
-        </a>
-    </li>
-    <li ng-class="{ disabled: (page || defaultPageNumber) === count }">
-        <a href aria-label="Last" uib-tooltip="Last"
-           ng-click="changePage($event, count, (page && page !== count) || (!page && defaultPageNumber !== count))">
-            <span aria-hidden="true">&raquo;</span>
-        </a>
-    </li>
-</ul>
+<div class="paginate paginate-multi btn-group" ng-show="count" role="group">
+    <button type="button" class="btn btn-default" ng-disabled="page === 1" aria-label="First" uib-tooltip="First"
+            ng-click="changePage($event, 1, (page && page !== 1) || (!page && defaultPageNumber !== 1))">
+        <span aria-hidden="true">&laquo;</span>
+    </button>
+    <button type="button" class="btn btn-default" ng-disabled="!showPrev" aria-label="Previous" uib-tooltip="Previous"
+            ng-click="changePage($event, (page || defaultPageNumber)-1, showPrev)">
+        <span aria-hidden="true">&lsaquo;</span>
+    </button>
+    <div class="btn-group" uib-dropdown role="group" ng-class="{  dropup: dropUp, dropdown: !dropUp }">
+        <button class="btn btn-default" type="button"
+                uib-dropdown-toggle>
+            Page {{page}}
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li ng-repeat="pageNumber in pageRange(count, page || defaultPageNumber, buttonCount)">
+                <a href ng-click="changePage($event, pageNumber, true)" role="menuitem">{{pageNumber}}</a>
+            </li>
+        </ul>
+    </div>
+    <button type="button" class="btn btn-default" ng-disabled="!showNext" aria-label="Next" uib-tooltip="Next"
+            ng-click="changePage($event, page+1, showNext)">
+        <span aria-hidden="true">&rsaquo;</span>
+    </button>
+    <button type="button" class="btn btn-default" ng-disabled="(page || defaultPageNumber) === count" aria-label="Last"
+            uib-tooltip="Last"
+            ng-click="changePage($event, count, (page && page !== count) || (!page && defaultPageNumber !== count))">
+        <span aria-hidden="true">&raquo;</span>
+    </button>
+</div>

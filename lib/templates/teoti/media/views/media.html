@@ -1,3 +1,4 @@
-<div class="embed-responsive embed-responsive-16by9">
-    <iframe class="media {{media.type}}" ng-if="media" src="{{media.url}}" frameborder="0" allowfullscreen></iframe>
+<div class="embed-responsive embed-responsive-16by9" ng-if="media">
+    <iframe class="media {{media.type}}" src="{{media.url}}" frameborder="0" allowfullscreen></iframe>
 </div>
+<span ng-transclude ng-if="!media"></span>

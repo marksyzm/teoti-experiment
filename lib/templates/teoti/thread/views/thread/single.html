@@ -32,11 +32,19 @@
             <div class="btn-group" ng-show="thread.related">
                 <a href="{{thread.related}}" target="_blank" class="btn btn-info">Related</a>
             </div>
-            <div class="btn-group pull-right">
-                <a href class="btn btn-default">Reply</a>
-                <a href class="btn btn-default">Edit</a>
-                <a href class="btn btn-default" aria-label="Report" uib-tooltip="Report">!</a>
-                <a href class="btn btn-danger">Delete</a>
+            <div class="btn-group dropdown pull-right" uib-dropdown>
+                <button class="btn btn-primary" type="button" ng-click="reply(post)">Reply</button>
+                <button class="btn btn-primary" id="single-button-{{post._id}}" type="button"
+                        aria-haspopup="true" aria-expanded="false" uib-dropdown-toggle>
+                    <span class="caret"></span>
+                    <span class="sr-only">Menu</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="single-button-{{post._id}}">
+                    <li><a href role="menuitem" ng-click="edit(post)">Edit</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href role="menuitem" ng-click="report(post)">Report</a></li>
+                    <li><a href role="menuitem" class="text-danger" ng-click="delete(post)">Delete</a></li>
+                </ul>
             </div>
         </div>
     </div>

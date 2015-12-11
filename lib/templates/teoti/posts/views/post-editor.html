@@ -1,0 +1,7 @@
+<form name="formPostEditor" ng-class="{ active: active }">
+    <h3>{{ post ? 'Reply' + (reply ? ' > '+reply.user.username : '') : 'Add post' }}</h3>
+    <div class="form-group">
+        <textarea ng-model="post.content" class="form-control" name="formPostEditorContent" ng-disabled="loading"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary" ng-disabled="formPostEditor.$invalid || loading">Submit</button>
+</form>

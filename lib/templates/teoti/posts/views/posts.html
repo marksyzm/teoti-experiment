@@ -13,7 +13,15 @@
              ng-class="{ loading: loading }"></nav>
 
         <ul class="posts">
-            <li ng-repeat="post in posts.items track by post._id" post="post"></li>
+            <li ng-repeat="post in posts.items track by post._id"
+                t-post="post"
+                t-post-edit="edit"
+                t-post-reply="reply"
+                t-post-report="report"
+                t-post-delete="del"></li>
+            <li t-post="newPost"
+                t-post-temp="true"
+                ng-if="newPost && !newPost._id && newPost.content" ng-class="{ editing: !postEdited }"></li>
         </ul>
 
         <nav t-paginate
@@ -27,5 +35,11 @@
              t-paginate-drop-up="true"
              ng-class="{ loading: loading }"></nav>
     </div>
+
+    <t-post-editor t-post-editor-post="editedPost"
+                   t-post-editor-reply="reply"
+                   t-post-editor-forum-slug="forumSlug"
+                   t-post-editor-edited="postEdited"
+                   t-post-editor-thread-id="threadId"></t-post-editor>
 </section>
 <section ng-show="error" ng-include="include('../../scaffolding/views/error.html')"></section>

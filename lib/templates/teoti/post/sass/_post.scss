@@ -1,4 +1,9 @@
-[post] {
+[t-post] {
+  &[t-post-temp=true] {
+    &.editing {
+      @extend .temp;
+    }
+  }
   .post {
     @extend .panel;
     .post-heading {
@@ -33,9 +38,10 @@
       .post-heading-buttons {
         float: right;
         @extend .clearfix;
-
-        .post-heading-buttons-menu {
-          margin-left: 5px;
+        .dropdown-toggle {
+          .caret {
+            color: $white;
+          }
         }
       }
     }
@@ -49,6 +55,7 @@
     .post-body {
       @extend .panel-body;
       .post-body-content {
+        word-wrap: break-word;
         img {
           max-width: 100%;
         }

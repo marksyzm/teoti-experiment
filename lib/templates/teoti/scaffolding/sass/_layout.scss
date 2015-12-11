@@ -46,6 +46,10 @@
   height: auto;
 }
 
+.temp {
+  opacity: 0.5;
+}
+
 [t-paginate] {
   &.loading {
     opacity: 0.6;

@@ -21,7 +21,9 @@
                 t-post-delete="del"></li>
             <li t-post="newPost"
                 t-post-temp="true"
-                ng-if="newPost && !newPost._id && newPost.content" ng-class="{ editing: !postEdited }"></li>
+                ng-repeat="newPost in newPosts track by $index"
+                ng-if="!newPost._id && newPost.content"
+                ng-class="{ editing: !newPost.postEdited }"></li>
         </ul>
 
         <nav t-paginate

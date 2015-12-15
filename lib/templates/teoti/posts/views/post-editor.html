@@ -1,4 +1,4 @@
-<form name="formPostEditor" ng-class="{ active: active }">
+<form name="formPostEditor" ng-class="{ active: active }" ng-submit="submit()">
     <h3>{{ post ? 'Reply' + (reply ? ' > '+reply.user.username : '') : 'Add post' }}</h3>
     <div class="form-group">
         <textarea ng-model="post.content" class="form-control" name="formPostEditorContent" ng-disabled="loading"></textarea>

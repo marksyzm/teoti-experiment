@@ -1,23 +1,23 @@
 <article class="post panel">
 
-    <header class="post-heading panel-heading" ng-if="post">
+    <header class="post-heading panel-heading" ng-show="post">
         <a href="{{post.user.url}}" class="post-user-avatar">
             <img ng-src="/sickle/icon?url={{post.user.avatarUrl}}" alt="{{post.user.username}}" class="icon visible-xs-inline-block visible-sm-inline-block">
             <img ng-src="/sickle/thumbnail?url={{post.user.avatarUrl}}" alt="{{post.user.username}}" class="thumb hidden-xs hidden-sm">
         </a>
 
-        <div class="post-heading-buttons btn-group dropdown" ng-if="!temp" uib-dropdown>
-            <button class="btn btn-primary" type="button" ng-click="postResource.reply(post, this)">Reply</button>
+        <div class="post-heading-buttons btn-group dropdown" ng-show="!temp" uib-dropdown>
+            <button class="btn btn-primary" type="button" ng-click="reply(post)">Reply</button>
             <button class="btn btn-primary" id="single-button-{{post._id}}" type="button"
                     uib-dropdown-toggle aria-haspopup="true" aria-expanded="false">
                 <span class="caret"></span>
                 <span class="sr-only">Menu</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="single-button-{{post._id}}">
-                <li><a href role="menuitem" ng-click="postResource.edit(post, this)">Edit</a></li>
+                <li><a href role="menuitem" ng-click="edit(post)">Edit</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href role="menuitem" ng-click="postResource.report(post, this)">Report</a></li>
-                <li><a href role="menuitem" class="text-danger" ng-click="postResource.delete(post, this)">Delete</a></li>
+                <li><a href role="menuitem" ng-click="report(post)">Report</a></li>
+                <li><a href role="menuitem" class="text-danger" ng-click="delete(post)">Delete</a></li>
             </ul>
         </div>
 
@@ -25,14 +25,14 @@
             <h3 class="post-heading-actions-primary">
                 <a href="{{post.user.url}}">{{post.user.username}}</a>
 
-                <span ng-if="post.parent">
+                <span ng-show="post.parent">
                     <span class="text-muted">&gt;</span>
                     <a href="{{post.parent.user.url}}">{{post.parent.user.username}}</a>
-                    <button type="button" ng-click="showChain(post._id)" ng-if="!temp"></button>
+                    <button type="button" ng-click="showChain(post._id)" ng-show="!temp"></button>
                 </span>
             </h3>
 
-            <div class="post-heading-actions-secondary" ng-if="!temp">
+            <div class="post-heading-actions-secondary" ng-show="!temp">
                 <div like-dislike ld-post="post"></div>
 
                 <time class="text-muted" datetime="{{post.created}}"
@@ -45,7 +45,7 @@
 
     <div class="post-body">
         <div class="post-body-content"
-             ng-if="post.content"
+             ng-show="post.content"
              bind-html-compile="post.content | bbcode"></div>
     </div>
 </article>

@@ -1,10 +1,35 @@
 t-post-editor,
 [t-post-editor] {
-  textarea.form-control {
-    height: 3em;
-    transition: all 0.5s ease;
-    &:focus {
-      height: 8em;
+  @extend .container;
+  position: fixed;
+  display: block;
+  margin: 0 auto;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  @include media-query($screen-sm-min, 'max-width') {
+    width: 100%;
+  }
+  .post-editor {
+    @extend .panel;
+    margin-bottom: 0;
+    .post-editor-heading {
+      @extend .panel-heading, .clearfix;
+      h3 {
+        margin: 0;
+      }
+      .post-editor-btn-cancel {
+        float: right;
+      }
+    }
+    .post-editor-body {
+      @extend .panel-body;
+    }
+    textarea.form-control {
+      height: 3em;
+      &.active {
+        height: 8em;
+      }
     }
   }
 }

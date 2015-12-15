@@ -15,8 +15,8 @@
         <ul class="posts">
             <li ng-repeat="post in posts.items track by post._id"
                 t-post="post"
-                t-post-edit="edit"
-                t-post-reply="reply"
+                t-post-edit="setEdit"
+                t-post-reply="setReply"
                 t-post-report="report"
                 t-post-delete="del"></li>
             <li t-post="newPost"
@@ -38,10 +38,11 @@
              ng-class="{ loading: loading }"></nav>
     </div>
 
-    <t-post-editor t-post-editor-post="editedPost"
-                   t-post-editor-reply="reply"
-                   t-post-editor-forum-slug="forumSlug"
-                   t-post-editor-edited="postEdited"
-                   t-post-editor-thread-id="threadId"></t-post-editor>
+    <section t-post-editor
+             t-post-editor-post="editedPost"
+             t-post-editor-reply="reply"
+             t-post-editor-forum-slug="forumSlug"
+             t-post-editor-edited="postEdited"
+             t-post-editor-thread-id="threadId"></section>
 </section>
 <section ng-show="error" ng-include="include('../../scaffolding/views/error.html')"></section>

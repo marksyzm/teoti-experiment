@@ -28,13 +28,10 @@ node_modules
 .lock-wscript
 
 .DS_Store
-public/js/components
-*.css
 .sass-cache
 *.css.map
 *.js.map
 .idea/
-public/js/app.js
 npm-debug.log
 validation-status.json
 coverage/

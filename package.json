@@ -74,6 +74,7 @@
     "pm2": "^0.12.15",
     "recaptcha": "^1.2.0",
     "request": "^2.45.0",
+    "sceditor": "^1.4.7",
     "scrape": "^0.2.3",
     "sickle": "^1.1.0",
     "speakingurl": "^0.18.1",

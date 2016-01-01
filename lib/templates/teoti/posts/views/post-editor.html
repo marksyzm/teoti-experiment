@@ -1,22 +1,24 @@
-<div class="post-editor">
+<div class="post-editor" ng-class="{ active: active }">
 
-    <div class="post-editor-heading" ng-show="active">
-        <button type="button" class="btn btn-danger btn-xs post-editor-btn-cancel"
+    <div class="post-editor-heading">
+        <button type="button" class="btn btn-danger btn-xs post-editor-btn-cancel" aria-label="Cancel"
                 ng-disabled="loading"
-                ng-click="cancel()"
-                ng-show="active" aria-label="Cancel">&times;</button>
+                ng-click="cancel()">&times;</button>
 
         <h3>{{ post._id ? 'Edit ': '' }}Reply {{reply ? ' > ' + reply.user.username : '' }}</h3>
     </div>
 
     <div class="post-editor-body">
-        <form name="formPostEditor" ng-class="{ active: active }" ng-submit="submit()">
+        <form name="formPostEditor" ng-submit="submit()">
             <div class="form-group">
                 <textarea class="form-control" name="formPostEditorContent" placeholder="Leave a reply"
-                          ng-class="{ active: active }"
+                          t-editor
+                          t-editor-model="post.content"
                           ng-model="post.content"
+                          ng-if="active"
                           ng-disabled="loading"></textarea>
             </div>
+
             <button type="submit" class="btn btn-primary"
                     ng-show="active" ng-disabled="formPostEditor.$invalid || loading">
                 {{ post._id ? 'Update': 'Create' }}

@@ -14,6 +14,7 @@
                 <textarea class="form-control" name="formPostEditorContent" placeholder="Leave a reply"
                           t-editor
                           t-editor-model="post.content"
+                          t-editor-update="updateEditor"
                           ng-model="post.content"
                           ng-if="active"
                           ng-disabled="loading"></textarea>

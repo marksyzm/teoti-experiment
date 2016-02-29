@@ -1,4 +1,3 @@
-t-post-editor,
 [t-post-editor] {
   @extend .container;
   position: fixed;
@@ -14,7 +13,8 @@ t-post-editor,
     @extend .panel;
     margin-bottom: 0;
     .post-editor-heading {
-      @extend .panel-heading, .clearfix;
+      @extend .panel-heading;
+      @extend .clearfix;
       h3 {
         margin: 0;
       }
@@ -24,6 +24,15 @@ t-post-editor,
     }
     .post-editor-body {
       @extend .panel-body;
+      .post-editor-text-enable {
+        border: 1px solid #EEE;
+        color: #CCC;
+        padding: 10px;
+        cursor: pointer;
+        &:hover {
+          color: $text-color;
+        }
+      }
     }
     textarea.form-control {
       width: 100%;

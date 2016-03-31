@@ -11,13 +11,12 @@
     <div class="post-editor-body">
         <div class="post-editor-text-enable" ng-click="active = true" ng-show="!active">Create reply...</div>
         <form name="formPostEditor" ng-submit="submit()">
-            <div class="form-group">
+            <div class="form-group" ng-if="active">
                 <textarea class="form-control" name="formPostEditorContent" placeholder="Leave a reply"
                           t-editor
                           t-editor-model="post.content"
                           t-editor-update="updateEditor"
                           ng-model="post.content"
-                          ng-if="active"
                           ng-disabled="loading"></textarea>
             </div>
 

@@ -2,6 +2,7 @@
   "routePermissions": [
     {
       "path": "/authenticate",
+      "model": "user",
       "permissions": {
         "create"  : { "own": [], "all": [], "public": true }
       }

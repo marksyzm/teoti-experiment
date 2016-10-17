@@ -2,129 +2,138 @@
   "routePermissions": [
     {
       "path": "/authenticate",
-      "model": "user",
-      "permissions": {
-        "create"  : { "own": [], "all": [], "public": true }
+      "crudMethods": {
+        "create"  : { "public": true }
       }
     },
     {
       "path": "/user",
-      "permissions": {
-        "create"  : { "own": [], "all": ["user"] },
-        "read"    : { "own": [], "all": [], "public": true },
-        "update"  : { "own": [], "all": [] },
-        "delete"  : { "own": [], "all": [] }
+      "model": "User",
+      "crudMethods": {
+        "create"  : { "all": true },
+        "read"    : { "public": true }
       }
     },
     {
       "path": "/user/{userId}",
-      "permissions": {
-        "create"  : { "own": [], "all": [] },
-        "read"    : { "own": [], "all": [], "public": true },
-        "update"  : { "own": [], "all": ["user"] },
-        "delete"  : { "own": [], "all": ["user"] }
+      "model": "User",
+      "crudMethods": {
+        "read"    : { "public": true },
+        "update"  : { "all": true },
+        "delete"  : { "all": true }
       }
     },
     {
       "path": "/account",
-      "permissions": {
-        "create"  : { "own": [], "all": [] },
-        "read"    : { "own": [], "all": [], "public": true },
-        "update"  : { "own": ["user"], "all": [] },
-        "delete"  : { "own": [], "all": [] }
+      "model": "User",
+      "crudMethods": {
+        "read"    : { "public": true },
+        "update"  : { "own": true }
       }
     },
     {
       "path": "/group",
-      "permissions": {
-        "create"  : { "own": [], "all": ["group"] },
-        "read"    : { "own": [], "all": ["group"] }
+      "model": "Group",
+      "crudMethods": {
+        "create"  : { "all": true },
+        "read"    : { "all": true }
       }
     },
     {
       "path": "/group/{groupId}",
-      "permissions": {
-        "read"    : { "own": [], "all": ["group"] },
-        "update"  : { "own": [], "all": ["group"] },
-        "delete"  : { "own": [], "all": ["group"] }
+      "model": "Group",
+      "crudMethods": {
+        "read"    : { "all": true },
+        "update"  : { "all": true },
+        "delete"  : { "all": true }
       }
     },
     {
       "path": "/forum",
-      "permissions": {
-        "create"  : { "own": [], "all": ["forum"] },
-        "read"    : { "own": [], "all": [], "public": true }
+      "model": "Forum",
+      "crudMethods": {
+        "create"  : { "all": true },
+        "read"    : { "public": true }
       }
     },
     {
       "path": "/forum/{forumId}",
-      "permissions": {
-        "read"    : { "own": [], "all": ["forum"] },
-        "update"  : { "own": [], "all": ["forum"] },
-        "delete"  : { "own": [], "all": ["forum"] }
+      "model": "Forum",
+      "crudMethods": {
+        "read"    : { "all": true },
+        "update"  : { "all": true },
+        "delete"  : { "all": true }
       }
     },
     {
       "path": "/forum/{forumId}/thread",
-      "permissions": {
-        "read"    : { "own": [], "all": [], "public": true },
-        "create"  : { "own": ["thread"], "all": ["thread"] },
-        "delete"  : { "own": ["thread"], "all": ["thread"] }
+      "model": "Thread",
+      "crudMethods": {
+        "read"    : { "public": true },
+        "create"  : { "own": true, "all": true },
+        "delete"  : { "own": true, "all": true }
       }
     },
     {
       "path": "/forum/{forumId}/thread/{threadId}",
-      "permissions": {
-        "read"    : { "own": [], "all": [], "public": true },
-        "update"  : { "own": ["forum","thread"], "all": ["forum","thread"] },
-        "delete"  : { "own": ["forum","thread"], "all": ["forum","thread"] }
+      "model": "Thread",
+      "crudMethods": {
+        "read"    : { "public": true },
+        "update"  : { "own": "Thread", "all": true },
+        "delete"  : { "own": "Thread", "all": true }
       }
     },
     {
       "path": "/forum/{forumId}/thread/{threadId}/post",
-      "permissions": {
-        "create"  : { "own": ["post"], "all": ["post"] },
-        "read"    : { "own": [], "all": [], "public": true }
+      "model": "Post",
+      "crudMethods": {
+        "create"  : { "own": true, "all": true },
+        "read"    : { "public": true }
       }
     },
     {
       "path": "/forum/{forumId}/thread/{threadId}/post/{postId}",
-      "permissions": {
-        "read"    : { "own": ["forum","thread","post"], "all": ["forum","thread","post"] },
-        "update"  : { "own": ["forum","thread","post"], "all": ["forum","thread","post"], "ownership": ["post"] },
-        "delete"  : { "own": ["forum","thread","post"], "all": ["forum","thread","post"], "ownership": ["post"] }
+      "model": "Post",
+      "crudMethods": {
+        "read"    : { "own": "Post", "all": true },
+        "update"  : { "own": "Post", "all": true },
+        "delete"  : { "own": "Post", "all": true }
       }
     },
     {
       "path": "/thread",
-      "permissions": {
-        "read"  : { "own": [], "all": ["thread"] },
-        "create"  : { "own": [], "all": ["thread"] },
-        "update"  : { "own": [], "all": ["thread"] },
-        "create"  : { "own": [], "all": ["thread"] }
+      "model": "Thread",
+      "crudMethods": {
+        "read"    : { "all": true },
+        "create"  : { "all": true },
+        "update"  : { "all": true },
+        "create"  : { "all": true }
       }
     },
     {
       "path": "/thread/{threadId}",
-      "permissions": {
-        "read"  : { "own": [], "all": ["thread"] },
-        "create"  : { "own": [], "all": ["thread"] },
-        "update"  : { "own": [], "all": ["thread"] },
-        "delete"  : { "own": [], "all": ["thread"] }
+      "model": "Thread",
+      "crudMethods": {
+        "read"    : { "all": true },
+        "create"  : { "all": true },
+        "update"  : { "all": true },
+        "delete"  : { "all": true }
       }
     },
     {
       "path": "/shout",
-      "permissions": {
-        "read"  : { "own": [], "all": [], "public": true },
-        "create"  : { "own": ["shout"], "all": [] }
+      "model": "Shout",
+      "crudMethods": {
+        "read"    : { "public": true },
+        "create"  : { "own": true }
       }
     },
     {
       "path": "/shout/{shoutId}",
-      "permissions": {
-        "update"  : { "own": ["shout"], "all": [] },
-        "delete"  : { "own": ["shout"], "all": ["shout"] }
+      "model": "Shout",
+      "crudMethods": {
+        "update"  : { "own": "Shout" },
+        "delete"  : { "own": "Shout", "all": true }
       }
     }
   ]
